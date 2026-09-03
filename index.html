@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>台灣熱門漫畫 Top 10｜每日排行</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="index">
+<header class="site-header">
+  <a class="brand" href="index.html">台漫榜 <span>Top 10</span></a>
+  <span class="date-badge" id="dateBadge">載入中…</span>
+</header>
+
+<main>
+  <section class="hero">
+    <p class="eyebrow">BOOK HERO · 每日自動刷新</p>
+    <h1>台灣熱門漫畫<br>今日 Top 10</h1>
+    <p class="lede"><span id="heroDate">—</span> 今日排行 · 點一本書，看章節文字劇情</p>
+    <div class="shelf-wrap">
+      <ol class="shelf" id="shelf" aria-label="今日漫畫書架"></ol>
+      <div class="plank" aria-hidden="true"></div>
+    </div>
+    <p class="hint">← 左右滑動瀏覽書架 · 點封面進入章節 →</p>
+  </section>
+
+  <section class="rank-section">
+    <h2>今日完整榜單</h2>
+    <ol class="rank-list" id="rankList"></ol>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>資料為介紹用途，劇情為摘要文字。本頁為劇情介紹，非漫畫原文，支持正版。</p>
+</footer>
+
+<script src="assets/js/ranking.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
