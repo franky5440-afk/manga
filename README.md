@@ -5,6 +5,7 @@
 ## 功能
 
 - 首頁 Top 10 榜單，每日（台灣時區）自動換序
+- 有生之年分頁（`timeless.html`）：固定 18 本經典收藏，不每日更新，每本收錄最新 10 話大綱
 - 漫畫詳情頁：簡介、作者、類型、章節列表
 - 章節頁：文字劇情 + 上一章 / 下一章導航
 - 無後端，離線可開，手機優先 RWD
@@ -23,12 +24,14 @@ python3 -m http.server 8000
 
 ```
 index.html          首頁榜單
-manga.html          詳情頁 (?id=xxx)
-chapter.html        章節頁 (?id=xxx&ch=N)
+timeless.html       有生之年固定收藏（?無參數，固定排序）
+manga.html          詳情頁 (?id=xxx，&src=classics 讀固定收藏)
+chapter.html        章節頁 (?id=xxx&ch=N，&src=classics 讀固定收藏)
 assets/css/style.css
 assets/js/app.js
 assets/js/ranking.js  每日排序邏輯
 data/manga.json       全部漫畫資料（唯一真相來源）
+data/classics.json    有生之年 18 本固定收藏（真相來源之二，fixedRank 排序）
 ```
 
 ## 每日排序怎麼算

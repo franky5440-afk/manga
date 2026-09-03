@@ -111,3 +111,11 @@ function xfnv1a(str) {
 ## 9. 後續可擴充（v1 不做）
 
 搜尋、類型篩選、閱讀進度 localStorage、RSS/JSON feed。想做先開 issue 更新本檔，不直接寫碼。
+
+## 10. 有生之年固定收藏分頁（v1.1，2026-09-04）
+
+- 新頁 `timeless.html`：固定 18 本經典（不每日更新、不經 `ranking.js`），按 `data/classics.json` 的 `fixedRank` 排序
+- 資料 `data/classics.json`：欄位同 `manga.json`，但以 `fixedRank`（1~18）取代 `baseScore`；每本收錄最新 10 話（`num` 為真實話數，休刊作取最後刊載 10 話），`plot` 為 150~250 字原創大綱
+- 詳情/章節頁共用：`manga.html?id=xxx&src=classics`、`chapter.html?id=xxx&ch=N&src=classics` 讀固定收藏；詳情頁顯示「固定收藏第 N 名 / 共 18 本」，麵包屑首層連回 `timeless.html`
+- 站內導覽：各頁 header 下方 `site-nav`（每日 Top 10 / 有生之年），當前分頁 `aria-current="page"`
+- 18 本名單：獵人、烙印勇士、浪客行、NANA、千面女郎、強殖裝甲、五星物語、骷髏13、名偵探柯南、JOJOLands、王者天下、第一神拳、刃牙道、驅魔少年、X 戰記、七龍珠超、一拳超人、來自深淵

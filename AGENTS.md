@@ -24,14 +24,16 @@
 ├── AGENTS.md
 ├── README.md
 ├── spec.md
-├── index.html          # 首頁：Top 10 榜單
-├── manga.html          # 詳情頁：?id=xxx 顯示章節列表
-├── chapter.html        # 章節頁：?id=xxx&ch=1 顯示文字劇情
+├── index.html          # 首頁：Top 10 榜單（每日刷新）
+├── timeless.html       # 有生之年分頁：固定 18 本收藏榜單
+├── manga.html          # 詳情頁：?id=xxx（&src=classics 讀固定收藏）顯示章節列表
+├── chapter.html        # 章節頁：?id=xxx&ch=1（&src=classics 讀固定收藏）顯示文字劇情
 ├── assets/css/style.css
 ├── assets/js/app.js
 ├── assets/js/ranking.js
 ├── data/manga.json
-├── tools/*.py            # 資料維護腳本（章節擴充、字數檢查），僅本機執行
+├── data/classics.json  # 有生之年固定收藏（唯一真相來源之二）
+├── tools/                # 資料維護與驗證腳本（僅本機執行）
 ```
 
 新增檔案時必須放在上述位置，不可自創目錄（除非更新本檔與 spec.md）。
@@ -59,12 +61,12 @@
 
 - `id` 全小寫英文 + 連字號，不可重複，不可改（URL 依賴）
 - 每本至少 3 個章節，每章節 `plot` 為純文字，不放圖片
-- `baseScore` 0~100，作為每日排序的基準分
+- `baseScore` 0~100，作為每日排序的基準分（僅 `manga.json` 用；`classics.json` 改用 `fixedRank` 固定排序，不參與每日刷新）
 - 封面圖若缺檔，必須用 CSS 佔位色 + 書名首字，不可破圖
 
 ## 5. 每日刷新排序規則
 
-- 排序邏輯集中在 `assets/js/ranking.js`，不可散落在各頁
+- 排序邏輯集中在 `assets/js/ranking.js`，不可散落在各頁（有生之年分頁固定按 `fixedRank`，不經過 `ranking.js`）
 - Seed = 當日日期字串 `YYYY-MM-DD`（以台灣時區 Asia/Taipei 計算）
 - 每本當日分數 = `baseScore + hash(id + seed) % 20 - 10`
 - `hash` 用確定性字串 hash（例如 xfnv1a），不可用 `Math.random()`
