@@ -106,6 +106,7 @@
   function renderManga(data, classics, res) {
     var src = qs('src') === 'classics' ? 'classics' : 'top10';
     var dataset = src === 'classics' ? classics : data;
+    document.body.setAttribute('data-src', src);
     var m = dataset.find(function (x) { return x.id === qs('id'); });
     var detail = document.getElementById('detail');
     var chList = document.getElementById('chList');
@@ -148,6 +149,7 @@
     var src = qs('src') === 'classics' ? 'classics' : 'top10';
     var dataset = src === 'classics' ? classics : data;
     var suffix = src === 'classics' ? '&src=classics' : '';
+    document.body.setAttribute('data-src', src);
     var m = dataset.find(function (x) { return x.id === qs('id'); });
     var home = document.getElementById('crumbHome');
     if (home) {

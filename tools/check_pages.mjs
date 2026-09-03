@@ -24,7 +24,7 @@ async function runCase(name, page, search, check) {
     console,
     URLSearchParams,
     document: {
-      body: { getAttribute: () => page },
+      body: { getAttribute: () => page, setAttribute: () => {} },
       getElementById: (id) => els[id] || null,
       querySelectorAll: () => [],
       title: '',
