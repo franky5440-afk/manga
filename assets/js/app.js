@@ -1,4 +1,4 @@
-// app.js — 各頁 render + 封面 fallback（排序只用 ranking.js）
+// app.js — 各頁 render + 3D 書本封面（排序只用 ranking.js）
 (function () {
   var page = document.body.getAttribute('data-page');
 
@@ -10,17 +10,17 @@
   function qs(name) {
     return new URLSearchParams(location.search).get(name);
   }
-  // 封面：有 cover 檔就用 img（破圖時換佔位），否則直接佔位色 + 首字
+  // 書本物件：封面圖載入失敗就拿掉 img，露出直排書名的佔位封面
   function coverHTML(m, size) {
-    var first = esc(m.title.charAt(0));
-    var color = m.color || '#1d4ed8';
-    if (m.cover) {
-      return '<span class="cover ' + size + '" style="--c:' + color + '">' +
-        '<img src="' + esc(m.cover) + '" alt="' + esc(m.title) + '封面" loading="lazy" onerror="this.remove()">' +
-        '<span class="cover-ph" aria-hidden="true">' + first + '</span></span>';
-    }
-    return '<span class="cover ' + size + '" style="--c:' + color + '">' +
-      '<span class="cover-ph" aria-hidden="true">' + first + '</span></span>';
+    var color = m.color || '#3b4a6b';
+    var img = m.cover
+      ? '<img src="' + esc(m.cover) + '" alt="' + esc(m.title) + '封面" loading="lazy" onerror="this.parentNode.classList.add(\'no-img\');this.remove()">' +
+        '<span class="cover-band"><b>' + esc(m.title) + '</b><small>' + esc(m.author) + '</small></span>'
+      : '';
+    return '<span class="book-obj ' + size + '" style="--c:' + color + '">' +
+      '<span class="book-face' + (m.cover ? '' : ' no-img') + '">' + img +
+      '<span class="cover-ph" aria-hidden="true"><b>' + esc(m.title) + '</b><small>' + esc(m.author) + '</small></span>' +
+      '</span></span>';
   }
   function errBox(msg) {
     return '<div class="error"><p>' + esc(msg) + '</p><p><a class="btn" href="index.html">回到首頁</a></p></div>';
@@ -36,7 +36,7 @@
     var rank = getTodayRank(data);
     var badge = document.getElementById('dateBadge');
     if (page === 'timeless') {
-      if (badge) badge.textContent = '固定收藏 · 共 ' + classics.length + ' 本';
+      if (badge) badge.textContent = '固定收藏 ' + classics.length + ' 本';
     } else if (badge) {
       badge.textContent = rank.seed + ' 今日排行';
     }
@@ -60,30 +60,31 @@
   function diffHTML(d) {
     if (d > 0) return '<span class="diff up">▲' + d + '</span>';
     if (d < 0) return '<span class="diff down">▼' + (-d) + '</span>';
-    return '<span class="diff flat">— 持平</span>';
+    return '<span class="diff flat">持平</span>';
   }
 
   // 首頁：書架 hero + 完整榜單
   function renderIndex(res, diff) {
     var shelf = document.getElementById('shelf');
-    shelf.innerHTML = res.list.map(function (m) {
-      return '<li><a class="book" href="manga.html?id=' + esc(m.id) + '">' +
-        '<span class="rank">' + m.rank + '</span> ' + diffHTML(diff[m.id]) +
+    shelf.innerHTML = res.list.map(function (m, i) {
+      return '<li style="--i:' + i + '"><a class="book" href="manga.html?id=' + esc(m.id) + '">' +
         coverHTML(m, 'big') +
-        '<span class="book-t">' + esc(m.title) + '</span>' +
-        '<span class="book-a">' + esc(m.author) + '</span></a></li>';
+        '<span class="book-meta"><span class="rank">' + m.rank + '</span>' +
+        '<span class="book-t">' + esc(m.title) + '</span>' + diffHTML(diff[m.id]) + '</span></a></li>';
     }).join('');
     var list = document.getElementById('rankList');
     list.innerHTML = res.list.map(function (m) {
       return '<li><a class="card" href="manga.html?id=' + esc(m.id) + '">' +
-        '<span class="rank">No.' + m.rank + '</span>' + coverHTML(m, 'sm') +
-        '<span class="card-body"><b>' + esc(m.title) + ' ' + diffHTML(diff[m.id]) + '</b>' +
-        '<small>' + esc(m.author) + ' · ' + m.genre.map(esc).join(' / ') + ' · ' + m.todayScore + ' 分</small>' +
-        '<span>' + esc(m.synopsis.slice(0, 40)) + '…</span></span></a></li>';
+        coverHTML(m, 'sm') +
+        '<span class="card-body">' +
+        '<span class="card-head"><span class="rank">' + m.rank + '</span>' + diffHTML(diff[m.id]) + '<span class="score">' + m.todayScore + ' 分</span></span>' +
+        '<b>' + esc(m.title) + '</b>' +
+        '<small>' + esc(m.author) + ' · ' + m.genre.map(esc).join(' / ') + '</small>' +
+        '<span class="syn">' + esc(m.synopsis.slice(0, 40)) + '…</span></span></a></li>';
     }).join('');
   }
 
-  // 有生之年：固定排序，不經 ranking.js，直接按 fixedRank
+  // 有生之年：固定排序，不經 ranking.js，直接按 fixedRank 排成一面書牆
   function renderTimeless(classics) {
     var list = document.getElementById('fixedList');
     if (!classics.length) {
@@ -91,14 +92,13 @@
       return;
     }
     var ordered = classics.slice().sort(function (a, b) { return a.fixedRank - b.fixedRank; });
-    list.innerHTML = ordered.map(function (m) {
+    list.innerHTML = ordered.map(function (m, i) {
       var nums = m.chapters.map(function (c) { return c.num; }).sort(function (a, b) { return a - b; });
-      var range = '第 ' + nums[0] + '–' + nums[nums.length - 1] + ' 話';
-      return '<li><a class="card" href="manga.html?id=' + esc(m.id) + '&src=classics">' +
-        '<span class="rank">No.' + m.fixedRank + '</span>' + coverHTML(m, 'sm') +
-        '<span class="card-body"><b>' + esc(m.title) + '</b>' +
-        '<small>' + esc(m.author) + ' · ' + m.genre.map(esc).join(' / ') + ' · ' + range + '</small>' +
-        '<span>' + esc(m.synopsis.slice(0, 40)) + '…</span></span></a></li>';
+      return '<li style="--i:' + i + '"><a class="book" href="manga.html?id=' + esc(m.id) + '&src=classics">' +
+        coverHTML(m, 'wall') +
+        '<span class="book-meta"><span class="rank">' + m.fixedRank + '</span>' +
+        '<span class="book-t">' + esc(m.title) + '</span>' +
+        '<span class="book-a">第 ' + nums[0] + '-' + nums[nums.length - 1] + ' 話</span></span></a></li>';
     }).join('');
   }
 
@@ -106,7 +106,6 @@
   function renderManga(data, classics, res) {
     var src = qs('src') === 'classics' ? 'classics' : 'top10';
     var dataset = src === 'classics' ? classics : data;
-    document.body.setAttribute('data-src', src);
     var m = dataset.find(function (x) { return x.id === qs('id'); });
     var detail = document.getElementById('detail');
     var chList = document.getElementById('chList');
@@ -126,21 +125,22 @@
     var rankLine;
     if (src === 'classics') {
       document.title = m.title + '｜有生之年經典';
-      rankLine = '固定收藏第 ' + m.fixedRank + ' 名 / 共 ' + dataset.length + ' 本 · 最新 10 話大綱';
+      rankLine = '固定收藏第 ' + m.fixedRank + ' 名，共 ' + dataset.length + ' 本。收錄最新 10 話大綱';
     } else {
       var ranked = res.list.find(function (x) { return x.id === m.id; });
       document.title = m.title + '｜台漫榜 Top 10';
-      rankLine = '今日第 ' + ranked.rank + ' 名 / 共 10 本 · ' + ranked.todayScore + ' 分';
+      rankLine = '今日第 ' + ranked.rank + ' 名，共 10 本。' + ranked.todayScore + ' 分';
     }
     document.getElementById('crumbTitle').textContent = m.title;
     detail.innerHTML = '<div class="detail-top">' + coverHTML(m, 'big') +
       '<div><h1>' + esc(m.title) + '</h1>' +
       '<p class="meta">' + esc(m.author) + ' · ' + m.genre.map(esc).join(' / ') + '</p>' +
-      '<p class="meta">' + esc(rankLine) + '</p>' +
-      '<p>' + esc(m.synopsis) + '</p></div></div>';
-    varchs = m.chapters.slice().sort(function (a, b) { return a.num - b.num; });
-    chList.innerHTML = varchs.map(function (c) {
-      return '<li><a href="chapter.html?id=' + esc(m.id) + '&ch=' + c.num + suffix + '">第 ' + c.num + ' 話 — ' + esc(c.title) + '</a></li>';
+      '<p class="meta rankline">' + esc(rankLine) + '</p>' +
+      '<p class="synopsis">' + esc(m.synopsis) + '</p></div></div>';
+    var chs = m.chapters.slice().sort(function (a, b) { return a.num - b.num; });
+    chList.innerHTML = chs.map(function (c) {
+      return '<li><a href="chapter.html?id=' + esc(m.id) + '&ch=' + c.num + suffix + '">' +
+        '<span class="ch-num">第 ' + c.num + ' 話</span><span class="ch-title">' + esc(c.title) + '</span></a></li>';
     }).join('');
   }
 
@@ -149,7 +149,6 @@
     var src = qs('src') === 'classics' ? 'classics' : 'top10';
     var dataset = src === 'classics' ? classics : data;
     var suffix = src === 'classics' ? '&src=classics' : '';
-    document.body.setAttribute('data-src', src);
     var m = dataset.find(function (x) { return x.id === qs('id'); });
     var home = document.getElementById('crumbHome');
     if (home) {
@@ -178,8 +177,8 @@
     cb.textContent = m.title;
     cb.href = 'manga.html?id=' + encodeURIComponent(m.id) + suffix;
     document.getElementById('crumbCh').textContent = '第 ' + c.num + ' 話';
-    box.innerHTML = '<h1>' + esc(m.title) + '</h1>' +
-      '<h2>第 ' + c.num + ' 話 — ' + esc(c.title) + '</h2>' +
+    box.innerHTML = '<p class="book-label">' + esc(m.title) + '</p>' +
+      '<h1><span class="ch-num">第 ' + c.num + ' 話</span>' + esc(c.title) + '</h1>' +
       '<p class="plot">' + esc(c.plot) + '</p>' +
       '<p class="disclaimer">本頁為劇情介紹，非漫畫原文，支持正版。</p>';
     var nums = m.chapters.map(function (x) { return x.num; }).sort(function (a, b) { return a - b; });

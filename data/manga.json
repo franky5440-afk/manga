@@ -3,7 +3,7 @@
     "id": "one-piece",
     "title": "航海王",
     "author": "尾田榮一郎",
-    "cover": "",
+    "cover": "assets/covers/one-piece.jpg",
     "color": "#e11d48",
     "genre": [
       "冒險",
@@ -68,7 +68,7 @@
     "id": "jujutsu-kaisen",
     "title": "咒術迴戰",
     "author": "芥見下下",
-    "cover": "",
+    "cover": "assets/covers/jujutsu-kaisen.jpg",
     "color": "#7c3aed",
     "genre": [
       "戰鬥",
@@ -133,7 +133,7 @@
     "id": "spy-family",
     "title": "SPY×FAMILY 間諜家家酒",
     "author": "遠藤達哉",
-    "cover": "",
+    "cover": "assets/covers/spy-family.jpg",
     "color": "#16a34a",
     "genre": [
       "喜劇",
@@ -198,7 +198,7 @@
     "id": "frieren",
     "title": "葬送的芙莉蓮",
     "author": "山田鐘人 / 阿部司",
-    "cover": "",
+    "cover": "assets/covers/frieren.jpg",
     "color": "#0ea5e9",
     "genre": [
       "奇幻",
@@ -263,7 +263,7 @@
     "id": "oshi-no-ko",
     "title": "【我推的孩子】",
     "author": "赤坂明 / 橫槍萌果",
-    "cover": "",
+    "cover": "assets/covers/oshi-no-ko.jpg",
     "color": "#db2777",
     "genre": [
       "劇情",
@@ -328,7 +328,7 @@
     "id": "blue-lock",
     "title": "BLUE LOCK 藍色監獄",
     "author": "金城宗幸 / 野村優介",
-    "cover": "",
+    "cover": "assets/covers/blue-lock.jpg",
     "color": "#1d4ed8",
     "genre": [
       "運動",
@@ -393,7 +393,7 @@
     "id": "kaiju-no8",
     "title": "怪獸 8 號",
     "author": "松本直也",
-    "cover": "",
+    "cover": "assets/covers/kaiju-no8.jpg",
     "color": "#059669",
     "genre": [
       "戰鬥",
@@ -458,7 +458,7 @@
     "id": "dandadan",
     "title": "膽大黨",
     "author": "龍幸伸",
-    "cover": "",
+    "cover": "assets/covers/dandadan.jpg",
     "color": "#ea580c",
     "genre": [
       "超自然",
@@ -523,7 +523,7 @@
     "id": "apocalypse-hotel",
     "title": "天國大魔境",
     "author": "石黑正數",
-    "cover": "",
+    "cover": "assets/covers/apocalypse-hotel.jpg",
     "color": "#0891b2",
     "genre": [
       "科幻",
@@ -588,7 +588,7 @@
     "id": "demon-slayer",
     "title": "鬼滅之刃",
     "author": "吾峠呼世晴",
-    "cover": "",
+    "cover": "assets/covers/demon-slayer.jpg",
     "color": "#b91c1c",
     "genre": [
       "戰鬥",
