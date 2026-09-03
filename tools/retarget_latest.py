@@ -6,7 +6,7 @@
 import json
 import pathlib
 
-P = pathlib.Path("/home/lintzuyang/freebuff_project/manga/data/manga.json")
+P = pathlib.Path(__file__).resolve().parent.parent / "data" / "manga.json"
 
 # (num, title, plot) — plot 需 200~800 字繁體中文摘要
 NEW = {
