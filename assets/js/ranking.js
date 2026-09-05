@@ -1,5 +1,7 @@
 // ranking.js — 每日排序唯一真相來源（無 DOM 操作）
-// 規則：score = baseScore + (xfnv1a(id + seed) % 20) - 10，seed = 台灣時區當日 YYYY-MM-DD
+// 正式排序讀 data/ranking.json（中文維基每日瀏覽量，由 tools/fetch_ranking.py 產生）。
+// 讀不到時退回本機 hash 排序，確保離線直接開檔仍能運作。
+// fallback 規則：score = baseScore + (xfnv1a(id + seed) % 20) - 10，seed = 台灣時區當日 YYYY-MM-DD
 function xfnv1a(str) {
   var h = 2166136261 >>> 0;
   for (var i = 0; i < str.length; i++) {
@@ -71,5 +73,50 @@ function rankDiff(todayList, ydayList) {
   ydayList.forEach(function (m) { prev[m.id] = m.rank; });
   var diff = {};
   todayList.forEach(function (m) { diff[m.id] = prev[m.id] - m.rank; });
+  return diff;
+}
+
+// ── 真實排行：讀 data/ranking.json ──────────────────────────────
+// 20260904 → 2026-09-04
+function formatDataDate(s) {
+  if (!s || s.length !== 8) return s || '';
+  return s.slice(0, 4) + '-' + s.slice(4, 6) + '-' + s.slice(6, 8);
+}
+
+// 把 ranking.json 的名次套回書本資料；資料不可用時回 null，由呼叫端退回 fallback
+function getLiveRank(books, live) {
+  var rows = live && live.cjk && live.cjk.list;
+  if (!rows || !rows.length) return null;
+  var byId = {};
+  books.forEach(function (b) { byId[b.id] = b; });
+
+  var list = [];
+  rows.forEach(function (r) {
+    var b = byId[r.id];
+    if (!b) return;  // 書池移除過的書就跳過，不要讓榜單出現查不到的項目
+    var m = {};
+    for (var k in b) { if (Object.prototype.hasOwnProperty.call(b, k)) m[k] = b[k]; }
+    m.rank = list.length + 1;  // 重新編號，避免跳過的書留下空號
+    m.views = r.views;
+    m.prevRank = r.prevRank;
+    list.push(m);
+  });
+  if (!list.length) return null;
+
+  return {
+    seed: formatDataDate(live.cjk.dataDate),
+    dataDate: live.cjk.dataDate,
+    source: live.cjk.source,
+    list: list,
+    live: true
+  };
+}
+
+// 真實榜的升降：直接用 ranking.json 帶來的前次名次，不必再算一次昨日排序
+function liveDiff(list) {
+  var diff = {};
+  list.forEach(function (m) {
+    diff[m.id] = (m.prevRank === null || m.prevRank === undefined) ? null : m.prevRank - m.rank;
+  });
   return diff;
 }

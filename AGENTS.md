@@ -33,7 +33,10 @@
 ├── assets/js/ranking.js
 ├── data/manga.json
 ├── data/classics.json  # 有生之年固定收藏（唯一真相來源之二）
-├── tools/                # 資料維護與驗證腳本（僅本機執行）
+├── data/ranking.json   # 每日排行結果（由 tools/fetch_ranking.py 產生，勿手改）
+├── data/global_zh.json # 全球榜外文作品的繁中資料：譯名／作者／類型／簡介（人工維護）
+├── tools/                # 資料維護與驗證腳本
+└── .github/workflows/daily-ranking.yml  # 每日自動更新 ranking.json
 ```
 
 新增檔案時必須放在上述位置，不可自創目錄（除非更新本檔與 spec.md）。
@@ -61,17 +64,41 @@
 
 - `id` 全小寫英文 + 連字號，不可重複，不可改（URL 依賴）
 - 每本至少 3 個章節，每章節 `plot` 為純文字，不放圖片
-- `baseScore` 0~100，作為每日排序的基準分（僅 `manga.json` 用；`classics.json` 改用 `fixedRank` 固定排序，不參與每日刷新）
+- `wiki`（可選）：中文維基的正式條目名。只有在自動解析對不上時才需要手動指定
+- `baseScore` 0~100，僅作為 `ranking.json` 讀不到時的離線 fallback 基準分（僅 `manga.json` 用；`classics.json` 改用 `fixedRank` 固定排序，不參與每日刷新）
 - 封面圖若缺檔，必須用 CSS 佔位色 + 書名首字，不可破圖
 
-## 5. 每日刷新排序規則
+## 5. 每日排行規則（2026-09-05 起改用真實資料）
 
-- 排序邏輯集中在 `assets/js/ranking.js`，不可散落在各頁（有生之年分頁固定按 `fixedRank`，不經過 `ranking.js`）
-- Seed = 當日日期字串 `YYYY-MM-DD`（以台灣時區 Asia/Taipei 計算）
-- 每本當日分數 = `baseScore + hash(id + seed) % 20 - 10`
-- `hash` 用確定性字串 hash（例如 xfnv1a），不可用 `Math.random()`
-- 同一日期內排序必須穩定且一致；換日即變化
-- 首頁必須顯示「今日日期 + 更新時間」，格式：`2026-09-03 今日排行`
+首頁有兩個榜，資料都來自官方公開 API，由 `tools/fetch_ranking.py` 產生 `data/ranking.json`：
+
+**華文圈熱門**（本站書池內，取前 10）
+- 依據：中文維基百科**單日條目瀏覽量**（Wikimedia REST API，免金鑰）
+- 書名對照由 MediaWiki 的 `redirects=1` 自動解（航海王 → ONE PIECE），查不到會再用去空格版重試；
+  仍解不到的可在 `manga.json` 補 `wiki` 欄位手動指定條目名
+- 升降箭頭比對 `ranking.json` 上一次的名次，不是重算昨日排序
+- Wikimedia 資料延遲 1~2 天，畫面顯示的是**資料日期**而非今天，不可謊稱即時
+
+**全球熱門**（不限書池，純展示）
+- 依據：AniList `TRENDING_DESC`（GraphQL，免金鑰）
+- 這一區的作品多半不在本站書池內，**只顯示不可點**，不做詳情頁連結
+- 外文作品的繁中資料（譯名／作者／類型／**中文簡介**）放在 `data/global_zh.json`：
+  ```json
+  { "原文書名": { "titleZh": "繁中譯名", "author": "作者", "genre": ["類型"], "synopsis": "簡介" } }
+  ```
+- 全球榜每天換一批書，這些資料**不可**寫進 `ranking.json`（那是腳本產物、隔天會被覆蓋）
+- 腳本依 native → romaji → english 順序查表；查不到就只顯示原名並標「中文簡介準備中」，
+  不會擋住當日榜單。跑完會列出尚無中文簡介的書名
+- 採**累積式**：榜上出現過的作品逐步補齊，覆蓋率隨時間提高，不需要（也不可能）事先寫完
+- 🔴 `synopsis` 同樣受 §7 版權紅線約束：必須自行撰寫，**不可翻譯或複製原作官方簡介**
+
+**共同要求**
+- 排序邏輯集中在 `assets/js/ranking.js`，不可散落各頁（有生之年固定按 `fixedRank`，不經過它）
+- `ranking.json` 讀不到時必須退回本機 hash 排序（`baseScore + xfnv1a(id + seed) % 20 - 10`，
+  seed 為台灣時區當日 `YYYY-MM-DD`），確保離線直接開檔仍可運作，
+  且畫面要明講「非真實熱度」，不可讓使用者誤以為是真排行
+- **畫面上必須寫明排名依據與資料日期**（`#rankNote`），這是誠實性要求，不是可選裝飾
+- 🔴 `data/ranking.json` 由腳本產生，**不可手動編輯**
 
 ## 6. 程式碼準則
 
@@ -86,6 +113,8 @@
 - 章節 `plot` 必須是自行撰寫的劇情摘要/介紹文字，不可整篇複製漫畫原文或翻譯
 - 每章節結尾加一行：「本頁為劇情介紹，非漫畫原文，支持正版。」
 - 不爬蟲、不盜連官方或盜版站圖片，封面可用佔位色或自行繪製 SVG
+- 「不爬蟲」指的是不抓取網頁 HTML。**呼叫官方公開 API（Wikimedia、AniList）取得數據不在此限**，
+  但必須：① 帶可辨識的 User-Agent；② 在畫面上標明來源；③ 不轉存對方的圖片或全文
 
 ## 8. 驗證標準（完工前必跑）
 
@@ -95,9 +124,16 @@
 4. 點任一章節進 `chapter.html?id=xxx&ch=N` 文字正常顯示
 5. 不存在的 id / ch 顯示友善錯誤頁，不白屏
 6. 手機寬度 360px 無橫向捲軸
+7. `python3 tools/fetch_ranking.py` 可跑完且不出現「維基查無條目」警告
+8. 把 `data/ranking.json` 暫時移走後重整首頁，仍顯示 10 本、不白屏，
+   且依據說明會切換成「離線模式…非真實熱度」
+9. 首頁華文圈榜的順序等於 `ranking.json` 的 `cjk.list` 順序
 
 ## 9. Git 規範
 
 - 本機操作自由（add / commit / pull / 開分支直接做）
 - `git push` 一律不可自行執行，commit 完就停，等授權
+- ⚠️ **唯一例外：`.github/workflows/daily-ranking.yml`**（Frank 於 2026-09-05 明確授權）。
+  它每天自動 commit + push，但**只被允許改 `data/ranking.json`**，動到任何其他檔案就會中止並報錯。
+  這個例外不擴及人或其他 agent——你仍然不可自行 push，也不可放寬那個 workflow 的檔案白名單
 - commit 前跑機密掃描（見全域規範），訊息用繁體中文簡述改動

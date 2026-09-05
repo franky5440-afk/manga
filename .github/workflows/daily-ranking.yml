@@ -1,0 +1,50 @@
+name: 每日更新排行資料
+
+# 每天台灣時間早上 8 點（UTC 00:00）抓一次；也可以在 Actions 頁面手動觸發。
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+# 這條自動通道只需要寫回 repo，其餘權限一律不給
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-ranking
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # 腳本只用 Python 標準庫，不必安裝任何套件
+      - name: 抓取排行資料
+        run: python3 tools/fetch_ranking.py
+
+      - name: 檢查改動範圍
+        id: check
+        run: |
+          # 這條通道只被允許改 data/ranking.json，動到別的檔就中止，
+          # 避免自動 push 變成可以改任何檔案的後門
+          CHANGED=$(git diff --name-only)
+          echo "改動檔案：${CHANGED:-（無）}"
+          if [ -z "$CHANGED" ]; then
+            echo "result=nochange" >> "$GITHUB_OUTPUT"
+          elif [ "$CHANGED" = "data/ranking.json" ]; then
+            echo "result=ok" >> "$GITHUB_OUTPUT"
+          else
+            echo "::error::預期只會改 data/ranking.json，實際改到：$CHANGED"
+            exit 1
+          fi
+
+      - name: 提交更新
+        if: steps.check.outputs.result == 'ok'
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/ranking.json
+          git commit -m "資料更新：$(date -u -d '+8 hours' '+%Y-%m-%d') 排行"
+          git push

@@ -10,31 +10,46 @@
 </head>
 <body data-page="index">
 <header class="site-header">
-  <a class="brand" href="index.html">台漫榜 <span>Top 10</span></a>
-  <span class="date-badge" id="dateBadge">載入中…</span>
+  <a class="brand" href="index.html">台漫榜</a>
+  <nav class="site-nav" aria-label="站內分頁">
+    <a href="index.html" data-nav="index" aria-current="page">每日 Top 10</a>
+    <a href="timeless.html" data-nav="timeless">有生之年</a>
+    <a href="#rankList" class="nav-more">華文圈榜</a>
+    <a href="#globalList" class="nav-more">全球榜</a>
+    <a href="#footer" class="nav-more">關於</a>
+  </nav>
+  <div class="header-right">
+    <span class="date-badge" id="dateBadge">載入中…</span>
+    <a class="pill" href="#rankList">看今日榜單</a>
+  </div>
 </header>
-<nav class="site-nav" aria-label="站內分頁">
-  <a href="index.html" data-nav="index" aria-current="page">每日 Top 10</a>
-  <a href="timeless.html" data-nav="timeless">有生之年</a>
-</nav>
+
+<section class="hero">
+  <div class="hero-head">
+    <h1 class="hero-title">台漫榜</h1>
+    <p class="lede"><span id="heroDate">今日</span> 的順序，每天換一次。點一本書看章節劇情摘要。</p>
+  </div>
+  <div class="shelf-viewport" id="shelfViewport">
+    <ol class="shelf" id="shelf" aria-label="今日漫畫書架"></ol>
+  </div>
+  <div class="chips" id="genreChips" role="group" aria-label="類型篩選"></div>
+</section>
 
 <main>
-  <section class="hero">
-    <h1>今天台灣最紅的 10 本漫畫</h1>
-    <p class="lede"><span id="heroDate">今日</span> 的順序。每天換一次，點一本書看章節劇情摘要。</p>
-    <div class="shelf-wrap">
-      <ol class="shelf" id="shelf" aria-label="今日漫畫書架"></ol>
-    </div>
-    <p class="hint">左右滑動看整排</p>
+  <section class="rank-section">
+    <h2>華文圈熱門</h2>
+    <p class="rank-note" id="rankNote"></p>
+    <ol class="rank-list" id="rankList"></ol>
   </section>
 
-  <section class="rank-section">
-    <h2>完整榜單</h2>
-    <ol class="rank-list" id="rankList"></ol>
+  <section class="rank-section global-section">
+    <h2>全球熱門</h2>
+    <p class="rank-note">AniList 即時 trending 前 10，涵蓋日本、韓國、中國等各地作品，不限本站收錄範圍，因此僅供對照、不提供劇情頁。</p>
+    <ol class="global-list" id="globalList"></ol>
   </section>
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer" id="footer">
   <p>資料為介紹用途，劇情為摘要文字。本頁為劇情介紹，非漫畫原文，支持正版。</p>
 </footer>
 
