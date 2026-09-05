@@ -24,6 +24,7 @@
 ├── AGENTS.md
 ├── README.md
 ├── spec.md
+├── HANDOFF.md          # 內容補完交接文件（指派 opencode/muse spark）
 ├── index.html          # 首頁：Top 10 榜單（每日刷新）
 ├── timeless.html       # 有生之年分頁：固定 18 本收藏榜單
 ├── manga.html          # 詳情頁：?id=xxx（&src=classics 讀固定收藏）顯示章節列表
