@@ -247,6 +247,14 @@ def main():
         print(json.dumps(out, ensure_ascii=False, indent=2))
         return
 
+    # generatedAt 每次都不同，若不排除它比對，排行沒變也會天天產生一個空 commit
+    def payload(d):
+        return {k: v for k, v in d.items() if k != "generatedAt"}
+
+    if old and payload(old) == payload(out):
+        print("排行無變化，不重寫檔案")
+        return
+
     OUT.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"已寫入 {OUT.relative_to(ROOT)}")
     print(f"  華文圈榜（{cjk.get('dataDate')}）：" +
