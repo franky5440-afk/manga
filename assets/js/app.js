@@ -32,7 +32,12 @@
     classics:   { page: 'timeless',   file: 'data/classics.json',   home: 'timeless.html',   text: '有生之年', rankWord: '固定收藏', chapterWord: '收錄最新 10 話大綱' },
     essentials: { page: 'essentials', file: 'data/essentials.json', home: 'essentials.html', text: '必讀經典', rankWord: '必讀經典', chapterWord: '收錄開場 5 話與結局前 5 話大綱' }
   };
-  function srcKey() { var k = qs('src'); return FIXED[k] ? k : null; }
+  // 用 hasOwnProperty 而不是 FIXED[k]，否則 ?src=__proto__ 會沿原型鏈拿到值、
+  // 被當成有效分頁而讓整頁掛掉
+  function srcKey() {
+    var k = qs('src');
+    return Object.prototype.hasOwnProperty.call(FIXED, k) ? k : null;
+  }
 
   // classics 讀得到就用，讀不到不影響 Top 10 首頁
   function loadJSON(url) {
