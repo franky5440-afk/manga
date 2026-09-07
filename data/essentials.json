@@ -1,1 +1,321 @@
-[]
+[
+  {
+    "id": "fullmetal-alchemist",
+    "title": "鋼之鍊金術師",
+    "author": "荒川弘",
+    "cover": "",
+    "color": "#8c6239",
+    "genre": [
+      "奇幻",
+      "冒險",
+      "劇情"
+    ],
+    "fixedRank": 1,
+    "synopsis": "",
+    "chapters": [],
+    "_finalChapterHint": 108
+  },
+  {
+    "id": "death-note",
+    "title": "死亡筆記",
+    "author": "大場鶇、小畑健",
+    "cover": "",
+    "color": "#2b2b33",
+    "genre": [
+      "懸疑",
+      "超自然",
+      "劇情"
+    ],
+    "fixedRank": 2,
+    "synopsis": "",
+    "chapters": [],
+    "_finalChapterHint": 108
+  },
+  {
+    "id": "assassination-classroom",
+    "title": "暗殺教室",
+    "author": "松井優征",
+    "cover": "",
+    "color": "#f2c14e",
+    "genre": [
+      "喜劇",
+      "戰鬥",
+      "劇情"
+    ],
+    "fixedRank": 3,
+    "synopsis": "",
+    "chapters": [],
+    "_finalChapterHint": 180
+  },
+  {
+    "id": "promised-neverland",
+    "title": "約定的夢幻島",
+    "author": "白井カイウ、出水posuka",
+    "cover": "",
+    "color": "#4a6b5a",
+    "genre": [
+      "懸疑",
+      "冒險",
+      "劇情"
+    ],
+    "fixedRank": 4,
+    "synopsis": "",
+    "chapters": [],
+    "_finalChapterHint": 181
+  },
+  {
+    "id": "tokyo-revengers",
+    "title": "東京復仇者",
+    "author": "和久井健",
+    "cover": "",
+    "color": "#c14b4b",
+    "genre": [
+      "戰鬥",
+      "科幻",
+      "劇情"
+    ],
+    "fixedRank": 5,
+    "synopsis": "",
+    "chapters": [],
+    "_finalChapterHint": 278
+  },
+  {
+    "id": "kuroko-no-basket",
+    "title": "黑子的籃球",
+    "author": "藤卷忠俊",
+    "cover": "",
+    "color": "#4a7fb5",
+    "genre": [
+      "運動",
+      "競技",
+      "熱血"
+    ],
+    "fixedRank": 6,
+    "synopsis": "",
+    "chapters": [],
+    "_finalChapterHint": 275
+  },
+  {
+    "id": "fairy-tail",
+    "title": "妖精的尾巴",
+    "author": "真島浩",
+    "cover": "",
+    "color": "#d4763a",
+    "genre": [
+      "奇幻",
+      "冒險",
+      "戰鬥"
+    ],
+    "fixedRank": 7,
+    "synopsis": "",
+    "chapters": [],
+    "_finalChapterHint": 545
+  },
+  {
+    "id": "reborn",
+    "title": "家庭教師HITMAN REBORN!",
+    "author": "天野明",
+    "cover": "",
+    "color": "#d9a441",
+    "genre": [
+      "戰鬥",
+      "喜劇",
+      "熱血"
+    ],
+    "fixedRank": 8,
+    "synopsis": "",
+    "chapters": [],
+    "_finalChapterHint": 409
+  },
+  {
+    "id": "hikaru-no-go",
+    "title": "棋魂",
+    "author": "堀田由美、小畑健",
+    "cover": "",
+    "color": "#5b7a8c",
+    "genre": [
+      "競技",
+      "超自然",
+      "劇情"
+    ],
+    "fixedRank": 9,
+    "synopsis": "",
+    "chapters": [],
+    "_finalChapterHint": 189
+  },
+  {
+    "id": "silver-spoon",
+    "title": "銀之匙",
+    "author": "荒川弘",
+    "cover": "",
+    "color": "#8fae6b",
+    "genre": [
+      "治癒",
+      "喜劇",
+      "劇情"
+    ],
+    "fixedRank": 10,
+    "synopsis": "",
+    "chapters": [],
+    "_finalChapterHint": 131
+  },
+  {
+    "id": "shokugeki-no-soma",
+    "title": "食戟之靈",
+    "author": "附田祐斗、佐伯俊",
+    "cover": "",
+    "color": "#e08a3c",
+    "genre": [
+      "競技",
+      "喜劇",
+      "熱血"
+    ],
+    "fixedRank": 11,
+    "synopsis": "",
+    "chapters": [],
+    "_finalChapterHint": 315
+  },
+  {
+    "id": "yu-yu-hakusho",
+    "title": "幽遊白書",
+    "author": "富樫義博",
+    "cover": "",
+    "color": "#3f6b52",
+    "genre": [
+      "戰鬥",
+      "超自然",
+      "熱血"
+    ],
+    "fixedRank": 12,
+    "synopsis": "",
+    "chapters": [],
+    "_finalChapterHint": 175
+  },
+  {
+    "id": "parasyte",
+    "title": "寄生獸",
+    "author": "岩明均",
+    "cover": "",
+    "color": "#6a5a7a",
+    "genre": [
+      "科幻",
+      "懸疑",
+      "劇情"
+    ],
+    "fixedRank": 13,
+    "synopsis": "",
+    "chapters": [],
+    "_finalChapterHint": 64
+  },
+  {
+    "id": "twentieth-century-boys",
+    "title": "20世紀少年",
+    "author": "浦澤直樹",
+    "cover": "",
+    "color": "#5a6b7a",
+    "genre": [
+      "懸疑",
+      "科幻",
+      "劇情"
+    ],
+    "fixedRank": 14,
+    "synopsis": "",
+    "chapters": [],
+    "_finalChapterHint": 249
+  },
+  {
+    "id": "monster",
+    "title": "MONSTER",
+    "author": "浦澤直樹",
+    "cover": "",
+    "color": "#7a5a5a",
+    "genre": [
+      "懸疑",
+      "劇情"
+    ],
+    "fixedRank": 15,
+    "synopsis": "",
+    "chapters": [],
+    "_finalChapterHint": 162
+  },
+  {
+    "id": "rurouni-kenshin",
+    "title": "浪客劍心",
+    "author": "和月伸宏",
+    "cover": "",
+    "color": "#b5504a",
+    "genre": [
+      "戰鬥",
+      "劇情",
+      "熱血"
+    ],
+    "fixedRank": 16,
+    "synopsis": "",
+    "chapters": [],
+    "_finalChapterHint": 255
+  },
+  {
+    "id": "inuyasha",
+    "title": "犬夜叉",
+    "author": "高橋留美子",
+    "cover": "",
+    "color": "#6b8ab5",
+    "genre": [
+      "奇幻",
+      "冒險",
+      "戀愛"
+    ],
+    "fixedRank": 17,
+    "synopsis": "",
+    "chapters": [],
+    "_finalChapterHint": 558
+  },
+  {
+    "id": "yu-gi-oh",
+    "title": "遊戲王",
+    "author": "高橋和希",
+    "cover": "",
+    "color": "#7a6ba8",
+    "genre": [
+      "競技",
+      "冒險",
+      "超自然"
+    ],
+    "fixedRank": 18,
+    "synopsis": "",
+    "chapters": [],
+    "_finalChapterHint": 343
+  },
+  {
+    "id": "mushishi",
+    "title": "蟲師",
+    "author": "漆原友紀",
+    "cover": "",
+    "color": "#6b8a7a",
+    "genre": [
+      "治癒",
+      "超自然",
+      "劇情"
+    ],
+    "fixedRank": 19,
+    "synopsis": "",
+    "chapters": [],
+    "_finalChapterHint": 50
+  },
+  {
+    "id": "great-teacher-onizuka",
+    "title": "麻辣教師GTO",
+    "author": "藤澤亨",
+    "cover": "",
+    "color": "#4a8a8a",
+    "genre": [
+      "喜劇",
+      "劇情",
+      "熱血"
+    ],
+    "fixedRank": 20,
+    "synopsis": "",
+    "chapters": [],
+    "_finalChapterHint": 208
+  }
+]
