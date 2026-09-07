@@ -57,7 +57,7 @@ data/essentials.json  必讀經典固定收藏（真相來源之三，fixedRank 
 
 ## 開發規範
 
-詳見 `AGENTS.md` 與 `spec.md`。重點：
+詳見 `AGENTS.md` 與 `spec.md`。內容補完的進度看 `handoff/` 裡最新日期那一份。重點：
 
 - 不用框架、不引 CDN、不加搜尋留言會員
 - 繁體中文內容，2 空格縮排
