@@ -1,100 +1,100 @@
 {
-  "generatedAt": "2026-09-06T11:24:48+08:00",
+  "generatedAt": "2026-09-07T11:24:17+08:00",
   "cjk": {
     "source": "zh.wikipedia pageviews",
     "sourceUrl": "https://wikimedia.org/api/rest_v1/",
-    "dataDate": "20260905",
+    "dataDate": "20260906",
     "missing": [],
     "list": [
       {
-        "id": "demon-slayer",
-        "wiki": "鬼滅之刃",
-        "views": 1062,
-        "day": "20260905",
+        "id": "bleach",
+        "wiki": "BLEACH",
+        "views": 2013,
+        "day": "20260906",
         "found": true,
         "rank": 1,
-        "prevRank": 2
+        "prevRank": null
+      },
+      {
+        "id": "demon-slayer",
+        "wiki": "鬼滅之刃",
+        "views": 1024,
+        "day": "20260906",
+        "found": true,
+        "rank": 2,
+        "prevRank": 1
       },
       {
         "id": "frieren",
         "wiki": "葬送的芙莉蓮",
-        "views": 1021,
-        "day": "20260905",
+        "views": 950,
+        "day": "20260906",
         "found": true,
-        "rank": 2,
-        "prevRank": 3
+        "rank": 3,
+        "prevRank": 2
       },
       {
         "id": "jujutsu-kaisen",
         "wiki": "咒術迴戰",
-        "views": 912,
-        "day": "20260905",
+        "views": 937,
+        "day": "20260906",
         "found": true,
-        "rank": 3,
-        "prevRank": 1
+        "rank": 4,
+        "prevRank": 3
+      },
+      {
+        "id": "attack-on-titan",
+        "wiki": "進擊的巨人",
+        "views": 923,
+        "day": "20260906",
+        "found": true,
+        "rank": 5,
+        "prevRank": null
       },
       {
         "id": "one-piece",
         "wiki": "ONE PIECE",
-        "views": 854,
-        "day": "20260905",
+        "views": 920,
+        "day": "20260906",
         "found": true,
-        "rank": 4,
+        "rank": 6,
         "prevRank": 4
+      },
+      {
+        "id": "my-hero-academia",
+        "wiki": "我的英雄學院",
+        "views": 666,
+        "day": "20260906",
+        "found": true,
+        "rank": 7,
+        "prevRank": null
       },
       {
         "id": "blue-lock",
         "wiki": "BLUE LOCK 藍色監獄",
-        "views": 610,
-        "day": "20260905",
+        "views": 658,
+        "day": "20260906",
         "found": true,
-        "rank": 5,
+        "rank": 8,
         "prevRank": 5
       },
       {
-        "id": "kaiju-no8",
-        "wiki": "怪獸8號",
-        "views": 587,
-        "day": "20260905",
-        "found": true,
-        "rank": 6,
-        "prevRank": 9
-      },
-      {
-        "id": "dandadan",
-        "wiki": "膽大黨",
-        "views": 535,
-        "day": "20260905",
-        "found": true,
-        "rank": 7,
-        "prevRank": 6
-      },
-      {
-        "id": "spy-family",
-        "wiki": "SPY×FAMILY間諜家家酒",
-        "views": 401,
-        "day": "20260905",
-        "found": true,
-        "rank": 8,
-        "prevRank": 7
-      },
-      {
-        "id": "oshi-no-ko",
-        "wiki": "【我推的孩子】",
-        "views": 359,
-        "day": "20260905",
+        "id": "haikyu",
+        "wiki": "排球少年！！",
+        "views": 608,
+        "day": "20260906",
         "found": true,
         "rank": 9,
-        "prevRank": 8
+        "prevRank": null
       },
       {
-        "id": "apocalypse-hotel",
-        "wiki": "天國大魔境",
-        "views": 307,
-        "day": "20260905",
+        "id": "naruto",
+        "wiki": "火影忍者",
+        "views": 589,
+        "day": "20260906",
         "found": true,
         "rank": 10,
-        "prevRank": 10
+        "prevRank": null
       }
     ]
   },
