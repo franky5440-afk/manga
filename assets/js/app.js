@@ -26,13 +26,21 @@
     return '<div class="error"><p>' + esc(msg) + '</p><p><a class="btn" href="index.html">回到首頁</a></p></div>';
   }
 
+  // 兩個固定收藏分頁（有生之年／必讀經典）共用同一套詳情與章節邏輯，
+  // 差別只有資料檔與返回路徑，所以集中成一張表，不要在各處散寫 if
+  var FIXED = {
+    classics:   { page: 'timeless',   file: 'data/classics.json',   home: 'timeless.html',   text: '有生之年', rankWord: '固定收藏', chapterWord: '收錄最新 10 話大綱' },
+    essentials: { page: 'essentials', file: 'data/essentials.json', home: 'essentials.html', text: '必讀經典', rankWord: '必讀經典', chapterWord: '收錄開場 5 話與結局前 5 話大綱' }
+  };
+  function srcKey() { var k = qs('src'); return FIXED[k] ? k : null; }
+
   // classics 讀得到就用，讀不到不影響 Top 10 首頁
   function loadJSON(url) {
     return fetch(url).then(function (r) { return r.json(); }).catch(function () { return null; });
   }
-  Promise.all([loadJSON('data/manga.json'), loadJSON('data/classics.json'), loadJSON('data/ranking.json')]).then(function (res) {
+  Promise.all([loadJSON('data/manga.json'), loadJSON(FIXED.classics.file), loadJSON('data/ranking.json'), loadJSON(FIXED.essentials.file)]).then(function (res) {
     var data = res[0] || [];
-    var classics = res[1] || [];
+    var sets = { classics: res[1] || [], essentials: res[3] || [] };
     var live = res[2];
     // 正式排序用真實瀏覽量；讀不到（例如離線直接開檔）才退回本機 hash 排序
     var rank = getLiveRank(data, live);
@@ -44,8 +52,9 @@
       diff = rankDiff(rank.list, getRankBySeed(data, seedPlus(rank.seed, -1)).list);
     }
     var badge = document.getElementById('dateBadge');
-    if (page === 'timeless') {
-      if (badge) badge.textContent = '固定收藏 ' + classics.length + ' 本';
+    var fixedKey = page === 'timeless' ? 'classics' : (page === 'essentials' ? 'essentials' : null);
+    if (fixedKey) {
+      if (badge) badge.textContent = FIXED[fixedKey].rankWord + ' ' + sets[fixedKey].length + ' 本';
     } else if (badge) {
       badge.textContent = rank.seed + (rank.live ? ' 熱度榜' : ' 今日排行');
     }
@@ -55,9 +64,9 @@
     }
 
     if (page === 'index') renderIndex(rank, diff, live);
-    else if (page === 'timeless') renderTimeless(classics);
-    else if (page === 'manga') renderManga(data, classics, rank);
-    else if (page === 'chapter') renderChapter(data, classics);
+    else if (fixedKey) renderFixed(sets[fixedKey], fixedKey);
+    else if (page === 'manga') renderManga(data, sets, rank);
+    else if (page === 'chapter') renderChapter(data, sets);
   }).catch(function () {
     ['shelf', 'rankList', 'globalList', 'fixedList', 'detail', 'chList', 'chapter', 'chNav'].forEach(function (id) {
       var el = document.getElementById(id);
@@ -144,38 +153,41 @@
     }).join('');
   }
 
-  // 有生之年：固定排序，不經 ranking.js，直接按 fixedRank 排成一面書牆
-  function renderTimeless(classics) {
+  // 固定收藏分頁：不經 ranking.js，直接按 fixedRank 排成一面書牆
+  function renderFixed(books, key) {
     var list = document.getElementById('fixedList');
-    if (!classics.length) {
+    if (!books.length) {
       list.innerHTML = errBox('固定收藏載入失敗，請確認已用 http.server 開站後重整。');
       return;
     }
-    var ordered = classics.slice().sort(function (a, b) { return a.fixedRank - b.fixedRank; });
+    var ordered = books.slice().sort(function (a, b) { return a.fixedRank - b.fixedRank; });
     list.innerHTML = ordered.map(function (m, i) {
       var nums = m.chapters.map(function (c) { return c.num; }).sort(function (a, b) { return a - b; });
-      return '<li style="--i:' + i + '"><a class="book" href="manga.html?id=' + esc(m.id) + '&src=classics">' +
+      // 必讀經典是「開場 5 話＋結局前 5 話」兩段，寫成 a-b 會誤導成連續 10 話
+      var span = nums[5] - nums[4] > 1
+        ? '第 ' + nums[0] + '-' + nums[4] + ' · ' + nums[5] + '-' + nums[9] + ' 話'
+        : '第 ' + nums[0] + '-' + nums[nums.length - 1] + ' 話';
+      return '<li style="--i:' + i + '"><a class="book" href="manga.html?id=' + esc(m.id) + '&src=' + key + '">' +
         coverHTML(m, 'wall') +
         '<span class="book-meta"><span class="rank">' + m.fixedRank + '</span>' +
         '<span class="book-t">' + esc(m.title) + '</span>' +
-        '<span class="book-a">第 ' + nums[0] + '-' + nums[nums.length - 1] + ' 話</span></span></a></li>';
+        '<span class="book-a">' + span + '</span></span></a></li>';
     }).join('');
   }
 
   // 詳情頁（src=classics 時讀固定收藏，顯示固定名次，不顯示今日分數）
-  function renderManga(data, classics, res) {
-    var src = qs('src') === 'classics' ? 'classics' : 'top10';
-    var dataset = src === 'classics' ? classics : data;
+  function renderManga(data, sets, res) {
+    var key = srcKey();
+    var cfg = key ? FIXED[key] : null;
+    var dataset = cfg ? sets[key] : data;
     var m = dataset.find(function (x) { return x.id === qs('id'); });
     var detail = document.getElementById('detail');
     var chList = document.getElementById('chList');
     var home = document.getElementById('crumbHome');
-    var suffix = src === 'classics' ? '&src=classics' : '';
-    var homeHref = src === 'classics' ? 'timeless.html' : 'index.html';
-    var homeText = src === 'classics' ? '有生之年' : '首頁';
-    if (home) { home.href = homeHref; home.textContent = homeText; }
+    var suffix = cfg ? '&src=' + key : '';
+    if (home) { home.href = cfg ? cfg.home : 'index.html'; home.textContent = cfg ? cfg.text : '首頁'; }
     // 站內分頁亮起目前所在的分頁
-    markNav(src === 'classics' ? 'timeless' : 'index');
+    markNav(cfg ? cfg.page : 'index');
     if (!m) {
       document.getElementById('crumbTitle').textContent = '找不到';
       detail.innerHTML = errBox('找不到這本漫畫，回到首頁看看今日榜單吧。');
@@ -183,9 +195,9 @@
       return;
     }
     var rankLine;
-    if (src === 'classics') {
-      document.title = m.title + '｜有生之年經典';
-      rankLine = '固定收藏第 ' + m.fixedRank + ' 名，共 ' + dataset.length + ' 本。收錄最新 10 話大綱';
+    if (cfg) {
+      document.title = m.title + '｜' + cfg.text;
+      rankLine = cfg.rankWord + '第 ' + m.fixedRank + ' 名，共 ' + dataset.length + ' 本。' + cfg.chapterWord;
     } else {
       var ranked = res.list.find(function (x) { return x.id === m.id; });
       document.title = m.title + '｜台漫榜 Top 10';
@@ -198,7 +210,9 @@
       '<div><h1>' + esc(m.title) + '</h1>' +
       '<p class="meta">' + esc(m.author) + ' · ' + m.genre.map(esc).join(' / ') + '</p>' +
       '<p class="meta rankline">' + esc(rankLine) + '</p>' +
-      '<p class="synopsis">' + esc(m.synopsis) + '</p></div></div>';
+      '<p class="synopsis">' + esc(m.synopsis) + '</p>' +
+      (m.status ? '<p class="synopsis status"><b>作品現況</b>' + esc(m.status) + '</p>' : '') +
+      '</div></div>';
     var chs = m.chapters.slice().sort(function (a, b) { return a.num - b.num; });
     chList.innerHTML = chs.map(function (c) {
       return '<li><a href="chapter.html?id=' + esc(m.id) + '&ch=' + c.num + suffix + '">' +
@@ -207,17 +221,18 @@
   }
 
   // 章節頁（src=classics 時讀固定收藏，連結帶回 src）
-  function renderChapter(data, classics) {
-    var src = qs('src') === 'classics' ? 'classics' : 'top10';
-    var dataset = src === 'classics' ? classics : data;
-    var suffix = src === 'classics' ? '&src=classics' : '';
+  function renderChapter(data, sets) {
+    var key = srcKey();
+    var cfg = key ? FIXED[key] : null;
+    var dataset = cfg ? sets[key] : data;
+    var suffix = cfg ? '&src=' + key : '';
     var m = dataset.find(function (x) { return x.id === qs('id'); });
     var home = document.getElementById('crumbHome');
     if (home) {
-      home.href = src === 'classics' ? 'timeless.html' : 'index.html';
-      home.textContent = src === 'classics' ? '有生之年' : '首頁';
+      home.href = cfg ? cfg.home : 'index.html';
+      home.textContent = cfg ? cfg.text : '首頁';
     }
-    markNav(src === 'classics' ? 'timeless' : 'index');
+    markNav(cfg ? cfg.page : 'index');
     var box = document.getElementById('chapter');
     var nav = document.getElementById('chNav');
     var ch = parseInt(qs('ch'), 10);
