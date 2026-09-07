@@ -27,9 +27,11 @@ async function runCase(name, page, search, check) {
       body: { getAttribute: () => page, setAttribute: () => {} },
       getElementById: (id) => els[id] || null,
       querySelectorAll: () => [],
+      querySelector: () => ({ classList: { toggle: () => {} }, offsetHeight: 0 }),
       title: '',
     },
     location: { search, pathname: '/' + page + '.html' },
+    window: { addEventListener: () => {}, scrollY: 0, matchMedia: () => ({ matches: true }) },
     fetch: (url) => {
       const p = path.join(root, url);
       return Promise.resolve({ json: () => Promise.resolve(JSON.parse(fs.readFileSync(p, 'utf8'))) });
@@ -48,6 +50,11 @@ await runCase('timeless 列出 18 本', 'timeless', '', (els) => {
   if (count(els.fixedList.innerHTML, 'li') !== 18) throw new Error('fixedList 筆數=' + count(els.fixedList.innerHTML, 'li'));
   if (!els.fixedList.innerHTML.includes('src=classics')) throw new Error('缺少 src=classics 連結');
   if (!els.dateBadge.textContent.includes('18')) throw new Error('badge 未顯示 18 本：' + els.dateBadge.textContent);
+});
+await runCase('essentials 分頁可渲染', 'essentials', '', (els) => {
+  const n = count(els.fixedList.innerHTML, 'li');
+  if (n === 0) throw new Error('essentials 是空的');
+  if (!els.fixedList.innerHTML.includes('src=essentials')) throw new Error('缺少 src=essentials 連結');
 });
 await runCase('index 維持 10 本', 'index', '', (els) => {
   if (count(els.rankList.innerHTML, 'li') !== 10) throw new Error('rankList 筆數=' + count(els.rankList.innerHTML, 'li'));
