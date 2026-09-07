@@ -26,14 +26,16 @@
 ├── spec.md
 ├── HANDOFF.md          # 內容補完交接文件（指派 opencode/muse spark）
 ├── index.html          # 首頁：Top 10 榜單（每日刷新）
-├── timeless.html       # 有生之年分頁：固定 18 本收藏榜單
-├── manga.html          # 詳情頁：?id=xxx（&src=classics 讀固定收藏）顯示章節列表
-├── chapter.html        # 章節頁：?id=xxx&ch=1（&src=classics 讀固定收藏）顯示文字劇情
+├── timeless.html       # 有生之年分頁：長期停更／未完之作，固定 18 本
+├── essentials.html     # 必讀經典分頁：已完結名作，固定收藏
+├── manga.html          # 詳情頁：?id=xxx（&src=classics|essentials 讀固定收藏）顯示章節列表
+├── chapter.html        # 章節頁：?id=xxx&ch=1（&src=classics|essentials 讀固定收藏）顯示文字劇情
 ├── assets/css/style.css
 ├── assets/js/app.js
 ├── assets/js/ranking.js
 ├── data/manga.json
 ├── data/classics.json  # 有生之年固定收藏（唯一真相來源之二）
+├── data/essentials.json # 必讀經典固定收藏（唯一真相來源之三）
 ├── data/ranking.json   # 每日排行結果（由 tools/fetch_ranking.py 產生，勿手改）
 ├── data/global_zh.json # 全球榜外文作品的繁中資料：譯名／作者／類型／簡介（人工維護）
 ├── tools/                # 資料維護與驗證腳本
@@ -66,7 +68,13 @@
 - `id` 全小寫英文 + 連字號，不可重複，不可改（URL 依賴）
 - 每本至少 3 個章節，每章節 `plot` 為純文字，不放圖片
 - `wiki`（可選）：中文維基的正式條目名。只有在自動解析對不上時才需要手動指定
-- `baseScore` 0~100，僅作為 `ranking.json` 讀不到時的離線 fallback 基準分（僅 `manga.json` 用；`classics.json` 改用 `fixedRank` 固定排序，不參與每日刷新）
+- `baseScore` 0~100，僅作為 `ranking.json` 讀不到時的離線 fallback 基準分（僅 `manga.json` 用；
+  `classics.json` 與 `essentials.json` 改用 `fixedRank` 固定排序，不參與每日刷新）
+- `status`（僅 `classics.json`）：作品現況與停更原因，顯示為詳情頁簡介的第二段。
+  內容須經查證，原因類敘述要標明是普遍說法或官方說明，不可寫成既定事實
+- **章節編排慣例**：`manga.json` 與 `essentials.json` 的每本固定 10 話，
+  前 5 話是真正的第 1～5 話，後 5 話是**最終話往前推 5 話的真實話號**（不是 6～10）。
+  `classics.json` 因作品尚未完結，收錄的是連續的最新 10 話
 - 封面圖若缺檔，必須用 CSS 佔位色 + 書名首字，不可破圖
 
 ## 5. 每日排行規則（2026-09-05 起改用真實資料）
