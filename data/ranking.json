@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-09-11T11:30:06+08:00",
+  "generatedAt": "2026-09-12T11:35:28+08:00",
   "cjk": {
     "source": "zh.wikipedia pageviews",
     "sourceUrl": "https://wikimedia.org/api/rest_v1/",
-    "dataDate": "20260910",
+    "dataDate": "20260911",
     "missing": [],
     "list": [
       {
         "id": "bleach",
         "wiki": "BLEACH",
-        "views": 1211,
-        "day": "20260910",
+        "views": 1303,
+        "day": "20260911",
         "found": true,
         "rank": 1,
         "prevRank": 1
@@ -18,83 +18,83 @@
       {
         "id": "frieren",
         "wiki": "葬送的芙莉蓮",
-        "views": 1005,
-        "day": "20260910",
+        "views": 1014,
+        "day": "20260911",
         "found": true,
         "rank": 2,
-        "prevRank": 3
+        "prevRank": 2
       },
       {
         "id": "jujutsu-kaisen",
         "wiki": "咒術迴戰",
-        "views": 865,
-        "day": "20260910",
+        "views": 875,
+        "day": "20260911",
         "found": true,
         "rank": 3,
-        "prevRank": 5
+        "prevRank": 3
       },
       {
         "id": "attack-on-titan",
         "wiki": "進擊的巨人",
-        "views": 831,
-        "day": "20260910",
+        "views": 861,
+        "day": "20260911",
         "found": true,
         "rank": 4,
-        "prevRank": 2
+        "prevRank": 4
       },
       {
         "id": "demon-slayer",
         "wiki": "鬼滅之刃",
-        "views": 785,
-        "day": "20260910",
+        "views": 832,
+        "day": "20260911",
         "found": true,
         "rank": 5,
-        "prevRank": 4
+        "prevRank": 5
+      },
+      {
+        "id": "initial-d",
+        "wiki": "頭文字D",
+        "views": 786,
+        "day": "20260911",
+        "found": true,
+        "rank": 6,
+        "prevRank": null
       },
       {
         "id": "one-piece",
         "wiki": "ONE PIECE",
-        "views": 721,
-        "day": "20260910",
+        "views": 752,
+        "day": "20260911",
         "found": true,
-        "rank": 6,
+        "rank": 7,
         "prevRank": 6
       },
       {
         "id": "my-hero-academia",
         "wiki": "我的英雄學院",
-        "views": 533,
-        "day": "20260910",
-        "found": true,
-        "rank": 7,
-        "prevRank": 7
-      },
-      {
-        "id": "haikyu",
-        "wiki": "排球少年！！",
-        "views": 484,
-        "day": "20260910",
+        "views": 640,
+        "day": "20260911",
         "found": true,
         "rank": 8,
-        "prevRank": 10
-      },
-      {
-        "id": "blue-lock",
-        "wiki": "BLUE LOCK 藍色監獄",
-        "views": 480,
-        "day": "20260910",
-        "found": true,
-        "rank": 9,
-        "prevRank": 9
+        "prevRank": 7
       },
       {
         "id": "naruto",
         "wiki": "火影忍者",
-        "views": 473,
-        "day": "20260910",
+        "views": 600,
+        "day": "20260911",
+        "found": true,
+        "rank": 9,
+        "prevRank": 10
+      },
+      {
+        "id": "sailor-moon",
+        "wiki": "美少女戰士",
+        "views": 490,
+        "day": "20260911",
         "found": true,
         "rank": 10,
-        "prevRank": 8
+        "prevRank": null
       }
     ]
   },
