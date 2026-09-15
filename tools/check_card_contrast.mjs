@@ -1,0 +1,75 @@
+// check_card_contrast.mjs — 書卡白字可讀性契約：拿站上全部書的真實 color 欄位，
+// 依 style.css 裡 .book-card 的混色比例算 WCAG 對比度。執行：node tools/check_card_contrast.mjs
+// 為什麼要寫成測試：第一版書卡在 76 本裡有 50 本白字對比不到 3.0，截圖縮圖上看不出來。
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
+const read = (p) => fs.readFileSync(path.join(root, p), 'utf8');
+const css = read('assets/css/style.css');
+
+let failed = 0;
+function test(name, fn) {
+  try { fn(); console.log('PASS', name); }
+  catch (e) { failed++; console.log('FAIL', name, '\n   ', e.message); }
+}
+function ok(cond, msg) { if (!cond) throw new Error(msg); }
+
+// 只取 .book-card { ... } 本體那一條規則（不含 ::before、:hover）
+function rule(selector) {
+  const re = new RegExp('(^|\\n)\\s*' + selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\s*\\{([^}]*)\\}');
+  const m = css.match(re);
+  return m ? m[2] : null;
+}
+const hex = (h) => { h = h.replace('#', ''); return [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16) / 255); };
+const lum = (c) => { const f = (v) => (v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4); const [r, g, b] = c.map(f); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
+const mix = (a, b, t) => a.map((v, i) => v * t + b[i] * (1 - t));
+const white = (c) => 1.05 / (lum(c) + 0.05);
+
+const ground = hex((css.match(/--ground\s*:\s*(#[0-9a-f]{6})/i) || [])[1] || '#000000');
+const books = ['manga', 'essentials', 'classics'].flatMap((f) => JSON.parse(read('data/' + f + '.json')).map((b) => ({ id: b.id, c: hex(b.color || '#3b4a6b') })));
+
+const card = rule('.book-card');
+// 規定寫法：background 的漸層兩個色標都是 color-mix(in srgb, var(--c) N%, var(--ground))
+const stops = card ? [...card.matchAll(/color-mix\(\s*in\s+srgb\s*,\s*var\(--c\)\s+(\d+(?:\.\d+)?)%\s*,\s*var\(--ground\)\s*\)/g)].map((m) => Number(m[1]) / 100) : [];
+
+test('.book-card 背景是兩個 color-mix(in srgb, var(--c) N%, var(--ground)) 色標的漸層', () => {
+  ok(card, '找不到 .book-card 規則');
+  ok(stops.length === 2, '應該剛好兩個「書本色混底色」色標，實際 ' + stops.length + ' 個（不可混 #fff 或 white）');
+  ok(!/color-mix\([^)]*(#fff\b|#ffffff|white)/i.test(card), '.book-card 背景不可再混白色');
+});
+test('書卡上半部（書名，大字）白字對比 ≥ 3.0：全部書', () => {
+  ok(stops.length === 2, '色標格式不符，無法計算');
+  const bad = books.map((b) => [b.id, white(mix(b.c, ground, stops[0]))]).filter(([, r]) => r < 3).map(([id, r]) => id + '=' + r.toFixed(2));
+  ok(!bad.length, bad.length + ' 本不足：' + bad.slice(0, 8).join(', '));
+});
+test('書卡下半部（作者／類型，小字）白字對比 ≥ 4.5：全部書', () => {
+  ok(stops.length === 2, '色標格式不符，無法計算');
+  const bad = books.map((b) => [b.id, white(mix(b.c, ground, stops[1]))]).filter(([, r]) => r < 4.5).map(([id, r]) => id + '=' + r.toFixed(2));
+  ok(!bad.length, bad.length + ' 本不足：' + bad.slice(0, 8).join(', '));
+});
+test('小字不可用 opacity 降低對比（.bc-author／.bc-genre／.bc-num）', () => {
+  for (const s of ['.bc-author', '.bc-genre', '.bc-num']) {
+    const r = rule(s);
+    ok(r, '找不到 ' + s + ' 規則');
+    const o = r.match(/opacity\s*:\s*([\d.]+)/);
+    ok(!o || Number(o[1]) >= 1, s + ' 仍有 opacity ' + (o && o[1]));
+  }
+});
+test('.bc-num 在上半部是小字，要有深色底襯（background）', () => {
+  const r = rule('.bc-num');
+  ok(r && /background\s*:/.test(r), '.bc-num 缺少 background');
+});
+test('首頁 hero 有左右留白（.hero 規則的左右 padding 不可為 0）', () => {
+  const r = rule('.hero');
+  ok(r, '找不到 .hero 規則');
+  const p = r.match(/padding\s*:\s*([^;]+);/);
+  const inline = r.match(/padding-inline\s*:\s*([^;]+);/);
+  const parts = p ? p[1].trim().split(/\s+/) : [];
+  const side = inline ? inline[1].trim() : (parts.length >= 2 ? parts[1] : parts[0]);
+  ok(side && !/^0(px)?$/.test(side), '.hero 左右 padding 為 ' + JSON.stringify(side));
+});
+
+console.log(failed ? `\n${failed} FAIL` : '\nALL PASS');
+process.exit(failed ? 1 : 0);
