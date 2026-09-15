@@ -22,6 +22,21 @@
       '<span class="cover-ph" aria-hidden="true"><b>' + esc(m.title) + '</b><small>' + esc(m.author) + '</small></span>' +
       '</span></span>';
   }
+  // 正面書卡：首頁書架與兩個固定收藏共用。狀態依來源決定——
+  // 書池看 m.ended（完結／連載中）、必讀經典一律完結、有生之年一律未完結；
+  // 話數取該書最大話號，完結寫「全 N 話」其餘寫「最新 N 話」
+  function cardHTML(m, href, mode) {
+    var status = mode === 'essentials' ? '完結' : (mode === 'classics' ? '未完結' : (m.ended === true ? '完結' : '連載中'));
+    var nums = m.chapters.map(function (c) { return c.num; });
+    var max = Math.max.apply(null, nums);
+    var count = status === '完結' ? '全 ' + max + ' 話' : '最新 ' + max + ' 話';
+    var genre = (m.genre || []).map(esc).join('・');
+    return '<a class="book-card" href="' + esc(href) + '" style="--c:' + esc(m.color || '#3b4a6b') + '">' +
+      '<span class="bc-top"><span class="bc-status' + (status === '完結' ? ' end' : '') + '">' + esc(status) + '</span>' +
+      '<span class="bc-num">' + esc(count) + '</span></span>' +
+      '<span class="bc-title">' + esc(m.title) + '</span>' +
+      '<span class="bc-foot"><span class="bc-author">' + esc(m.author) + '</span><span class="bc-genre">' + genre + '</span></span></a>';
+  }
   function errBox(msg) {
     return '<div class="error"><p>' + esc(msg) + '</p><p><a class="btn" href="index.html">回到首頁</a></p></div>';
   }
@@ -98,10 +113,8 @@
     var shelf = document.getElementById('shelf');
     shelf.innerHTML = res.list.map(function (m, i) {
       return '<li style="--i:' + i + '" data-genre="' + esc(m.genre.join('|')) + '">' +
-        '<a class="book" href="manga.html?id=' + esc(m.id) + '">' +
-        coverHTML(m, 'big') +
-        '<span class="book-meta"><span class="rank">' + m.rank + '</span>' +
-        '<span class="book-t">' + esc(m.title) + '</span>' + diffHTML(diff[m.id]) + '</span></a></li>';
+        '<span class="shelf-rank"><span class="rank">' + m.rank + '</span>' + diffHTML(diff[m.id]) + '</span>' +
+        cardHTML(m, 'manga.html?id=' + m.id, 'pool') + '</li>';
     }).join('');
     var list = document.getElementById('rankList');
     list.innerHTML = res.list.map(function (m) {
@@ -166,17 +179,10 @@
       return;
     }
     var ordered = books.slice().sort(function (a, b) { return a.fixedRank - b.fixedRank; });
+    var mode = key === 'essentials' ? 'essentials' : 'classics';
     list.innerHTML = ordered.map(function (m, i) {
-      var nums = m.chapters.map(function (c) { return c.num; }).sort(function (a, b) { return a - b; });
-      // 必讀經典是「開場 5 話＋結局前 5 話」兩段，寫成 a-b 會誤導成連續 10 話
-      var span = nums[5] - nums[4] > 1
-        ? '第 ' + nums[0] + '-' + nums[4] + ' · ' + nums[5] + '-' + nums[9] + ' 話'
-        : '第 ' + nums[0] + '-' + nums[nums.length - 1] + ' 話';
-      return '<li style="--i:' + i + '"><a class="book" href="manga.html?id=' + esc(m.id) + '&src=' + key + '">' +
-        coverHTML(m, 'wall') +
-        '<span class="book-meta"><span class="rank">' + m.fixedRank + '</span>' +
-        '<span class="book-t">' + esc(m.title) + '</span>' +
-        '<span class="book-a">' + span + '</span></span></a></li>';
+      return '<li style="--i:' + i + '"><span class="fixed-rank"><span class="rank">' + m.fixedRank + '</span></span>' +
+        cardHTML(m, 'manga.html?id=' + m.id + '&src=' + key, mode) + '</li>';
     }).join('');
   }
 

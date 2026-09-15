@@ -47,8 +47,12 @@ def check(name, ok, detail=''):
         print('FAIL', name, ('\n    ' + str(detail)) if detail else '')
 
 
+# 基準固定為資料整理前的 commit；用 HEAD 的話，資料 commit 進去後基準會跟著移動、測試就失去意義
+BASE = '84c342e'
+
+
 def head(rel):
-    out = subprocess.run(['git', '-C', str(ROOT), 'show', 'HEAD:' + rel],
+    out = subprocess.run(['git', '-C', str(ROOT), 'show', BASE + ':' + rel],
                          capture_output=True, text=True, check=True).stdout
     return json.loads(out)
 
