@@ -131,3 +131,22 @@ function bookHref(book) {
   if (b.src === 'essentials' || b.src === 'classics') href += '&src=' + b.src;
   return href;
 }
+
+// 為什麼直接用 ranking.js 的 xfnv1a：頁面保證 ranking.js 先載入，自帶複本會造成兩份雜湊不同步
+function dailyPicks(pool, excludeIds, seed, n) {
+  var books = asArray(pool);
+  var ex = asArray(excludeIds);
+  var kept = [];
+  var i;
+  for (i = 0; i < books.length; i++) {
+    if (ex.indexOf(books[i].id) === -1) kept.push(books[i]);
+  }
+  var s = (seed === undefined || seed === null) ? '' : String(seed);
+  kept.sort(function (a, b) {
+    var ha = xfnv1a(a.id + s);
+    var hb = xfnv1a(b.id + s);
+    if (ha !== hb) return ha - hb;
+    return a.id < b.id ? -1 : (a.id > b.id ? 1 : 0);
+  });
+  return kept.slice(0, n).map(function (b) { return copyBook(b, 'manga', b.ended === true); });
+}
