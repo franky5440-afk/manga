@@ -123,7 +123,7 @@
     "cover": "assets/covers/berserk.jpg",
     "fixedRank": 2,
     "genre": [
-      "黑暗奇幻",
+      "奇幻",
       "戰鬥"
     ],
     "id": "berserk",
@@ -189,8 +189,8 @@
     "cover": "assets/covers/vagabond.jpg",
     "fixedRank": 3,
     "genre": [
-      "時代劇",
-      "武士"
+      "劇情",
+      "戰鬥"
     ],
     "id": "vagabond",
     "synopsis": "改編自吉川英治小說，描繪宮本武藏由野獸般少年成長為一代劍聖的歷程。井上雄彥以水墨般的筆觸叩問生命，自二零一五年休刊至今。",
@@ -256,7 +256,7 @@
     "fixedRank": 4,
     "genre": [
       "戀愛",
-      "音樂"
+      "演藝圈"
     ],
     "id": "nana",
     "synopsis": "同名同齡的兩個娜娜在東京相遇，成為室友並交織出愛情與夢想。矢澤愛以時尚筆觸刻畫搖滾青春，自二零零九年休刊，復刊之日萬眾期待。",
@@ -321,8 +321,8 @@
     "cover": "assets/covers/glass-mask.jpg",
     "fixedRank": 5,
     "genre": [
-      "戲劇",
-      "成長"
+      "演藝圈",
+      "劇情"
     ],
     "id": "glass-mask",
     "synopsis": "平凡少女北島瑪雅被發掘演戲天賦，與天才少女亞弓競逐紅天女之位。美內鈴惠自一九七六年連載至今未完，單行本止於四十九卷。（話數為整理時已知範圍）",
@@ -454,7 +454,7 @@
     "fixedRank": 7,
     "genre": [
       "科幻",
-      "史詩"
+      "戰鬥"
     ],
     "id": "five-star-stories",
     "synopsis": "喬克太陽星團的壯闊編年史，騎士、法蒂瑪與巨大機器人交織出橫跨數千年的命運。永野護以華麗設定與神話筆法，描繪戰爭血脈與愛恨輪迴，是科幻漫畫的傳奇經典。（話數為整理時已知範圍）",
@@ -519,8 +519,8 @@
     "cover": "assets/covers/golgo-13.jpg",
     "fixedRank": 8,
     "genre": [
-      "硬派",
-      "動作"
+      "諜戰",
+      "戰鬥"
     ],
     "id": "golgo-13",
     "synopsis": "齋藤隆夫筆下的超一流狙擊手杜克東鄉，遊走於國際暗殺委託之間，以冷徹身手見證時代變遷。連載逾半世紀的硬派傳奇，每回獨立成篇，深刻描繪人性與權力的黑暗面。",
@@ -585,8 +585,8 @@
     "cover": "assets/covers/detective-conan.jpg",
     "fixedRank": 9,
     "genre": [
-      "推理",
-      "少年"
+      "懸疑",
+      "劇情"
     ],
     "id": "detective-conan",
     "synopsis": "青山剛昌筆下的國民推理漫畫，高中生偵探工藤新一化身柯南，在日常案件與黑衣組織對決之間步步逼近真相。三十年長青不墜，推理迷與新讀者皆能樂在其中。",
@@ -652,7 +652,7 @@
     "fixedRank": 10,
     "genre": [
       "冒險",
-      "少年"
+      "超自然"
     ],
     "id": "jojo-lands",
     "synopsis": "荒木飛呂彥第九部以夏威夷為舞台，少年喬迪奧追逐能帶來財富的熔岩奇岩，替身戰與人性慾望激烈交織。承襲JOJO美學又開創新局，冒險迷不容錯過。",
@@ -717,8 +717,8 @@
     "cover": "assets/covers/kingdom.jpg",
     "fixedRank": 11,
     "genre": [
-      "歷史",
-      "戰爭"
+      "劇情",
+      "戰鬥"
     ],
     "id": "kingdom",
     "synopsis": "原泰久以秦滅六國為藍本，描繪信與嬴政攜手逐鹿中原的壯闊戰爭史詩。謀略、武勇與男兒情義齊飛，戰場描寫魄力十足，是歷史漫畫的巔峰之作。",
@@ -849,7 +849,7 @@
     "cover": "assets/covers/baki.jpg",
     "fixedRank": 13,
     "genre": [
-      "格鬥",
+      "戰鬥",
       "熱血"
     ],
     "id": "baki",
@@ -915,7 +915,7 @@
     "cover": "assets/covers/d-gray-man.jpg",
     "fixedRank": 14,
     "genre": [
-      "驅魔",
+      "超自然",
       "奇幻"
     ],
     "id": "d-gray-man",
@@ -981,7 +981,7 @@
     "cover": "assets/covers/x-clamp.jpg",
     "fixedRank": 15,
     "genre": [
-      "末日",
+      "超自然",
       "奇幻"
     ],
     "id": "x-clamp",
@@ -1113,8 +1113,8 @@
     "cover": "assets/covers/one-punch-man.jpg",
     "fixedRank": 17,
     "genre": [
-      "英雄",
-      "動作"
+      "戰鬥",
+      "喜劇"
     ],
     "id": "one-punch-man",
     "synopsis": "ONE原作、村田雄介重製的英雄諷刺喜劇，最強光頭埼玉於日常與崩壞間遊走，重製版以驚人作畫拓展世界觀與配角群像，動畫化亦人氣鼎盛。",
@@ -1179,7 +1179,7 @@
     "cover": "assets/covers/made-in-abyss.jpg",
     "fixedRank": 18,
     "genre": [
-      "探險",
+      "冒險",
       "奇幻"
     ],
     "id": "made-in-abyss",
