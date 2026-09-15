@@ -95,7 +95,7 @@
       if (hd) hd.textContent = rank.seed;
     }
 
-    if (page === 'index') renderIndex(rank, diff, live);
+    if (page === 'index') renderIndex(rank, diff, live, data);
     else if (fixedKey) renderFixed(sets[fixedKey], fixedKey, data);
     else if (page === 'library') renderLibrary(data, sets);
     else if (page === 'manga') renderManga(data, sets, rank);
@@ -121,14 +121,25 @@
     return (Number(m.views) || 0).toLocaleString('zh-Hant') + ' 次';
   }
 
-  // 首頁：書架 hero + 完整榜單
-  function renderIndex(res, diff, live) {
+  // 首頁：兩排書架 hero + 完整榜單
+  function renderIndex(res, diff, live, pool) {
     var shelf = document.getElementById('shelf');
     shelf.innerHTML = res.list.map(function (m, i) {
       return '<li style="--i:' + i + '" data-genre="' + esc(m.genre.join('|')) + '">' +
         '<span class="shelf-rank"><span class="rank">' + m.rank + '</span>' + diffHTML(diff[m.id]) + '</span>' +
         cardHTML(m, 'manga.html?id=' + m.id, 'pool') + '</li>';
     }).join('');
+    // 第二排「書庫精選」：書池中不在今天前 10 名的 10 本，不顯示名次與升降
+    var row1Ids = res.list.map(function (m) { return m.id; });
+    var picks = [];
+    var shelf2 = document.getElementById('shelf2');
+    if (shelf2 && pool && typeof dailyPicks === 'function') {
+      picks = dailyPicks(pool, row1Ids, res.seed, 10);
+      shelf2.innerHTML = picks.map(function (m, i) {
+        return '<li style="--i:' + i + '" data-genre="' + esc(m.genre.join('|')) + '">' +
+          cardHTML(m, bookHref(m), 'pool') + '</li>';
+      }).join('');
+    }
     var list = document.getElementById('rankList');
     list.innerHTML = res.list.map(function (m) {
       return '<li><a class="card" href="manga.html?id=' + esc(m.id) + '">' +
@@ -139,8 +150,9 @@
         '<small>' + esc(m.author) + ' · ' + m.genre.map(esc).join(' / ') + '</small>' +
         '<span class="syn">' + esc(m.synopsis.slice(0, 40)) + '…</span></span></a></li>';
     }).join('');
-    initShelfMotion(shelf);
-    renderChips(res.list, shelf);
+    initShelfMotion(shelf, 'shelfViewport', 1);
+    initShelfMotion(shelf2, 'shelfViewport2', -1);
+    renderChips(res.list.concat(picks), shelf, shelf2);
     renderRankNote(res);
     renderGlobal(live);
   }
@@ -377,9 +389,10 @@
 
   // 首頁書列：無縫漂移 + 拖曳慣性。漂移與拖曳只動 <ol> 的 transform，
   // hover 轉正動 .book-obj、鄰居讓位動 <li>，三層各自獨立才不會互相蓋掉。
-  function initShelfMotion(shelf) {
-    var viewport = document.getElementById('shelfViewport');
-    if (!viewport) return;
+  // 兩排各呼叫一次（第二排方向相反），暫停、拖曳、循環各自獨立。
+  function initShelfMotion(shelf, viewportId, dir) {
+    var viewport = document.getElementById(viewportId || 'shelfViewport');
+    if (!shelf || !viewport) return;
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // 複製一組接在後面做無縫循環；複製的那組不入無障礙樹也不吃 Tab
@@ -404,7 +417,7 @@
     measure();
     window.addEventListener('resize', measure);
 
-    var x = 0, vel = -28, drift = 0, last = 0;
+    var x = 0, vel = (dir || 1) < 0 ? 28 : -28, drift = 0, last = 0;
     var hovering = false, dragging = false, pauseUntil = 0;
 
     function frame(t) {
@@ -470,8 +483,8 @@
     }, true);
   }
 
-  // 類型 chips：15 種類型全放會排到天邊，只取最常出現的前 6 種
-  function renderChips(list, shelf) {
+  // 類型 chips：15 種類型全放會排到天邊，只取最常出現的前 6 種（兩排合併統計，同時作用在兩排）
+  function renderChips(list, shelf, shelf2) {
     var box = document.getElementById('genreChips');
     if (!box) return;
     var count = {};
@@ -494,12 +507,15 @@
       Array.prototype.forEach.call(box.children, function (b) {
         b.setAttribute('aria-pressed', String(b === btn));
       });
-      // 只改亮暗，不重排也不動 ranking 結果
-      Array.prototype.forEach.call(shelf.children, function (li) {
-        var hit = g === '全部' || (li.getAttribute('data-genre') || '').split('|').indexOf(g) > -1;
-        li.classList.toggle('dim', !hit);
+      // 只改亮暗，不重排也不動 ranking 結果；兩排各自獨立加減 .dim
+      var rows = shelf2 ? [shelf, shelf2] : [shelf];
+      rows.forEach(function (row) {
+        Array.prototype.forEach.call(row.children, function (li) {
+          var hit = g === '全部' || (li.getAttribute('data-genre') || '').split('|').indexOf(g) > -1;
+          li.classList.toggle('dim', !hit);
+        });
+        if (row.pauseDrift) row.pauseDrift(1200);
       });
-      if (shelf.pauseDrift) shelf.pauseDrift(1200);
     });
   }
 

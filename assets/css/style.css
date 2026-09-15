@@ -96,6 +96,9 @@ body[data-page="essentials"] .hero, body[data-page="timeless"] .hero, body[data-
   background: linear-gradient(to bottom, var(--plank-top), var(--plank));
   box-shadow: 0 10px 22px -8px rgba(var(--shadow), .8), inset 0 1px 0 rgba(255, 255, 255, .12);
 }
+/* 首頁第二排「書庫精選」：小標題＋說明，與第一排之間以木頭層板分隔 */
+.picks-title { font-size: 20px; margin: 30px 0 2px; }
+.picks-note { color: var(--muted); font-size: 13px; margin: 0 0 2px; }
 .shelf-rank, .fixed-rank {
   display: flex; align-items: baseline; gap: 6px; margin-bottom: 8px;
   font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums;
