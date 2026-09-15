@@ -125,6 +125,28 @@ await test('library：完結狀態切換有三顆（全部／已完結／連載�
   ok(JSON.stringify(btns) === JSON.stringify([['all', 'true', '全部'], ['ended', 'false', '已完結'], ['ongoing', 'false', '連載中']]), '實際 ' + JSON.stringify(btns));
 });
 
+await test('library：右上角 badge 顯示「書庫 N 本」（不是熱度榜日期）', async () => {
+  const els = await render('library', '');
+  ok(els.dateBadge.textContent === '書庫 ' + TOTAL + ' 本', 'badge=' + JSON.stringify(els.dateBadge.textContent));
+});
+await test('style.css：書庫搜尋框有樣式、書庫的類型／狀態按鈕可換行', () => {
+  const css = read('assets/css/style.css');
+  ok(/#libSearch\s*[{,]/.test(css), 'style.css 沒有 #libSearch 的樣式規則');
+  const wrap = css.match(/(#libChips|#libStatus)[^{]*\{[^}]*flex-wrap\s*:\s*wrap/g) || [];
+  ok(wrap.some((r) => r.includes('#libChips')) && wrap.some((r) => r.includes('#libStatus')) || /#libChips\s*,\s*#libStatus\s*\{[^}]*flex-wrap\s*:\s*wrap/.test(css), '#libChips 與 #libStatus 要 flex-wrap: wrap（16 顆類型在桌機會被截掉）');
+});
+await test('style.css：書庫頁 hero 在 main 裡面，不可再疊一層左右留白', () => {
+  const css = read('assets/css/style.css');
+  const m = [...css.matchAll(/([^{}]*)\{([^}]*)\}/g)].find(([, sel, body]) =>
+    /body\[data-page="library"\]\s*\.hero/.test(sel) && /padding-left\s*:\s*0/.test(body) && /padding-right\s*:\s*0/.test(body));
+  ok(m, '缺少 body[data-page="library"] .hero { padding-left: 0; padding-right: 0; }（可與 essentials／timeless 同一條規則）');
+});
+await test('style.css：書牆預設 2 欄（手機 360px 塞 3 張會把書名切斷），寬螢幕再加欄', () => {
+  const css = read('assets/css/style.css');
+  const base = css.match(/(^|\n)\.book-wall\s*\{([^}]*)\}/);
+  ok(base && /grid-template-columns\s*:\s*repeat\(\s*2\s*,\s*1fr\s*\)/.test(base[2]), '.book-wall 基本規則要 grid-template-columns: repeat(2, 1fr)');
+  ok(/@media\s*\(\s*min-width\s*:\s*\d+px\s*\)\s*\{[^@]*\.book-wall\s*\{[^}]*repeat\(\s*[3-6]\s*,/.test(css), '要有 min-width 斷點把 .book-wall 加到 3 欄以上');
+});
 await test('essentials：固定收藏＋書池完結書，共 ' + ESS + ' 本，badge 同步', async () => {
   const els = await render('essentials', '');
   ok(cards(els.fixedList.innerHTML) === ESS, 'book-card 數量=' + cards(els.fixedList.innerHTML));
