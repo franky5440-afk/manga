@@ -97,7 +97,7 @@ h1, h2, .brand { font-family: var(--display); }
 /* 正面書卡：正面朝前、依 --c 由亮到暗斜向漸層、左側深色書脊、右上大圓角、橫排書名 */
 .book-card {
   position: relative; display: flex; flex-direction: column; gap: 8px;
-  min-height: 196px; padding: 12px 12px 12px 20px;
+  min-width: 0; min-height: 196px; padding: 12px 12px 12px 20px;
   text-decoration: none; color: #fff; overflow: hidden;
   border-radius: 4px 18px 14px 4px;
   background:
@@ -111,7 +111,8 @@ h1, h2, .brand { font-family: var(--display); }
   border-right: 1px solid rgba(255, 255, 255, .14);
 }
 .book-card:hover, .book-card:focus-visible { transform: translateY(-6px); }
-.bc-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.book-card > * { min-width: 0; }
+.bc-top { display: flex; align-items: center; justify-content: space-between; gap: 4px 8px; flex-wrap: wrap; }
 .bc-status {
   font-size: 11px; font-weight: 700; letter-spacing: .06em; white-space: nowrap;
   background: rgba(0, 0, 0, .45); border: 1px solid rgba(255, 255, 255, .25);
@@ -119,10 +120,10 @@ h1, h2, .brand { font-family: var(--display); }
 }
 .bc-status.end { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 .bc-num { font-size: 11px; opacity: .9; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.bc-title { font-size: 17px; line-height: 1.4; font-weight: 700; text-shadow: 0 1px 3px rgba(0, 0, 0, .4); }
+.bc-title { font-size: 17px; line-height: 1.4; font-weight: 700; text-shadow: 0 1px 3px rgba(0, 0, 0, .4); overflow-wrap: break-word; }
 .bc-foot { margin-top: auto; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.bc-author { font-size: 12px; opacity: .9; }
-.bc-genre { font-size: 11px; opacity: .75; }
+.bc-author { font-size: 12px; opacity: .9; overflow-wrap: break-word; }
+.bc-genre { font-size: 11px; opacity: .75; overflow-wrap: break-word; }
 
 /* 與昨日相比的升降 */
 .diff { font-size: 12px; font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; margin-left: 6px; }
@@ -196,8 +197,9 @@ section h2 { font-size: 22px; letter-spacing: -.01em; margin: 48px 0 16px; }
 .book-t { display: inline; font-weight: 600; font-size: 14px; line-height: 1.45; }
 .book-a { display: block; font-size: 12px; color: var(--muted); }
 
-/* 有生之年／必讀經典：一面書牆 */
+/* 有生之年／必讀經典：一面書牆（li 須可縮，否則窄螢幕被卡片最小寬度撐出橫向捲軸） */
 .book-wall { list-style: none; margin: 0; padding: 24px 0 0; display: grid; gap: 28px 20px; grid-template-columns: repeat(3, 1fr); }
+.book-wall > li { min-width: 0; }
 
 /* 詳情：大書 + 標題 */
 .crumb { font-size: 13px; color: var(--muted); padding: 20px 0 0; }
