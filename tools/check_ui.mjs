@@ -52,7 +52,7 @@ for (const p of EXISTING) {
     const nav = (html.match(/<nav class="site-nav"[\s\S]*?<\/nav>/) || [])[0];
     ok(nav, '找不到 <nav class="site-nav">');
     const links = [...nav.matchAll(/<a href="([^"]+)" data-nav="([^"]+)"[^>]*>([^<]+)<\/a>/g)].map((m) => [m[1], m[2], m[3].trim()]);
-    const want = [['index.html', 'index', '每日熱門'], ['library.html', 'library', '書庫'], ['essentials.html', 'essentials', '必讀經典'], ['timeless.html', 'timeless', '有生之年']];
+    const want = [['index.html', 'index', '每日熱門'], ['library.html', 'library', '書庫'], ['essentials.html', 'essentials', '必讀經典'], ['timeless.html', 'timeless', '有生之年'], ['index.html#globalList', 'global', '全球榜']];
     ok(JSON.stringify(links) === JSON.stringify(want), '導覽連結應為 ' + JSON.stringify(want) + '，實際 ' + JSON.stringify(links));
     const form = (html.match(/<form class="site-search"[^>]*>[\s\S]*?<\/form>/) || [])[0];
     ok(form, '找不到 <form class="site-search">');
