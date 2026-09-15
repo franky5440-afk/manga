@@ -60,20 +60,25 @@ h1, h2, .brand { font-family: var(--display); }
 .site-nav a:hover { color: var(--ink); }
 .site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
 
-/* 搜尋框：跟著換行、可縮到最小，不撐破 360px */
+/* 搜尋框：跟著換行、可縮到最小，不撐破 360px。書庫搜尋框共用同一套視覺 */
 .site-search { display: flex; flex: 1 1 160px; min-width: 0; max-width: 280px; margin-left: auto; }
-.site-search input {
+.site-search input, #libSearch {
   width: 100%; min-width: 0; height: 36px; padding: 0 14px;
   background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
   color: var(--ink); font: inherit; font-size: 13px;
 }
-.site-search input::placeholder { color: var(--muted); }
+.site-search input::placeholder, #libSearch::placeholder { color: var(--muted); }
+/* 書庫搜尋框：同一套視覺，尺寸更大（桌機約 420px、手機滿版、高 44px） */
+#libSearch { display: block; height: 44px; padding: 0 18px; font-size: 15px; }
+@media (min-width: 720px) {
+  #libSearch { max-width: 420px; }
+}
 
 /* hero：一行標題＋資料日期，不再有巨大品牌字 */
 /* hero：一行標題＋資料日期，不再有巨大品牌字。首頁 hero 在 main 外面，
    左右留白與 main 一致；另外兩頁的 hero 在 main 裡面，留白由 main 給，避免雙倍 */
 .hero { padding: 36px 20px 0; }
-body[data-page="essentials"] .hero, body[data-page="timeless"] .hero { padding-left: 0; padding-right: 0; }
+body[data-page="essentials"] .hero, body[data-page="timeless"] .hero, body[data-page="library"] .hero { padding-left: 0; padding-right: 0; }
 .hero h1 { font-size: clamp(24px, 4vw, 34px); line-height: 1.3; font-weight: 700; margin: 0 0 8px; }
 .lede { color: var(--muted); font-size: 15px; margin: 0 0 8px; max-width: 32em; }
 .lede #heroDate { color: var(--ink); font-variant-numeric: tabular-nums; }
@@ -148,6 +153,14 @@ body[data-page="essentials"] .hero, body[data-page="timeless"] .hero { padding-l
 .chip:hover { background: var(--surface-2); }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--ground); border-color: var(--ink); }
 
+/* 書庫的類型／狀態按鈕：顆數多，直接換行不截斷（首頁 #genreChips 維持橫向捲動） */
+#libChips, #libStatus { flex-wrap: wrap; overflow-x: visible; }
+
+/* 書庫控制區：搜尋框、類型、狀態、計數之間拉出上下間距 */
+body[data-page="library"] .rank-section { display: flex; flex-direction: column; gap: 14px; }
+body[data-page="library"] .rank-section h2 { margin: 24px 0 0; }
+body[data-page="library"] #libCount { margin: 0; }
+
 /* 完整榜單：兩欄格，每格一本小書 + 名次（沿用舊 .card 結構） */
 section h2 { font-size: 22px; letter-spacing: -.01em; margin: 48px 0 16px; }
 .rank-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
@@ -203,8 +216,9 @@ section h2 { font-size: 22px; letter-spacing: -.01em; margin: 48px 0 16px; }
 .book-t { display: inline; font-weight: 600; font-size: 14px; line-height: 1.45; }
 .book-a { display: block; font-size: 12px; color: var(--muted); }
 
-/* 有生之年／必讀經典：一面書牆（li 須可縮，否則窄螢幕被卡片最小寬度撐出橫向捲軸） */
-.book-wall { list-style: none; margin: 0; padding: 24px 0 0; display: grid; gap: 28px 20px; grid-template-columns: repeat(3, 1fr); }
+/* 有生之年／必讀經典／書庫：一面書牆（li 須可縮，否則窄螢幕被卡片最小寬度撐出橫向捲軸）。
+   手機預設 2 欄（3 欄會把書名切斷），寬螢幕再加欄 */
+.book-wall { list-style: none; margin: 0; padding: 24px 0 0; display: grid; gap: 28px 20px; grid-template-columns: repeat(2, 1fr); }
 .book-wall > li { min-width: 0; }
 
 /* 詳情：大書 + 標題 */
@@ -259,6 +273,10 @@ section h2 { font-size: 22px; letter-spacing: -.01em; margin: 48px 0 16px; }
 }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
+}
+
+@media (min-width: 560px) {
+  .book-wall { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (min-width: 720px) {

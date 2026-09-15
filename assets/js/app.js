@@ -80,6 +80,13 @@
         badgeN = essentialsList(sets.essentials, data).length;
       }
       if (badge) badge.textContent = FIXED[fixedKey].rankWord + ' ' + badgeN + ' 本';
+    } else if (page === 'library') {
+      // 書庫頁不顯示熱度榜日期，顯示三檔合併總數；library.js 不在時退回三檔長度相加
+      var libN = data.length + sets.essentials.length + sets.classics.length;
+      if (typeof allBooks === 'function') {
+        libN = allBooks({ manga: data, essentials: sets.essentials, classics: sets.classics }).length;
+      }
+      if (badge) badge.textContent = '書庫 ' + libN + ' 本';
     } else if (badge) {
       badge.textContent = rank.seed + (rank.live ? ' 熱度榜' : ' 今日排行');
     }
