@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
-<title>必讀經典｜有完整結局的名作精選</title>
-<meta name="description" content="精選有完整結局的熱門漫畫，每本收錄開場 5 話與結局前 5 話大綱，一次補完經典。">
+<title>書庫｜全部漫畫搜尋與篩選</title>
+<meta name="description" content="書庫收錄本站全部漫畫，可搜尋書名、作者，按類型與完結狀態篩選。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2386b89a'/%3E%3Crect x='9' y='7' width='14' height='18' rx='2' fill='%2319191c'/%3E%3Crect x='9' y='7' width='3' height='18' fill='%23fff' opacity='.55'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body data-page="essentials">
+<body data-page="library">
 <header class="site-header">
   <a class="brand" href="index.html">台漫榜</a>
   <nav class="site-nav" aria-label="站內分頁">
     <a href="index.html" data-nav="index">每日熱門</a>
-    <a href="library.html" data-nav="library">書庫</a>
-    <a href="essentials.html" data-nav="essentials" aria-current="page">必讀經典</a>
+    <a href="library.html" data-nav="library" aria-current="page">書庫</a>
+    <a href="essentials.html" data-nav="essentials">必讀經典</a>
     <a href="timeless.html" data-nav="timeless">有生之年</a>
   </nav>
   <form class="site-search" action="library.html" role="search">
@@ -27,18 +27,23 @@
 
 <main>
   <section class="hero">
-    <h1>必讀經典</h1>
-    <p class="lede">已經畫下句點的名作。每本收錄開場 5 話與結局前 5 話，看得到起點也看得到終點。</p>
+    <h1>書庫</h1>
+    <p class="lede">每日書池、必讀經典、有生之年一次攤開。搜尋書名、作者，或按類型與完結狀態篩選。</p>
   </section>
 
   <section class="rank-section">
-    <h2>全部作品</h2>
-    <ol class="book-wall" id="fixedList"></ol>
+    <h2>全部書籍</h2>
+    <label class="visually-hidden" for="libSearch">搜尋書庫</label>
+    <input type="search" id="libSearch" placeholder="搜尋書名、作者…" aria-label="搜尋書庫">
+    <div class="chips" id="libChips" role="group" aria-label="類型篩選"></div>
+    <div class="chips" id="libStatus" role="group" aria-label="完結狀態篩選"></div>
+    <p class="rank-note" id="libCount" aria-live="polite"></p>
+    <ol class="book-wall" id="libList"></ol>
   </section>
 </main>
 
 <footer class="site-footer">
-  <p>資料為介紹用途，劇情為摘要文字。本頁為固定收藏，不參與每日排行。本頁為劇情介紹，非漫畫原文，支持正版。</p>
+  <p>資料為介紹用途，劇情為摘要文字。本頁為劇情介紹，非漫畫原文，支持正版。</p>
 </footer>
 
 <script src="assets/js/ranking.js"></script>

@@ -74,7 +74,12 @@
     var badge = document.getElementById('dateBadge');
     var fixedKey = page === 'timeless' ? 'classics' : (page === 'essentials' ? 'essentials' : null);
     if (fixedKey) {
-      if (badge) badge.textContent = FIXED[fixedKey].rankWord + ' ' + sets[fixedKey].length + ' 本';
+      // 必讀經典頁要算合併後的數量；library.js 不在時退回固定收藏本身的數量
+      var badgeN = sets[fixedKey].length;
+      if (fixedKey === 'essentials' && typeof essentialsList === 'function') {
+        badgeN = essentialsList(sets.essentials, data).length;
+      }
+      if (badge) badge.textContent = FIXED[fixedKey].rankWord + ' ' + badgeN + ' 本';
     } else if (badge) {
       badge.textContent = rank.seed + (rank.live ? ' 熱度榜' : ' 今日排行');
     }
@@ -84,11 +89,12 @@
     }
 
     if (page === 'index') renderIndex(rank, diff, live);
-    else if (fixedKey) renderFixed(sets[fixedKey], fixedKey);
+    else if (fixedKey) renderFixed(sets[fixedKey], fixedKey, data);
+    else if (page === 'library') renderLibrary(data, sets);
     else if (page === 'manga') renderManga(data, sets, rank);
     else if (page === 'chapter') renderChapter(data, sets);
   }).catch(function () {
-    ['shelf', 'rankList', 'globalList', 'fixedList', 'detail', 'chList', 'chapter', 'chNav'].forEach(function (id) {
+    ['shelf', 'rankList', 'globalList', 'fixedList', 'libList', 'detail', 'chList', 'chapter', 'chNav'].forEach(function (id) {
       var el = document.getElementById(id);
       if (el) el.innerHTML = errBox('資料載入失敗，請確認已用 http.server 開站後重整。');
     });
@@ -171,9 +177,25 @@
     }).join('');
   }
 
-  // 固定收藏分頁：不經 ranking.js，直接按 fixedRank 排成一面書牆
-  function renderFixed(books, key) {
+  // 固定收藏分頁：不經 ranking.js，直接按 fixedRank 排成一面書牆。
+  // 必讀經典頁多併入書池的完結書（固定收藏在前、書池完結書在後，連結不帶 src、不顯示名次）。
+  // 為什麼留舊路徑：library.js 若載入失敗，必讀經典仍顯示固定收藏，不白屏
+  function renderFixed(books, key, pool) {
     var list = document.getElementById('fixedList');
+    if (key === 'essentials' && typeof essentialsList === 'function' && typeof bookHref === 'function') {
+      var merged = essentialsList(books, pool);
+      if (!merged.length) {
+        list.innerHTML = errBox('固定收藏載入失敗，請確認已用 http.server 開站後重整。');
+        return;
+      }
+      list.innerHTML = merged.map(function (m, i) {
+        var rankSpan = m.src === 'manga'
+          ? '<span class="fixed-rank"></span>'
+          : '<span class="fixed-rank"><span class="rank">' + m.fixedRank + '</span></span>';
+        return '<li style="--i:' + i + '">' + rankSpan + cardHTML(m, bookHref(m), 'essentials') + '</li>';
+      }).join('');
+      return;
+    }
     if (!books.length) {
       list.innerHTML = errBox('固定收藏載入失敗，請確認已用 http.server 開站後重整。');
       return;
@@ -184,6 +206,73 @@
       return '<li style="--i:' + i + '"><span class="fixed-rank"><span class="rank">' + m.fixedRank + '</span></span>' +
         cardHTML(m, 'manga.html?id=' + m.id + '&src=' + key, mode) + '</li>';
     }).join('');
+  }
+
+  // 書庫頁：三檔合併，搜尋 → 類型／完結篩選。合併與排序全交給 library.js，這裡只做 DOM 與事件
+  function renderLibrary(data, sets) {
+    var all = allBooks({ manga: data, essentials: sets.essentials, classics: sets.classics });
+    var searchEl = document.getElementById('libSearch');
+    var chipsEl = document.getElementById('libChips');
+    var statusEl = document.getElementById('libStatus');
+    var countEl = document.getElementById('libCount');
+    var listEl = document.getElementById('libList');
+    var state = { q: qs('q') || '', genre: '全部', status: 'all' };
+    if (searchEl) searchEl.value = state.q;
+
+    // 狀態依來源：書池看 ended、必讀經典一律完結、有生之年一律未完結
+    function libMode(b) {
+      return b.src === 'essentials' ? 'essentials' : (b.src === 'classics' ? 'classics' : 'pool');
+    }
+    function renderControls() {
+      var genres = ['全部'].concat(genreCounts(all).map(function (c) { return c.genre; }));
+      chipsEl.innerHTML = genres.map(function (g) {
+        return '<button type="button" class="chip" data-g="' + esc(g) + '" aria-pressed="' + (g === state.genre) + '">' + esc(g) + '</button>';
+      }).join('');
+      var opts = [['all', '全部'], ['ended', '已完結'], ['ongoing', '連載中']];
+      statusEl.innerHTML = opts.map(function (o) {
+        return '<button type="button" class="chip" data-s="' + o[0] + '" aria-pressed="' + (o[0] === state.status) + '">' + o[1] + '</button>';
+      }).join('');
+    }
+    function paintList() {
+      var hit = filterBooks(searchBooks(all, state.q), { genre: state.genre, status: state.status });
+      if (hit.length) {
+        countEl.textContent = '共 ' + hit.length + ' 本';
+        listEl.innerHTML = hit.map(function (b, i) {
+          return '<li style="--i:' + i + '">' + cardHTML(b, bookHref(b), libMode(b)) + '</li>';
+        }).join('');
+      } else {
+        // textContent 不經 HTML 解析所以安全；進 innerHTML 的查詢字串一定要 esc()
+        countEl.textContent = state.q ? '找不到與「' + state.q + '」相關的書' : '找不到符合條件的書';
+        listEl.innerHTML = '<li><div class="error"><p>找不到' +
+          (state.q ? '與「' + esc(state.q) + '」相關的書' : '符合條件的書') +
+          '，換個關鍵字或篩選條件試試。</p></div></li>';
+      }
+    }
+    function syncURL() {
+      history.replaceState(null, '', state.q ? 'library.html?q=' + encodeURIComponent(state.q) : 'library.html');
+    }
+    searchEl.addEventListener('input', function () {
+      state.q = searchEl.value;
+      syncURL();
+      paintList();
+    });
+    // 事件委派：重畫後按鈕換過一輪，監聽器留在容器上才不會掉
+    chipsEl.addEventListener('click', function (e) {
+      var btn = e.target.closest('button');
+      if (!btn) return;
+      state.genre = btn.getAttribute('data-g');
+      renderControls();
+      paintList();
+    });
+    statusEl.addEventListener('click', function (e) {
+      var btn = e.target.closest('button');
+      if (!btn) return;
+      state.status = btn.getAttribute('data-s');
+      renderControls();
+      paintList();
+    });
+    renderControls();
+    paintList();
   }
 
   // 詳情頁（src=classics 時讀固定收藏，顯示固定名次，不顯示今日分數）
