@@ -26,6 +26,7 @@
 ├── spec.md
 ├── handoff/            # 交接文件，一天一檔：HANDOFF-YYYY-MM-DD.md（見 §3.1）
 ├── index.html          # 首頁：Top 10 榜單（每日刷新）
+├── library.html        # 書庫：全部書＋搜尋／類型／完結篩選（spec.md §11）
 ├── timeless.html       # 有生之年分頁：長期停更／未完之作，固定 18 本
 ├── essentials.html     # 必讀經典分頁：已完結名作，固定收藏
 ├── manga.html          # 詳情頁：?id=xxx（&src=classics|essentials 讀固定收藏）顯示章節列表
@@ -33,6 +34,7 @@
 ├── assets/css/style.css
 ├── assets/js/app.js
 ├── assets/js/ranking.js
+├── assets/js/library.js # 書庫合併／搜尋／篩選純函式，無 DOM（契約：tools/test_library.mjs）
 ├── data/manga.json
 ├── data/classics.json  # 有生之年固定收藏（唯一真相來源之二）
 ├── data/essentials.json # 必讀經典固定收藏（唯一真相來源之三）
@@ -78,6 +80,8 @@
 - `id` 全小寫英文 + 連字號，不可重複，不可改（URL 依賴）
 - 每本至少 3 個章節，每章節 `plot` 為純文字，不放圖片
 - `wiki`（可選）：中文維基的正式條目名。只有在自動解析對不上時才需要手動指定
+- `ended`（僅 `manga.json`，**必填布林**）：作品已完結＝`true`。完結的書會同時出現在必讀經典（spec.md §11.4）。
+  新增書時必須查證後填寫，不可省略或用猜的
 - `baseScore` 0~100，僅作為 `ranking.json` 讀不到時的離線 fallback 基準分（僅 `manga.json` 用；
   `classics.json` 與 `essentials.json` 改用 `fixedRank` 固定排序，不參與每日刷新）
 - `status`（僅 `classics.json`）：作品現況與停更原因，顯示為詳情頁簡介的第二段。
@@ -121,10 +125,11 @@
 
 ## 6. 程式碼準則
 
-- KISS：只寫 spec.md 定的功能，不加搜尋、留言、會員、後台
+- KISS：只寫 spec.md 定的功能，不加留言、會員、後台（站內搜尋與書庫已於 2026-09-16 由 Frank 核定納入，見 spec.md §11）
 - 外科手術式修改：只碰必要的檔案，沿用既有命名與縮排（2 空格）
 - 註解只寫「為什麼」，不寫流水帳
-- 不引入外部 CDN（字體、框架皆不引入），離線可開
+- 不引入外部 CDN（字體、框架皆不引入），離線可開。標題楷體只用系統字體堆疊，不可為了好看改接 Google Fonts 或自帶字型檔
+- 網站固定深色（spec.md §11.1），不要加回 `prefers-color-scheme` 亮色版
 - 所有文字內容為繁體中文
 
 ## 7. 版權與內容紅線
@@ -147,6 +152,8 @@
 8. 把 `data/ranking.json` 暫時移走後重整首頁，仍顯示 10 本、不白屏，
    且依據說明會切換成「離線模式…非真實熱度」
 9. 首頁華文圈榜的順序等於 `ranking.json` 的 `cjk.list` 順序
+10. 契約測試全綠：`node tools/check_pages.mjs`、`node tools/check_ui.mjs`、`node tools/test_library.mjs`、`python3 tools/test_data_status.py`
+    🔴 **測試檔是規格，不可為了讓它變綠而修改測試**；認為測試本身有矛盾就停下來回報
 
 ## 9. Git 規範
 

@@ -119,3 +119,39 @@ function xfnv1a(str) {
 - 詳情/章節頁共用：`manga.html?id=xxx&src=classics`、`chapter.html?id=xxx&ch=N&src=classics` 讀固定收藏；詳情頁顯示「固定收藏第 N 名 / 共 18 本」，麵包屑首層連回 `timeless.html`
 - 站內導覽：各頁 header 下方 `site-nav`（每日 Top 10 / 有生之年），當前分頁 `aria-current="page"`
 - 18 本名單：獵人、烙印勇士、浪客行、NANA、千面女郎、強殖裝甲、五星物語、骷髏13、名偵探柯南、JOJOLands、王者天下、第一神拳、刃牙道、驅魔少年、X 戰記、七龍珠超、一拳超人、來自深淵
+
+## 11. v2.0 改版：胡桃木書房、書庫與搜尋（2026-09-16，Frank 核定）
+
+> 本節**取代** §1 非目標裡的「搜尋」、§6 的配色／亮暗模式／3D 書本描述、§9 的「搜尋、類型篩選」。
+
+**起因**：書池擴充到 39 本後，首頁只顯示前 10 名，其餘書沒有入口；已完結的書也沒有進必讀經典。
+
+### 11.1 視覺
+
+- **固定深色**，不跟系統切換亮暗（`color-scheme: dark`）。色票（`assets/css/style.css` 的 `:root`）：
+  `--ground #1b1411`（底）、`--surface #2a2019`（面板）、`--ink #f0e4cc`（主字）、`--muted #ad9a7e`（次要字）、
+  `--line #3d2f25`（分隔線）、`--accent #86b89a`（玉綠點綴）、`--plank-top #7a5130`／`--plank #4a2f1b`（木頭層板）
+- 字體：內文沿用系統黑體堆疊；標題 `--display` 用**系統楷體堆疊**（`"Kaiti TC", "BiauKai", "DFKai-SB", "AR PL UKai TW", serif`），
+  **不載入任何外部或自訂字型**（§8「無 CDN 依賴」仍有效），沒有楷體的裝置退回明體是可接受的
+- 書本改為**正面書卡**（`.book-card`）：狀態標籤（完結／連載中／未完結）、話數（完結「全 N 話」、其餘「最新 N 話」，N＝該書最大話號）、
+  書名、作者、類型；底色取各書 `color` 欄位。首頁書架、必讀經典、有生之年共用同一個 `cardHTML()`
+- 首頁移除巨大品牌字 hero，改為一行標題＋資料日期；書架下方加木頭層板
+
+### 11.2 導覽與搜尋
+
+- 每頁導覽列固定四個分頁：每日熱門（`index.html`）／書庫（`library.html`）／必讀經典／有生之年
+- 每頁導覽列有搜尋框：`<form class="site-search" action="library.html" role="search">`＋`<input type="search" name="q" id="siteSearch">`，
+  送出後到書庫頁帶 `?q=`
+- 搜尋與篩選邏輯集中在 `assets/js/library.js`（純函式、無 DOM，契約見 `tools/test_library.mjs`）：
+  搜書名／作者／簡介（角色名）／類型，不分大小寫與全半形；排序為書名命中 → 作者命中 → 其他
+
+### 11.3 書庫頁 `library.html`
+
+- 列出三個資料檔的全部書（書池＋必讀經典＋有生之年，不重複），可用搜尋、類型、完結狀態篩選
+- 連結規則：書池的書 `manga.html?id=x`，固定收藏帶 `&src=essentials|classics`（`bookHref()`）
+
+### 11.4 必讀經典合併
+
+- `manga.json` 新增必填布林欄位 `ended`（完結＝true）
+- 必讀經典頁顯示 `essentials.json`（依 `fixedRank`）＋ 書池中 `ended === true` 的書，同一本書可同時出現在首頁熱門與必讀經典
+- 書池的完結書點進去讀的仍是 `manga.json`（不帶 `src`），資料不複製
