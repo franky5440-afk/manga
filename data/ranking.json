@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-09-16T11:47:25+08:00",
+  "generatedAt": "2026-09-17T11:52:40+08:00",
   "cjk": {
     "source": "zh.wikipedia pageviews",
     "sourceUrl": "https://wikimedia.org/api/rest_v1/",
-    "dataDate": "20260915",
+    "dataDate": "20260916",
     "missing": [],
     "list": [
       {
         "id": "bleach",
         "wiki": "BLEACH",
-        "views": 1277,
-        "day": "20260915",
+        "views": 1172,
+        "day": "20260916",
         "found": true,
         "rank": 1,
         "prevRank": 1
@@ -18,8 +18,8 @@
       {
         "id": "frieren",
         "wiki": "葬送的芙莉蓮",
-        "views": 1042,
-        "day": "20260915",
+        "views": 953,
+        "day": "20260916",
         "found": true,
         "rank": 2,
         "prevRank": 2
@@ -27,26 +27,26 @@
       {
         "id": "jujutsu-kaisen",
         "wiki": "咒術迴戰",
-        "views": 847,
-        "day": "20260915",
+        "views": 882,
+        "day": "20260916",
         "found": true,
         "rank": 3,
-        "prevRank": 4
+        "prevRank": 3
       },
       {
         "id": "attack-on-titan",
         "wiki": "進擊的巨人",
-        "views": 845,
-        "day": "20260915",
+        "views": 839,
+        "day": "20260916",
         "found": true,
         "rank": 4,
-        "prevRank": 3
+        "prevRank": 4
       },
       {
         "id": "demon-slayer",
         "wiki": "鬼滅之刃",
-        "views": 767,
-        "day": "20260915",
+        "views": 812,
+        "day": "20260916",
         "found": true,
         "rank": 5,
         "prevRank": 5
@@ -54,8 +54,8 @@
       {
         "id": "one-piece",
         "wiki": "ONE PIECE",
-        "views": 735,
-        "day": "20260915",
+        "views": 691,
+        "day": "20260916",
         "found": true,
         "rank": 6,
         "prevRank": 6
@@ -63,8 +63,8 @@
       {
         "id": "my-hero-academia",
         "wiki": "我的英雄學院",
-        "views": 585,
-        "day": "20260915",
+        "views": 589,
+        "day": "20260916",
         "found": true,
         "rank": 7,
         "prevRank": 7
@@ -72,17 +72,17 @@
       {
         "id": "naruto",
         "wiki": "火影忍者",
-        "views": 531,
-        "day": "20260915",
+        "views": 519,
+        "day": "20260916",
         "found": true,
         "rank": 8,
-        "prevRank": 9
+        "prevRank": 8
       },
       {
-        "id": "dandadan",
-        "wiki": "膽大黨",
-        "views": 507,
-        "day": "20260915",
+        "id": "chainsaw-man",
+        "wiki": "鏈鋸人",
+        "views": 468,
+        "day": "20260916",
         "found": true,
         "rank": 9,
         "prevRank": null
@@ -90,11 +90,11 @@
       {
         "id": "haikyu",
         "wiki": "排球少年！！",
-        "views": 445,
-        "day": "20260915",
+        "views": 436,
+        "day": "20260916",
         "found": true,
         "rank": 10,
-        "prevRank": 8
+        "prevRank": 10
       }
     ]
   },
@@ -103,16 +103,142 @@
     "sourceUrl": "https://anilist.co",
     "list": [
       {
+        "titleZh": "星耀劍士",
+        "authorZh": "Q10／juno",
+        "synopsisZh": "布拉德自幼在貧民窟裡掙扎求生，某夜遭黑色雷電擊中，一股神祕存在自此寄宿於他體內。伴隨力量甦醒，他一步步踏上劍術之路，要在群星俯視的大陸闖出自己的傳說。",
+        "genreZh": [
+          "奇幻",
+          "戰鬥"
+        ],
+        "rank": 1,
+        "anilistId": 170400,
+        "title": "별을 품은 소드마스터",
+        "romaji": "Byeoreul Pumeun Swordmaster",
+        "trending": 121,
+        "popularity": 31613,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/170400"
+      },
+      {
+        "titleZh": "Pick Me Up!",
+        "authorZh": "헤르모드／와삭바삭",
+        "synopsisZh": "世界排名第五的大師羅奇，破關途中意外昏迷，醒來後竟成了等級一、星級一的菜鳥英雄韓伊斯拉特。為了重返地球，他必須帶領新手夥伴，闖過迷宮整整一百層關卡。",
+        "genreZh": [
+          "奇幻",
+          "冒險"
+        ],
+        "rank": 2,
+        "anilistId": 159441,
+        "title": "픽 미 업!",
+        "romaji": "Pick Me Up!",
+        "trending": 94,
+        "popularity": 44393,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/159441"
+      },
+      {
+        "titleZh": "薰香花朵凜然綻放",
+        "authorZh": "三香見サカ",
+        "synopsisZh": "千鳥高中生紬凜太郎外表兇惡、沉默寡言，常被誤認為難以親近，其實在家中蛋糕店幫忙時展現笨拙卻真誠的溫柔，他與痛恨千鳥的貴族女校學生和栗薰子相遇，兩人的心意逐漸靠近。",
+        "genreZh": [
+          "戀愛",
+          "治癒"
+        ],
+        "rank": 3,
+        "anilistId": 140475,
+        "title": "薫る花は凛と咲く",
+        "romaji": "Kaoru Hana wa Rin to Saku",
+        "trending": 82,
+        "popularity": 79197,
+        "genres": [
+          "Comedy",
+          "Drama",
+          "Romance"
+        ],
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/140475"
+      },
+      {
         "titleZh": "",
         "authorZh": "",
         "synopsisZh": "",
         "genreZh": [],
-        "rank": 1,
+        "rank": 4,
+        "anilistId": 184502,
+        "title": "사시미 한 자루로 아카데미를 씹어먹음",
+        "romaji": "Sashimi Han Jaruro Academy-reul Ssipeomeokeum",
+        "trending": 67,
+        "popularity": 14571,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/184502"
+      },
+      {
+        "titleZh": "奈米魔神",
+        "authorZh": "한중월야／금강불괴",
+        "synopsisZh": "天如運是魔教教主之子，卻被貶為不受重視的第七公子。命懸一線之際，未來子孫送來奈米機器助他逃過一劫，憑藉奈米科技加速修煉，從谷底一路崛起，在魔教掀起全新變革。",
+        "genreZh": [
+          "科幻",
+          "戰鬥"
+        ],
+        "rank": 5,
+        "anilistId": 120980,
+        "title": "나노마신",
+        "romaji": "Nano Machine",
+        "trending": 50,
+        "popularity": 47851,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Fantasy",
+          "Sci-Fi"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/120980"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 6,
+        "anilistId": 174315,
+        "title": "姉のともだち",
+        "romaji": "Ane no Tomodachi",
+        "trending": 38,
+        "popularity": 11090,
+        "genres": [
+          "Comedy",
+          "Romance",
+          "Slice of Life"
+        ],
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/174315"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 7,
         "anilistId": 132144,
         "title": "화산귀환",
         "romaji": "Hwasangwihwan",
-        "trending": 132,
-        "popularity": 44381,
+        "trending": 33,
+        "popularity": 44435,
         "genres": [
           "Action",
           "Adventure",
@@ -126,20 +252,23 @@
         "authorZh": "",
         "synopsisZh": "",
         "genreZh": [],
-        "rank": 2,
-        "anilistId": 159930,
-        "title": "무한의 마법사",
-        "romaji": "Muhanui Mabeopsa",
-        "trending": 75,
-        "popularity": 40323,
+        "rank": 8,
+        "anilistId": 125528,
+        "title": "ローゼンガーテン・サーガ",
+        "romaji": "Rosengarten Saga",
+        "trending": 27,
+        "popularity": 13115,
         "genres": [
           "Action",
           "Adventure",
+          "Comedy",
           "Drama",
-          "Fantasy"
+          "Ecchi",
+          "Fantasy",
+          "Supernatural"
         ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/159930"
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/125528"
       },
       {
         "titleZh": "藍色監獄",
@@ -149,12 +278,12 @@
           "運動",
           "競技"
         ],
-        "rank": 3,
+        "rank": 9,
         "anilistId": 106130,
         "title": "ブルーロック",
         "romaji": "Blue Lock",
-        "trending": 64,
-        "popularity": 124147,
+        "trending": 27,
+        "popularity": 124207,
         "genres": [
           "Action",
           "Drama",
@@ -168,131 +297,19 @@
         "authorZh": "",
         "synopsisZh": "",
         "genreZh": [],
-        "rank": 4,
-        "anilistId": 175946,
-        "title": "괴력 난신",
-        "romaji": "Goeryeok Nansin",
-        "trending": 61,
-        "popularity": 18999,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/175946"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 5,
-        "anilistId": 106929,
-        "title": "일렉시드",
-        "romaji": "Eleceed",
-        "trending": 60,
-        "popularity": 46146,
-        "genres": [
-          "Action",
-          "Comedy",
-          "Supernatural"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/106929"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 6,
-        "anilistId": 204974,
-        "title": "싸이코패스 in 무림",
-        "romaji": "Psychopath in Murim",
-        "trending": 48,
-        "popularity": 5710,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/204974"
-      },
-      {
-        "titleZh": "絕對回歸",
-        "authorZh": "장영훈／박진환",
-        "synopsisZh": "劍無極曾在天魔一族肆虐的亂世中失去所有摯友與家人，自己也慘死於絕世高手華無奇之手。他習得失傳的回歸大法，歷經無數劫難重返過去，誓要親手改寫這場家破人亡的悲劇。",
-        "genreZh": [
-          "戰鬥",
-          "劇情"
-        ],
-        "rank": 7,
-        "anilistId": 180891,
-        "title": "절대회귀",
-        "romaji": "Jeoldaehoegwi",
-        "trending": 44,
-        "popularity": 18066,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/180891"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 8,
-        "anilistId": 169904,
-        "title": "尾守つみきと奇日常。",
-        "romaji": "Ogami Tsumiki to Kinichijou.",
-        "trending": 44,
-        "popularity": 14746,
-        "genres": [
-          "Comedy",
-          "Romance",
-          "Supernatural"
-        ],
-        "country": "JP",
-        "siteUrl": "https://anilist.co/manga/169904"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 9,
-        "anilistId": 137513,
-        "title": "信じていた仲間達にダンジョン奥地で殺されかけたがギフト『無限ガチャ』でレベル9999の仲間達を手に入れて元パーティーメンバーと世界に復讐＆『ざまぁ！』します！",
-        "romaji": "Shinjiteita Nakamatachi ni Dungeon Okuchi de Korosarekaketa ga Gift \"Mugen Gacha\" de Level 9999 no Nakamatachi wo Te ni Irete Moto Party Member to Sekai ni Fukushuu & \"Zamaa!\" Shimasu!",
-        "trending": 42,
-        "popularity": 13291,
-        "genres": [
-          "Adventure",
-          "Fantasy"
-        ],
-        "country": "JP",
-        "siteUrl": "https://anilist.co/manga/137513"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
         "rank": 10,
-        "anilistId": 188155,
-        "title": "화산파 천재검귀",
-        "romaji": "Hwasanpa Cheonjaegeomgwi",
-        "trending": 38,
-        "popularity": 4573,
+        "anilistId": 199999,
+        "title": "WITCHRIV",
+        "romaji": "WITCHRIV",
+        "trending": 24,
+        "popularity": 7614,
         "genres": [
-          "Action",
-          "Fantasy"
+          "Drama",
+          "Fantasy",
+          "Mystery"
         ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/188155"
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/199999"
       }
     ]
   }
