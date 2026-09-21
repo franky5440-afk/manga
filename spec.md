@@ -178,6 +178,9 @@ function xfnv1a(str) {
 - **算圖相容性禁令**（2026-09-21 iMac Chrome 實測）：**漸層裡不可有 `color-mix()`**（顏色會畫錯，紅書變金黃）；
   **不可用 `transform-style: preserve-3d`**（書卡文字會被斜切）。驗收以 iPad Safari 為準（Frank 裁示 iMac Chrome 版本過舊不算數），但這兩條寫法一律避開。
 - **書名英文單字不可從中間斷行**（例：「SPY×FAMILY」不可拆成「SPY×FAMI／LY」）。
+- **華文圈小封面、詳情頁大封面（`.book-obj`）也是 3D 精裝書**（Frank 2026-09-21 追加）：靜止時往右轉 15~45 度、`flat`；
+  `::before` 盒內書脊色帶（小封面寬 ≥ 12px、大封面 ≥ 24px）、`::after` 摺痕（寬 2~8px）、`.book-face` 疊 `rgba(27, 20, 17, a)` 上亮下暗；
+  書名不壓書脊；轉角度後不超出所在卡片（華文圈 `.card`、詳情頁 `.detail-top`）。
 - **全站書色統一**：各書 `color` 欄位一律先經 `--tone: color-mix(in srgb, var(--c) 45%, var(--leather))`（`--leather #6b4a33`）調和成皮革色系，
   書卡、書脊、華文圈小封面、詳情頁大封面**全部用 `--tone`，不可直接用 `var(--c)`**。
   理由：資料裡的 `color` 是高飽和色（桃紅、天藍、亮紫），與胡桃木底色衝突；在 CSS 端調和，日後新增的書也自動統一，不必改資料。

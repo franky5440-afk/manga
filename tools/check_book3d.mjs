@@ -214,6 +214,48 @@ for (const w of [360, 1280]) {
       ok(!bad.length, bad.length + ' 個色標太鮮豔，例：' + bad.slice(0, 2).map((c) => c.map((v) => Math.round(v * 255)).join(',')).join('；'));
     });
   }
+  // 華文圈小封面（首頁）與詳情頁大封面：Frank 2026-09-21 追加「華文圈排行的書沒有跟著改成 3D」
+  for (const p of ['index.html', PAGES[PAGES.length - 1]]) {
+    const R = S[p];
+    if (!R || R.error) continue;
+    const O = R.objs || [];
+    test(`[${w}px] ${p}：頁面上有 .book-obj 封面可量`, () => ok(O.length, '找不到 .book-obj'));
+    if (!O.length) continue;
+    test(`[${w}px] ${p}：封面（.book-obj）靜止時往右轉 15~45 度，且為 flat`, () => {
+      const bad = O.map((o) => {
+        const v = matrix(o.t);
+        if (!v) return 'transform=' + o.t;
+        const deg = Math.acos(Math.max(-1, Math.min(1, v[0]))) * 180 / Math.PI;
+        return deg >= 15 && deg <= 45 && v[2] < 0 && o.ts === 'flat' ? null : deg.toFixed(1) + 'deg／' + o.ts;
+      }).filter(Boolean);
+      ok(!bad.length, bad.length + ' 個不符：' + bad.slice(0, 3).join(', '));
+    });
+    test(`[${w}px] ${p}：封面 ::before 是盒內書脊色帶（left ≥ 0、小封面寬 ≥ 12px／大封面 ≥ 24px、不轉成側面）`, () => {
+      const bad = O.filter((o) => {
+        const v = matrix(o.spineT);
+        return o.spineContent === 'none' || o.spinePos !== 'absolute' || parseFloat(o.spineLeft) < 0 || parseFloat(o.spineW) < (o.sm ? 12 : 24) ||
+          (o.spineT !== 'none' && (!v || Math.abs(v[0]) < 0.9)) || !/rgba\(0, 0, 0, 0\.[3-9]/.test(o.spineImg);
+      });
+      ok(!bad.length, bad.length + ' 個不符，例：' + JSON.stringify(bad[0] && { sm: bad[0].sm, left: bad[0].spineLeft, w: bad[0].spineW, img: bad[0].spineImg.slice(0, 60) }));
+    });
+    test(`[${w}px] ${p}：封面 ::after 摺痕緊貼書脊右緣（寬 2~8px、起點 alpha ≥ 0.45）`, () => {
+      const bad = O.filter((o) => {
+        const edge = parseFloat(o.spineLeft) + parseFloat(o.spineW), cw = parseFloat(o.creaseW);
+        const first = (o.creaseImg.match(/rgba\(0, 0, 0, ([\d.]+)\)/) || [])[1];
+        return o.creaseContent === 'none' || Math.abs(parseFloat(o.creaseLeft) - edge) > 3 || !(cw >= 2 && cw <= 8) || !(Number(first) >= 0.45);
+      });
+      ok(!bad.length, bad.length + ' 個不符，例：' + JSON.stringify(bad[0] && { left: bad[0].creaseLeft, w: bad[0].creaseW }));
+    });
+    test(`[${w}px] ${p}：封面上亮下暗（.book-face 疊 180deg 的 rgba(27, 20, 17, a) 漸層），書名不壓書脊`, () => {
+      const bad = O.filter((o) => !/linear-gradient\(rgba\(27, 20, 17, [\d.]+\), rgba\(27, 20, 17, [\d.]+\)\)/.test(o.faceImg) ||
+        (o.textLeft !== null && o.textLeft < parseFloat(o.spineLeft) + parseFloat(o.spineW) + 4));
+      ok(!bad.length, bad.length + ' 個不符，例：' + JSON.stringify(bad[0] && { face: bad[0].faceImg.slice(0, 70), textLeft: bad[0].textLeft, spineW: bad[0].spineW }));
+    });
+    test(`[${w}px] ${p}：封面轉角度後不超出所在卡片`, () => {
+      const bad = O.filter((o) => o.outside);
+      ok(!bad.length, bad.length + ' 個超出');
+    });
+  }
   for (const p of PAGES) {
     const R = S[p];
     if (!R || R.error) continue;

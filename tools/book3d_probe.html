@@ -37,6 +37,20 @@
       overflow: cards.filter(function (c) { return c.scrollHeight > c.clientHeight + 1; })
         .map(function (c) { return c.textContent.trim().slice(0, 16); }),
       faces: all('.book-face').map(function (f) { return g(f).backgroundColor; }),
+      // 華文圈小封面（.book-obj.sm）與詳情頁大封面（.book-obj）：與書卡同一套 3D 精裝書
+      objs: all('.book-obj').slice(0, 12).map(function (o) {
+        var s = g(o), b = g(o, '::before'), a = g(o, '::after'), t = o.querySelector('.cover-ph b');
+        var tl = 0;
+        for (var el = t; el && el !== o; el = el.offsetParent) tl += el.offsetLeft;
+        var card = o.closest('.card, .detail-top'), cr = card && card.getBoundingClientRect(), orc = o.getBoundingClientRect();
+        return {
+          sm: o.classList.contains('sm'), t: s.transform, ts: s.transformStyle, bg: s.backgroundColor,
+          spineContent: b.content, spinePos: b.position, spineLeft: b.left, spineW: b.width, spineT: b.transform, spineImg: b.backgroundImage,
+          creaseContent: a.content, creaseLeft: a.left, creaseW: a.width, creaseImg: a.backgroundImage,
+          faceImg: g(o.querySelector('.book-face')).backgroundImage, textLeft: t ? tl : null,
+          outside: !!(cr && (orc.left < cr.left - 0.5 || orc.right > cr.right + 0.5))
+        };
+      }),
       walls: walls.map(function (w) { return g(w).backgroundImage + ' | ' + g(w).backgroundColor; }),
       liShadow: all('.shelf > li:not(.clone), .book-wall > li').slice(0, 8).map(function (li) {
         var a = g(li, '::after');
