@@ -20,12 +20,20 @@
       bodyBg: g(doc.body).backgroundColor,
       cardCount: cards.length,
       cards: cards.slice(0, 16).map(function (c) {
-        var s = g(c), b = g(c, '::before');
+        var s = g(c), b = g(c, '::before'), a = g(c, '::after');
+        var first = c.firstElementChild;
         return {
-          t: s.transform, img: s.backgroundImage, size: s.backgroundSize,
-          spineT: b.transform, spineOrigin: b.transformOrigin, spineW: b.width, spineContent: b.content
+          t: s.transform, ts: s.transformStyle, img: s.backgroundImage, size: s.backgroundSize, bg: s.backgroundColor,
+          spineT: b.transform, spineOrigin: b.transformOrigin, spineW: b.width, spineContent: b.content,
+          spineLeft: b.left, spinePos: b.position, spineImg: b.backgroundImage,
+          creaseContent: a.content, creaseLeft: a.left, creaseW: a.width, creaseImg: a.backgroundImage,
+          contentLeft: first ? first.offsetLeft : 0
         };
       }),
+      // 書名裡的英文單字（2 字以上）若被拆到兩行，Range 會回傳兩個以上不同高度的矩形
+      brokenWords: [],
+      // 書牆的書卡（getBoundingClientRect 已含 rotateY 投影）不可超出牆面左右邊界
+      outOfWall: [],
       overflow: cards.filter(function (c) { return c.scrollHeight > c.clientHeight + 1; })
         .map(function (c) { return c.textContent.trim().slice(0, 16); }),
       faces: all('.book-face').map(function (f) { return g(f).backgroundColor; }),
@@ -36,6 +44,36 @@
       }),
       wallText: []
     };
+    all('.bc-title').forEach(function (h) {
+      Array.prototype.forEach.call(h.childNodes, function (n) {
+        if (n.nodeType !== 3) return;
+        var re = /[A-Za-z0-9×!?'.\-]{2,}/g, m;
+        while ((m = re.exec(n.textContent))) {
+          var rg = doc.createRange(); rg.setStart(n, m.index); rg.setEnd(n, m.index + m[0].length);
+          var tops = {};
+          Array.prototype.forEach.call(rg.getClientRects(), function (q) { if (q.width > 0) tops[Math.round(q.top)] = 1; });
+          if (Object.keys(tops).length > 1) r.brokenWords.push(m[0]);
+        }
+      });
+    });
+    all('.book-wall').forEach(function (w) {
+      var wr = w.getBoundingClientRect();
+      all('.book-card', w).forEach(function (c) {
+        // getBoundingClientRect 不含偽元素：書脊（::before）若被轉成側面會往左甩出書卡盒子，
+        // 用「書脊矩陣 → 書卡矩陣」把書脊兩個水平端點投影回書卡座標，取最左的一點
+        var cs = g(c), bs = g(c, '::before'), cr = c.getBoundingClientRect();
+        var sl = parseFloat(bs.left) || 0, sw = parseFloat(bs.width) || 0, minX = 0;
+        if (bs.content !== 'none') {
+          var sm = new win.DOMMatrix(bs.transform === 'none' ? undefined : bs.transform);
+          var cm = new win.DOMMatrix(cs.transform === 'none' ? undefined : cs.transform);
+          [0, sw].forEach(function (x) {
+            var q = cm.transformPoint(sm.transformPoint(new win.DOMPoint(x, 0, 0)));
+            minX = Math.min(minX, sl + q.x);
+          });
+        }
+        if (cr.left + minX < wr.left - 0.5 || cr.right > wr.right + 0.5) r.outOfWall.push(c.textContent.trim().slice(0, 12));
+      });
+    });
     walls.forEach(function (w) {
       all('*', w).forEach(function (el) {
         if (el.closest('.book-card') || el.closest('.dim')) return;

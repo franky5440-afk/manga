@@ -3,6 +3,9 @@
 // 為什麼要開真瀏覽器：首頁書架的進場動畫最後一格是 transform: none 且 fill-mode both，
 // 動畫層級高於一般宣告，會把書卡的 3D 旋轉蓋回平面——只讀 CSS 文字看不出來，必須量 computed style。
 // 外觀好不好看仍由 review 端截圖判斷，這裡只釘「結構、數值與可讀性」。
+// 2026-09-21 第二版（上線後 Frank 回報）：書脊太薄、看不到書脊與封面間的折線、書牆最左排書脊超出框；
+// 另在 iMac Chrome（GPU）實測「漸層裡的 color-mix 會畫錯色」「preserve-3d 會把文字斜切」。
+// 因此改為：書脊是書卡盒子內的色帶（不再往後折 90 度）、摺痕是 ::after、底色純 --tone 疊半透明深色、禁用 preserve-3d。
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -12,6 +15,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const read = (p) => fs.readFileSync(path.join(root, p), 'utf8');
 const css = read('assets/css/style.css');
+const cssCode = css.replace(/\/\*[\s\S]*?\*\//g, '');   // 去掉註解，避免說明文字被當成違規
 
 let failed = 0;
 function test(name, fn) {
@@ -22,7 +26,13 @@ function ok(cond, msg) { if (!cond) throw new Error(msg); }
 
 // ── 色彩工具 ──────────────────────────────────────────────
 const hex = (h) => { h = h.replace('#', ''); return [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16) / 255); };
-const rgb = (s) => { const m = s.match(/rgba?\(\s*([\d.]+),\s*([\d.]+),\s*([\d.]+)/); return m ? [m[1], m[2], m[3]].map((v) => Number(v) / 255) : null; };
+// rgb()／rgba() 為 0~255；color-mix 的計算值 Chrome 會回傳 color(srgb r g b)，為 0~1（舊版漏了這種格式，彩度檢查形同空轉）
+const rgb = (s) => {
+  const m = s.match(/rgba?\(\s*([\d.]+),\s*([\d.]+),\s*([\d.]+)/);
+  if (m) return [m[1], m[2], m[3]].map((v) => Number(v) / 255);
+  const k = s.match(/color\(srgb\s+([\d.e-]+)\s+([\d.e-]+)\s+([\d.e-]+)/);
+  return k ? [k[1], k[2], k[3]].map(Number) : null;
+};
 const lum = (c) => { const f = (v) => (v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4); const [r, g, b] = c.map(f); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
 const contrast = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); };
 const mix = (a, b, t) => a.map((v, i) => v * t + b[i] * (1 - t));
@@ -56,12 +66,21 @@ test('書色統一：--tone 為 var(--c) 45% 混 var(--leather)，且 var(--c) �
   ok(uses === inTone, 'var(--c) 在 --tone 以外還出現 ' + (uses - inTone) + ' 次（書脊、封面、華文圈小封面都要改用 var(--tone)）');
 });
 const cardRule = (css.match(/(^|\n)\s*\.book-card\s*\{([^}]*)\}/) || [])[2] || '';
-const stops = [...cardRule.matchAll(/color-mix\(\s*in\s+srgb\s*,\s*var\(--tone\)\s+(\d+(?:\.\d+)?)%\s*,\s*var\(--ground\)\s*\)/g)].map((m) => Number(m[1]));
-test('封面漸層：垂直、上亮下暗、兩色標相差 ≥ 30 個百分點', () => {
-  ok(stops.length === 2, '.book-card 應有兩個 var(--tone) 混 var(--ground) 的色標，實際 ' + stops.length);
-  const main = cardRule.match(/linear-gradient\(\s*([^,]*?)\s*,\s*color-mix\(\s*in\s+srgb\s*,\s*var\(--tone\)/);
-  ok(main && /^(180deg|to bottom)$/.test(main[1].trim()), '主漸層要明寫 180deg 或 to bottom，實際 ' + (main && main[1]));
-  ok(stops[0] - stops[1] >= 30, '上 ' + stops[0] + '% 下 ' + stops[1] + '%，落差不足 30');
+// 封面＝純色 --tone 底，疊一層「--ground 色（27, 20, 17）半透明」的垂直漸層做上亮下暗。
+// 換算成混色比例：stops[i] ＝ (1 − alpha) × 100，即 --tone 佔的百分比，與舊版 color-mix 色標等價。
+const shade = cardRule.match(/linear-gradient\(\s*(180deg|to bottom)\s*,\s*rgba\(\s*27,\s*20,\s*17,\s*([\d.]+)\s*\)[^,]*,\s*rgba\(\s*27,\s*20,\s*17,\s*([\d.]+)\s*\)/);
+const stops = shade ? [shade[2], shade[3]].map((a) => Math.round((1 - Number(a)) * 1000) / 10) : [];
+test('封面：background-color 為 var(--tone)，疊 180deg 的 rgba(27, 20, 17, a) 兩色標漸層，上亮下暗、alpha 相差 ≥ 0.30', () => {
+  ok(/background-color\s*:\s*var\(--tone\)\s*;/.test(cardRule), '.book-card 要有 background-color: var(--tone)');
+  ok(stops.length === 2, '.book-card 找不到 linear-gradient(180deg, rgba(27, 20, 17, a), rgba(27, 20, 17, b)) 的深色疊層');
+  ok(stops[0] - stops[1] >= 30, '上 alpha ' + shade[2] + '、下 alpha ' + shade[3] + '，落差不足 0.30（或方向反了）');
+});
+test('漸層裡不可有 color-mix()（iMac Chrome 實測會畫錯色；要混色請先存成自訂屬性或改用半透明疊層）', () => {
+  const bad = [...cssCode.matchAll(/([a-z-]+)\s*:\s*([^;{}]*gradient\([^;{}]*);/g)].filter((m) => /color-mix\(/.test(m[2])).map((m) => m[1] + ': ' + m[2].slice(0, 60));
+  ok(!bad.length, bad.length + ' 條宣告違規，例：' + bad[0]);
+});
+test('不可使用 transform-style: preserve-3d（iMac Chrome 實測會把書卡文字斜切）', () => {
+  ok(!/preserve-3d/.test(cssCode), 'style.css 仍含 preserve-3d（註解不算）');
 });
 // 找出「selector 含 .book-card 與指定狀態」的規則裡的 rotateY 角度
 function stateAngles(state) {
@@ -136,19 +155,32 @@ for (const w of [360, 1280]) {
       }).filter(Boolean);
       ok(!bad.length, bad.length + ' 本不符：' + bad.slice(0, 4).join(', '));
     });
-    test(`[${w}px] ${p}：::before 是往後折 90 度的書脊（transform-origin 在左緣、寬 ≥ 20px）`, () => {
+    const minSpine = w >= 720 ? 28 : 20;
+    test(`[${w}px] ${p}：書卡是平面（transform-style 為 flat）`, () => {
+      const bad = R.cards.filter((c) => c.ts !== 'flat');
+      ok(!bad.length, bad.length + ' 本不是 flat，例：' + (bad[0] && bad[0].ts));
+    });
+    test(`[${w}px] ${p}：::before 是書卡盒子內左側的書脊色帶（left ≥ 0、寬 ≥ ${minSpine}px、沒有被轉成側面）`, () => {
       const bad = R.cards.filter((c) => {
         const v = matrix(c.spineT);
-        return c.spineContent === 'none' || !v || Math.abs(v[0]) > 0.05 || !/^0px\b/.test(c.spineOrigin) || parseFloat(c.spineW) < 20;
+        return c.spineContent === 'none' || c.spinePos !== 'absolute' || parseFloat(c.spineLeft) < 0 || parseFloat(c.spineW) < minSpine ||
+          (c.spineT !== 'none' && (!v || Math.abs(v[0]) < 0.9)) || !/rgba\(0, 0, 0, 0\.[3-9]/.test(c.spineImg);
       });
-      ok(!bad.length, bad.length + ' 本不符，例：' + JSON.stringify(bad[0] && { t: bad[0].spineT, o: bad[0].spineOrigin, w: bad[0].spineW }));
+      ok(!bad.length, bad.length + ' 本不符，例：' + JSON.stringify(bad[0] && { left: bad[0].spineLeft, w: bad[0].spineW, t: bad[0].spineT, pos: bad[0].spinePos, img: bad[0].spineImg.slice(0, 80) }));
     });
-    test(`[${w}px] ${p}：封面左緣有摺痕層（90deg 線性漸層、寬 ≤ 24px）`, () => {
-      const c = R.cards[0];
-      const L = layers(c.img), Z = layers(c.size);
-      ok(L.some((l, i) => /^linear-gradient\(90deg/.test(l) && /^\d+(\.\d+)?px\b/.test(Z[i] || '') && parseFloat(Z[i]) <= 24),
-        '找不到摺痕層，background-image 層數 ' + L.length + '，background-size ' + c.size);
+    test(`[${w}px] ${p}：::after 是書脊與封面交界的摺痕（緊貼書脊右緣、寬 3~10px、起點是 alpha ≥ 0.45 的暗溝）`, () => {
+      const bad = R.cards.filter((c) => {
+        const edge = parseFloat(c.spineLeft) + parseFloat(c.spineW), left = parseFloat(c.creaseLeft), cw = parseFloat(c.creaseW);
+        const first = (c.creaseImg.match(/rgba\(0, 0, 0, ([\d.]+)\)/) || [])[1];
+        return c.creaseContent === 'none' || Math.abs(left - edge) > 3 || !(cw >= 3 && cw <= 10) || !(Number(first) >= 0.45);
+      });
+      ok(!bad.length, bad.length + ' 本不符，例：' + JSON.stringify(bad[0] && { left: bad[0].creaseLeft, w: bad[0].creaseW, spineEdge: parseFloat(bad[0].spineLeft) + parseFloat(bad[0].spineW), img: bad[0].creaseImg.slice(0, 80) }));
     });
+    test(`[${w}px] ${p}：書卡文字不壓在書脊與摺痕上（內容左緣 ≥ 書脊右緣 + 6px）`, () => {
+      const bad = R.cards.filter((c) => c.contentLeft < parseFloat(c.spineLeft) + parseFloat(c.spineW) + 6);
+      ok(!bad.length, bad.length + ' 本不符，例：內容左緣 ' + (bad[0] && bad[0].contentLeft) + 'px、書脊寬 ' + (bad[0] && bad[0].spineW));
+    });
+    test(`[${w}px] ${p}：書名裡的英文單字不可從中間斷行（例：SPY×FAMILY）`, () => ok(!R.brokenWords.length, '斷字：' + R.brokenWords.slice(0, 4).join('、')));
     test(`[${w}px] ${p}：全幅白色反光不可把書名對比壓到 3.0 以下`, () => {
       const c = R.cards[0];
       const L = layers(c.img), Z = layers(c.size);
@@ -176,9 +208,9 @@ for (const w of [360, 1280]) {
       ok(!bad.length, bad.length + ' 處不足，例：' + bad.slice(0, 3).map((t) => t.text + '=' + t.color).join('；'));
     });
     test(`[${w}px] ${p}：書卡內容沒有溢出封面`, () => ok(!R.overflow.length, '溢出：' + R.overflow.slice(0, 4).join('、')));
-    test(`[${w}px] ${p}：書卡顏色已調和（主漸層各色標 sRGB 彩度 ≤ 0.52）`, () => {
-      const bad = R.cards.map((c) => layers(c.img).pop()).map((l) => [...l.matchAll(/rgba?\([^)]+\)/g)].map((m) => rgb(m[0])).filter(Boolean))
-        .flat().filter((c) => chroma(c) > 0.52);
+    test(`[${w}px] ${p}：書牆的書（含書脊）不超出牆面左右邊界`, () => ok(!R.outOfWall.length, '超出：' + R.outOfWall.slice(0, 4).join('、')));
+    test(`[${w}px] ${p}：書卡顏色已調和（封面底色 sRGB 彩度 ≤ 0.52）`, () => {
+      const bad = R.cards.map((c) => rgb(c.bg)).filter((c) => !c || chroma(c) > 0.52);
       ok(!bad.length, bad.length + ' 個色標太鮮豔，例：' + bad.slice(0, 2).map((c) => c.map((v) => Math.round(v * 255)).join(',')).join('；'));
     });
   }
