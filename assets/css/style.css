@@ -16,6 +16,7 @@
   --wall-top: #4a3526;
   --wall: #3d2c20;
   --book-angle: 22deg;
+  --spine-w: 20px; /* 書脊寬度（書卡盒子內色帶），手機 20px／桌機 30px（見 720px 斷點） */
   --shadow: 0, 0, 0;
   --radius: 14px;
   --font: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, sans-serif;
@@ -119,39 +120,31 @@ body[data-page="essentials"] .hero, body[data-page="timeless"] .hero, body[data-
 }
 .shelf-rank .rank, .fixed-rank .rank { font-size: 20px; font-weight: 700; color: var(--accent); line-height: 1; }
 
-/* 正面書卡：3D 精裝書──依 --tone（--c 調和皮革色系）上亮下暗垂直漸層、左緣摺痕、
-   左側書脊往後折 90 度、靜止時右轉 --book-angle 露出書脊，hover／focus 轉正方便閱讀 */
+/* 正面書卡：3D 精裝書（第二版）──純色 --tone 底疊 180deg 深色漸層做上亮下暗，
+   ::before 是書卡盒子內左側的書脊色帶（不再往後折 90 度，書牆最左排才不會超框），
+   ::after 是緊貼書脊右緣的摺痕；靜止時右轉 --book-angle 露出書脊，hover／focus 轉正方便閱讀 */
 .book-card {
   position: relative; display: flex; flex-direction: column; gap: 8px;
-  min-width: 0; min-height: 196px; padding: 12px 12px 12px 20px;
+  min-width: 0; min-height: 196px; padding: 12px 8px 12px calc(var(--spine-w) + 8px);
   text-decoration: none; color: #fff; overflow: visible;
   border-radius: 4px 18px 14px 4px;
   --tone: color-mix(in srgb, var(--c) 45%, var(--leather));
-  background-image:
-    linear-gradient(90deg, rgba(0, 0, 0, .5), rgba(255, 255, 255, .18) 45%, rgba(0, 0, 0, .15)),
-    linear-gradient(180deg, color-mix(in srgb, var(--tone) 78%, var(--ground)), color-mix(in srgb, var(--tone) 42%, var(--ground)) 100%);
-  background-size: 14px 100%, 100% 100%;
-  background-repeat: no-repeat, no-repeat;
-  background-position: 0 0, 0 0;
+  background-color: var(--tone);
+  background-image: linear-gradient(180deg, rgba(27, 20, 17, .08), rgba(27, 20, 17, .45));
   box-shadow: 0 18px 28px -14px rgba(var(--shadow), .7), inset 0 0 0 1px rgba(255, 255, 255, .12);
   transition: transform .3s var(--ease), box-shadow .3s var(--ease);
   transform: rotateY(var(--book-angle));
   transform-origin: left center;
-  transform-style: preserve-3d;
 }
-.book-card::before { /* 左側書脊：往後折 90 度的 3D 側面 */
-  content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 26px;
-  background: linear-gradient(90deg,
-    color-mix(in srgb, var(--tone) 55%, black),
-    color-mix(in srgb, var(--tone) 78%, black) 55%,
-    color-mix(in srgb, var(--tone) 50%, black));
+.book-card::before { /* 書脊：書卡盒子內左側色帶，寬度見 --spine-w（手機 20px／桌機 30px） */
+  content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: var(--spine-w);
+  background-color: var(--tone);
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .15) 55%, rgba(0, 0, 0, .35));
   border-right: 1px solid rgba(255, 255, 255, .14);
-  transform-origin: 0 center;
-  transform: rotateY(90deg);
-  /* 這個組合（left:0 + origin:0 + rotateY(90deg)）折出去的位置是對的（往左後方甩開，
-     跟封面反方向），但轉完後這一面的法線是背對觀眾的那面，若設 hidden 會被整片藏掉，
-     所以刻意不隱藏背面——背景只是對稱漸層，露出背面看起來沒有差異 */
-  backface-visibility: visible;
+}
+.book-card::after { /* 摺痕：貼著書脊右緣的暗溝過渡到亮稜 */
+  content: ""; position: absolute; top: 0; bottom: 0; left: var(--spine-w); width: 5px;
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, .5), rgba(255, 255, 255, .12));
 }
 .book-card:hover, .book-card:focus-visible { transform: rotateY(0deg) translateY(-6px); }
 .book-card > * { min-width: 0; }
@@ -166,7 +159,7 @@ body[data-page="essentials"] .hero, body[data-page="timeless"] .hero, body[data-
   font-size: 11px; font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums;
   background: rgba(0, 0, 0, .45); padding: 3px 9px; border-radius: 999px;
 }
-.bc-title { font-size: 17px; line-height: 1.4; font-weight: 700; text-shadow: 0 1px 3px rgba(0, 0, 0, .4); overflow-wrap: break-word; }
+.bc-title { font-size: 15px; line-height: 1.4; font-weight: 700; text-shadow: 0 1px 3px rgba(0, 0, 0, .4); overflow-wrap: break-word; }
 .bc-foot { margin-top: auto; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .bc-author { font-size: 12px; font-weight: 600; color: #f5efe2; overflow-wrap: break-word; }
 .bc-genre { font-size: 11px; color: #e2d6bd; overflow-wrap: break-word; }
@@ -214,21 +207,34 @@ section h2 { font-size: 22px; letter-spacing: -.01em; margin: 48px 0 16px; }
 .card-body small { display: block; font-size: 12px; color: var(--muted); margin: 2px 0 6px; }
 .card-body .syn { display: block; font-size: 14px; line-height: 1.6; color: var(--muted); }
 
-/* 詳情頁沿用的小書封面（平面正面＋左書脊，與書卡同色系） */
+/* 詳情頁大封面／書庫小封面（也是 3D 精裝書，與書卡同一套：盒內書脊色帶＋摺痕＋上亮下暗） */
 .book { display: block; text-decoration: none; color: inherit; }
 .book-obj {
   position: relative; display: block; aspect-ratio: 3 / 4; width: 100%;
   border-radius: 4px 12px 10px 4px; overflow: hidden;
   --tone: color-mix(in srgb, var(--c) 45%, var(--leather));
+  --spine-w-obj: 26px; /* 大封面；小封面（.sm）覆寫為 14px */
   background: var(--tone);
   box-shadow: 0 22px 34px -14px rgba(var(--shadow), .7);
+  transform: perspective(900px) rotateY(var(--book-angle));
+  transform-origin: left center;
 }
-.book-obj::before {
-  content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 10px; z-index: 2;
-  background: linear-gradient(90deg, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1));
+.book-obj.sm { --spine-w-obj: 14px; }
+.book-obj::before { /* 書脊 */
+  content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: var(--spine-w-obj); z-index: 2;
+  background-color: var(--tone);
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .15));
   border-right: 1px solid rgba(255, 255, 255, .14);
 }
-.book-face { position: absolute; inset: 0; overflow: hidden; background: var(--tone); }
+.book-obj::after { /* 摺痕 */
+  content: ""; position: absolute; top: 0; bottom: 0; left: var(--spine-w-obj); width: 4px; z-index: 2;
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, .5), rgba(255, 255, 255, .1));
+}
+.book-face {
+  position: absolute; inset: 0; overflow: hidden;
+  background-color: var(--tone);
+  background-image: linear-gradient(rgba(27, 20, 17, .08), rgba(27, 20, 17, .45));
+}
 .book-face img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .cover-band {
   position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 10px 9px 14px;
@@ -237,7 +243,7 @@ section h2 { font-size: 22px; letter-spacing: -.01em; margin: 48px 0 16px; }
 .cover-band b { display: block; font-size: 13px; line-height: 1.35; }
 .cover-band small { display: block; font-size: 10px; opacity: .8; }
 .cover-ph {
-  position: absolute; inset: 0; display: none; padding: 12px 10px 12px 18px;
+  position: absolute; inset: 0; display: none; padding: 12px 10px 12px calc(var(--spine-w-obj, 26px) + 8px);
   color: #fff;
 }
 .no-img .cover-ph, .book-face.no-img .cover-ph { display: flex; flex-direction: column; gap: 8px; justify-content: center; }
@@ -329,7 +335,8 @@ section h2 { font-size: 22px; letter-spacing: -.01em; margin: 48px 0 16px; }
 }
 
 @media (min-width: 720px) {
-  :root { --book-angle: 32deg; } /* 窄螢幕（.shelf li 148px／book-wall 2~3 欄）用較小角度，避免英文書名斷字 */
+  :root { --book-angle: 32deg; --spine-w: 30px; } /* 窄螢幕（.shelf li 148px／book-wall 2~3 欄）用較小角度，避免英文書名斷字 */
+  .bc-title { font-size: 17px; }
   .rank-list { grid-template-columns: 1fr 1fr; }
   .book-wall { grid-template-columns: repeat(6, 1fr); gap: 32px 24px; }
   .detail-top { grid-template-columns: 220px 1fr; align-items: start; }
