@@ -50,6 +50,9 @@ function layers(s) {
   return out;
 }
 const matrix = (t) => { const m = /^matrix3d\(([^)]+)\)/.exec(t || ''); return m ? m[1].split(',').map(Number) : null; };
+// 有透視才看得出立體：外層設 perspective，或自己的 transform 帶 perspective()（matrix3d 第 12 格 m34 ≠ 0）。
+// 只有 rotateY 沒有透視＝水平壓扁，看起來還是平的。
+const hasPersp = (x) => (x.persp && x.persp !== 'none') || Math.abs((matrix(x.t) || [])[11] || 0) > 1e-6;
 
 // ── 靜態：色票與 CSS 規則 ─────────────────────────────────
 const WALL_TOP = '#4a3526', WALL = '#3d2c20', LEATHER = '#6b4a33';
@@ -115,7 +118,7 @@ async function probe(width) {
   const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'book3d-'));
   try {
     await new Promise((r) => setTimeout(r, 800));
-    const url = 'http://127.0.0.1:' + port + '/tools/book3d_probe.html?pages=' + encodeURIComponent(PAGES.join(','));
+    const url = 'http://127.0.0.1:' + port + '/tools/book3d_probe.html?pages=' + encodeURIComponent(PAGES.join(',')) + '&w=' + width;
     const res = spawnSync(chrome, ['--headless=new', '--disable-gpu', '--no-first-run', '--no-default-browser-check',
       '--user-data-dir=' + profile, '--window-size=' + width + ',900', '--virtual-time-budget=40000', '--dump-dom', url],
     { encoding: 'utf8', timeout: 120000 });
@@ -142,6 +145,9 @@ for (const w of [360, 1280]) {
     for (const p of PAGES) ok(S[p] && !S[p].error, p + '：' + (S[p] && S[p].error || '無結果'));
   });
   if (!S) continue;
+  test(`[${w}px] 量測寬度確實是 ${w}px（headless 視窗最窄 500px，不可被默默放大）`, () => {
+    for (const p of PAGES) ok(!S[p] || S[p].error || S[p].innerWidth === w, p + '：innerWidth ' + (S[p] && S[p].innerWidth));
+  });
   for (const p of LIST_PAGES) {
     const R = S[p];
     if (!R || R.error) continue;
@@ -154,6 +160,10 @@ for (const w of [360, 1280]) {
         return deg >= 20 && deg <= 45 && v[2] < 0 ? null : deg.toFixed(1) + 'deg(m13=' + v[2].toFixed(2) + ')';
       }).filter(Boolean);
       ok(!bad.length, bad.length + ' 本不符：' + bad.slice(0, 4).join(', '));
+    });
+    test(`[${w}px] ${p}：書卡有透視（外層 perspective 或 transform 帶 perspective()），不是只被水平壓扁`, () => {
+      const bad = R.cards.filter((c) => !hasPersp(c));
+      ok(!bad.length, bad.length + ' 本沒有透視');
     });
     const minSpine = w >= 720 ? 28 : 20;
     test(`[${w}px] ${p}：書卡是平面（transform-style 為 flat）`, () => {
@@ -229,6 +239,10 @@ for (const w of [360, 1280]) {
         return deg >= 15 && deg <= 45 && v[2] < 0 && o.ts === 'flat' ? null : deg.toFixed(1) + 'deg／' + o.ts;
       }).filter(Boolean);
       ok(!bad.length, bad.length + ' 個不符：' + bad.slice(0, 3).join(', '));
+    });
+    test(`[${w}px] ${p}：封面（.book-obj）有透視（外層 perspective 或 transform 帶 perspective()），不是只被水平壓扁`, () => {
+      const bad = O.filter((o) => !hasPersp(o));
+      ok(!bad.length, bad.length + ' 個沒有透視');
     });
     test(`[${w}px] ${p}：封面 ::before 是盒內書脊色帶（left ≥ 0、小封面寬 ≥ 12px／大封面 ≥ 24px、不轉成側面）`, () => {
       const bad = O.filter((o) => {

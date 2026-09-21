@@ -24,6 +24,7 @@
         var first = c.firstElementChild;
         return {
           t: s.transform, ts: s.transformStyle, img: s.backgroundImage, size: s.backgroundSize, bg: s.backgroundColor,
+          persp: g(c.parentElement).perspective,
           spineT: b.transform, spineOrigin: b.transformOrigin, spineW: b.width, spineContent: b.content,
           spineLeft: b.left, spinePos: b.position, spineImg: b.backgroundImage,
           creaseContent: a.content, creaseLeft: a.left, creaseW: a.width, creaseImg: a.backgroundImage,
@@ -45,6 +46,7 @@
         var card = o.closest('.card, .detail-top'), cr = card && card.getBoundingClientRect(), orc = o.getBoundingClientRect();
         return {
           sm: o.classList.contains('sm'), t: s.transform, ts: s.transformStyle, bg: s.backgroundColor,
+          persp: g(o.parentElement).perspective,
           spineContent: b.content, spinePos: b.position, spineLeft: b.left, spineW: b.width, spineT: b.transform, spineImg: b.backgroundImage,
           creaseContent: a.content, creaseLeft: a.left, creaseW: a.width, creaseImg: a.backgroundImage,
           faceImg: g(o.querySelector('.book-face')).backgroundImage, textLeft: t ? tl : null,
@@ -113,6 +115,9 @@
         next(i + 1);
       }, 4000);
     };
+    // headless Chrome 視窗最窄 500px（--window-size=360 會被默默放大），寬度改由 iframe 指定才量得到真 360px
+    var w = new URLSearchParams(location.search).get('w');
+    if (w) f.style.width = w + 'px';
     f.src = '../' + pages[i];
     document.body.appendChild(f);
   }
