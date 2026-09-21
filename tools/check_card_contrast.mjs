@@ -1,6 +1,8 @@
 // check_card_contrast.mjs — 書卡白字可讀性契約：拿站上全部書的真實 color 欄位，
-// 依 style.css 裡 .book-card 的混色比例算 WCAG 對比度。執行：node tools/check_card_contrast.mjs
+// 依 style.css 的混色比例算 WCAG 對比度。執行：node tools/check_card_contrast.mjs
 // 為什麼要寫成測試：第一版書卡在 76 本裡有 50 本白字對比不到 3.0，截圖縮圖上看不出來。
+// 2026-09-21 改寫（Frank 裁示全站書色統一）：書本色一律先經 --tone（混 --leather 皮革色）調和，
+// 書卡漸層改用 var(--tone) 混 var(--ground)，所以這裡的算式也先混 --leather 再混 --ground。
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -31,22 +33,31 @@ const ground = hex((css.match(/--ground\s*:\s*(#[0-9a-f]{6})/i) || [])[1] || '#0
 const books = ['manga', 'essentials', 'classics'].flatMap((f) => JSON.parse(read('data/' + f + '.json')).map((b) => ({ id: b.id, c: hex(b.color || '#3b4a6b') })));
 
 const card = rule('.book-card');
-// 規定寫法：background 的漸層兩個色標都是 color-mix(in srgb, var(--c) N%, var(--ground))
-const stops = card ? [...card.matchAll(/color-mix\(\s*in\s+srgb\s*,\s*var\(--c\)\s+(\d+(?:\.\d+)?)%\s*,\s*var\(--ground\)\s*\)/g)].map((m) => Number(m[1]) / 100) : [];
+// 規定寫法：--tone: color-mix(in srgb, var(--c) N%, var(--leather))；書卡漸層兩個色標都是
+// color-mix(in srgb, var(--tone) N%, var(--ground))
+const leather = hex((css.match(/--leather\s*:\s*(#[0-9a-f]{6})/i) || [])[1] || '#000000');
+const toneM = css.match(/--tone\s*:\s*color-mix\(\s*in\s+srgb\s*,\s*var\(--c\)\s+(\d+(?:\.\d+)?)%\s*,\s*var\(--leather\)\s*\)/);
+const toneK = toneM ? Number(toneM[1]) / 100 : null;
+const tone = (c) => mix(c, leather, toneK);
+const stops = card ? [...card.matchAll(/color-mix\(\s*in\s+srgb\s*,\s*var\(--tone\)\s+(\d+(?:\.\d+)?)%\s*,\s*var\(--ground\)\s*\)/g)].map((m) => Number(m[1]) / 100) : [];
 
-test('.book-card 背景是兩個 color-mix(in srgb, var(--c) N%, var(--ground)) 色標的漸層', () => {
+test('--tone 定義為 color-mix(in srgb, var(--c) N%, var(--leather))，且 --leather 有定義', () => {
+  ok(/--leather\s*:\s*#[0-9a-f]{6}\s*;/i.test(css), '缺少 --leather 色票');
+  ok(toneK !== null, '缺少 --tone 定義（格式不符）');
+});
+test('.book-card 背景是兩個 color-mix(in srgb, var(--tone) N%, var(--ground)) 色標的漸層', () => {
   ok(card, '找不到 .book-card 規則');
-  ok(stops.length === 2, '應該剛好兩個「書本色混底色」色標，實際 ' + stops.length + ' 個（不可混 #fff 或 white）');
+  ok(stops.length === 2, '應該剛好兩個「調和色混底色」色標，實際 ' + stops.length + ' 個（不可混 #fff 或 white）');
   ok(!/color-mix\([^)]*(#fff\b|#ffffff|white)/i.test(card), '.book-card 背景不可再混白色');
 });
 test('書卡上半部（書名，大字）白字對比 ≥ 3.0：全部書', () => {
-  ok(stops.length === 2, '色標格式不符，無法計算');
-  const bad = books.map((b) => [b.id, white(mix(b.c, ground, stops[0]))]).filter(([, r]) => r < 3).map(([id, r]) => id + '=' + r.toFixed(2));
+  ok(stops.length === 2 && toneK !== null, '色標格式不符，無法計算');
+  const bad = books.map((b) => [b.id, white(mix(tone(b.c), ground, stops[0]))]).filter(([, r]) => r < 3).map(([id, r]) => id + '=' + r.toFixed(2));
   ok(!bad.length, bad.length + ' 本不足：' + bad.slice(0, 8).join(', '));
 });
 test('書卡下半部（作者／類型，小字）白字對比 ≥ 4.5：全部書', () => {
-  ok(stops.length === 2, '色標格式不符，無法計算');
-  const bad = books.map((b) => [b.id, white(mix(b.c, ground, stops[1]))]).filter(([, r]) => r < 4.5).map(([id, r]) => id + '=' + r.toFixed(2));
+  ok(stops.length === 2 && toneK !== null, '色標格式不符，無法計算');
+  const bad = books.map((b) => [b.id, white(mix(tone(b.c), ground, stops[1]))]).filter(([, r]) => r < 4.5).map(([id, r]) => id + '=' + r.toFixed(2));
   ok(!bad.length, bad.length + ' 本不足：' + bad.slice(0, 8).join(', '));
 });
 test('小字不可用 opacity 降低對比（.bc-author／.bc-genre／.bc-num）', () => {

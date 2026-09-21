@@ -1,0 +1,69 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>book3d probe</title>
+<!-- check_book3d.mjs 專用：用 iframe 逐頁載入站內頁面，等進場動畫跑完後讀 getComputedStyle，
+     結果以 JSON 寫進 #out，再由 headless Chrome 的 --dump-dom 帶回 node。不是給人看的頁面。 -->
+<style>html, body { margin: 0; } iframe { border: 0; width: 100vw; height: 900px; display: block; }</style>
+<pre id="out">PENDING</pre>
+<script>
+(function () {
+  var pages = new URLSearchParams(location.search).get('pages').split(',');
+  var results = {};
+  function measure(doc, win) {
+    var g = function (el, pseudo) { return win.getComputedStyle(el, pseudo || null); };
+    var all = function (sel, root) { return Array.prototype.slice.call((root || doc).querySelectorAll(sel)); };
+    var cards = all('.book-card');
+    var walls = all('.shelf-viewport, .book-wall');
+    var r = {
+      innerWidth: win.innerWidth,
+      scrollWidth: doc.documentElement.scrollWidth,
+      bodyBg: g(doc.body).backgroundColor,
+      cardCount: cards.length,
+      cards: cards.slice(0, 16).map(function (c) {
+        var s = g(c), b = g(c, '::before');
+        return {
+          t: s.transform, img: s.backgroundImage, size: s.backgroundSize,
+          spineT: b.transform, spineOrigin: b.transformOrigin, spineW: b.width, spineContent: b.content
+        };
+      }),
+      overflow: cards.filter(function (c) { return c.scrollHeight > c.clientHeight + 1; })
+        .map(function (c) { return c.textContent.trim().slice(0, 16); }),
+      faces: all('.book-face').map(function (f) { return g(f).backgroundColor; }),
+      walls: walls.map(function (w) { return g(w).backgroundImage + ' | ' + g(w).backgroundColor; }),
+      liShadow: all('.shelf > li:not(.clone), .book-wall > li').slice(0, 8).map(function (li) {
+        var a = g(li, '::after');
+        return { content: a.content, img: a.backgroundImage };
+      }),
+      wallText: []
+    };
+    walls.forEach(function (w) {
+      all('*', w).forEach(function (el) {
+        if (el.closest('.book-card') || el.closest('.dim')) return;
+        var own = Array.prototype.some.call(el.childNodes, function (n) { return n.nodeType === 3 && n.textContent.trim(); });
+        if (own) r.wallText.push({ text: el.textContent.trim().slice(0, 16), color: g(el).color });
+      });
+    });
+    return r;
+  }
+  function next(i) {
+    if (i >= pages.length) { document.getElementById('out').textContent = JSON.stringify(results); return; }
+    var f = document.createElement('iframe');
+    f.onload = function () {
+      // 進場動畫最長約 .8s + 20 本 × 60ms 延遲，等 4 秒確保量到的是靜止狀態
+      // headless 的虛擬時間不推進 CSS 動畫，要主動 finish() 才量得到靜止狀態（無限循環的動畫會拋錯，略過）
+      setTimeout(function () {
+        try {
+          f.contentDocument.getAnimations().forEach(function (a) { try { a.finish(); } catch (e) {} });
+          results[pages[i]] = measure(f.contentDocument, f.contentWindow);
+        }
+        catch (e) { results[pages[i]] = { error: String(e) }; }
+        f.remove();
+        next(i + 1);
+      }, 4000);
+    };
+    f.src = '../' + pages[i];
+    document.body.appendChild(f);
+  }
+  next(0);
+})();
+</script>
