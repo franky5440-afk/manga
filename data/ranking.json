@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T11:49:19+08:00",
+  "generatedAt": "2026-09-22T11:46:43+08:00",
   "cjk": {
     "source": "zh.wikipedia pageviews",
     "sourceUrl": "https://wikimedia.org/api/rest_v1/",
@@ -31,7 +31,7 @@
         "day": "20260920",
         "found": true,
         "rank": 3,
-        "prevRank": 7
+        "prevRank": 3
       },
       {
         "id": "frieren",
@@ -40,7 +40,7 @@
         "day": "20260920",
         "found": true,
         "rank": 4,
-        "prevRank": 3
+        "prevRank": 4
       },
       {
         "id": "jujutsu-kaisen",
@@ -67,7 +67,7 @@
         "day": "20260920",
         "found": true,
         "rank": 7,
-        "prevRank": 4
+        "prevRank": 7
       },
       {
         "id": "kaiju-no8",
@@ -85,7 +85,7 @@
         "day": "20260920",
         "found": true,
         "rank": 9,
-        "prevRank": 10
+        "prevRank": 9
       },
       {
         "id": "naruto",
@@ -94,7 +94,7 @@
         "day": "20260920",
         "found": true,
         "rank": 10,
-        "prevRank": 9
+        "prevRank": 10
       }
     ]
   },
@@ -103,25 +103,22 @@
     "sourceUrl": "https://anilist.co",
     "list": [
       {
-        "titleZh": "鐵血劍家獵犬的回歸",
-        "authorZh": "레고밟았어／설아랑",
-        "synopsisZh": "身為鐵血劍家最忠誠的獵犬，維基爾替家族剷除異己，換來的卻是莫須有的罪名與斷頭台。帶著滿腔怨恨重生回到四十年前，這一次他發誓不再當任何人的狗。",
-        "genreZh": [
-          "奇幻",
-          "戰鬥"
-        ],
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
         "rank": 1,
-        "anilistId": 163824,
-        "title": "철혈검가 사냥개의 회귀",
-        "romaji": "Cheolhyeolgeomga Sanyanggaeui Hoegwi",
-        "trending": 99,
-        "popularity": 44940,
+        "anilistId": 175946,
+        "title": "괴력 난신",
+        "romaji": "Goeryeok Nansin",
+        "trending": 127,
+        "popularity": 19323,
         "genres": [
           "Action",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/163824"
+        "siteUrl": "https://anilist.co/manga/175946"
       },
       {
         "titleZh": "",
@@ -129,30 +126,68 @@
         "synopsisZh": "",
         "genreZh": [],
         "rank": 2,
-        "anilistId": 101557,
-        "title": "僕の心のヤバイやつ",
-        "romaji": "Boku no Kokoro no Yabai Yatsu",
-        "trending": 55,
-        "popularity": 35935,
+        "anilistId": 182066,
+        "title": "회귀한 용병은 다 계획이 있다",
+        "romaji": "Hoegwihan Yongbyeongeun Da Gyehoegi Itda",
+        "trending": 102,
+        "popularity": 23992,
         "genres": [
-          "Comedy",
-          "Romance",
-          "Slice of Life"
+          "Action",
+          "Fantasy"
         ],
-        "country": "JP",
-        "siteUrl": "https://anilist.co/manga/101557"
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/182066"
+      },
+      {
+        "titleZh": "絕對回歸",
+        "authorZh": "장영훈／박진환",
+        "synopsisZh": "劍無極曾在天魔一族肆虐的亂世中失去所有摯友與家人，自己也慘死於絕世高手華無奇之手。他習得失傳的回歸大法，歷經無數劫難重返過去，誓要親手改寫這場家破人亡的悲劇。",
+        "genreZh": [
+          "戰鬥",
+          "劇情"
+        ],
+        "rank": 3,
+        "anilistId": 180891,
+        "title": "절대회귀",
+        "romaji": "Jeoldaehoegwi",
+        "trending": 78,
+        "popularity": 18306,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/180891"
       },
       {
         "titleZh": "",
         "authorZh": "",
         "synopsisZh": "",
         "genreZh": [],
-        "rank": 3,
+        "rank": 4,
+        "anilistId": 208208,
+        "title": "양치기 마법사",
+        "romaji": "Yangchigi Mabeopsa",
+        "trending": 63,
+        "popularity": 6035,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/208208"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 5,
         "anilistId": 180890,
         "title": "천하제일인의 소꿉친구",
         "romaji": "Cheonhajeirinui Sokkupchingu",
-        "trending": 42,
-        "popularity": 15383,
+        "trending": 55,
+        "popularity": 15537,
         "genres": [
           "Action",
           "Adventure",
@@ -162,65 +197,22 @@
         "siteUrl": "https://anilist.co/manga/180890"
       },
       {
-        "titleZh": "歷經萬年回歸的玩家",
-        "authorZh": "맹주경／4PLAYER",
-        "synopsisZh": "男子墜入地獄，僅憑求生本能與吞噬異能，歷經萬年吞盡九重地獄群魔，連七大魔王都向他俯首稱臣。終於重返人間，他卻發現地球早已變成怪物橫行的實境遊戲場，只能從頭再戰。",
-        "genreZh": [
-          "奇幻",
-          "戰鬥"
-        ],
-        "rank": 4,
-        "anilistId": 153284,
-        "title": "만 년 만에 귀환한 플레이어",
-        "romaji": "Man Nyeon Mane Gwihwanhan Player",
-        "trending": 41,
-        "popularity": 32171,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/153284"
-      },
-      {
-        "titleZh": "歸來的少爺是暗殺者",
-        "authorZh": "커피라임／스윙뱃",
-        "synopsisZh": "大陸第一暗殺者希安，遭最信任的兄長背叛而慘死，重新睜眼時，竟回到公爵家年幼時光。這一次他發誓不再為誰效命，只憑雙手鍛鍊力量走向頂點，成為主宰命運的人。",
-        "genreZh": [
-          "奇幻",
-          "戰鬥"
-        ],
-        "rank": 5,
-        "anilistId": 175262,
-        "title": "회귀한 공작가의 막내도련님은 암살자",
-        "romaji": "Hoegwihan Gongjakgaui Mangnaedoryeonnimeun Amsalja",
-        "trending": 39,
-        "popularity": 23773,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/175262"
-      },
-      {
         "titleZh": "",
         "authorZh": "",
         "synopsisZh": "",
         "genreZh": [],
         "rank": 6,
-        "anilistId": 149544,
-        "title": "気になってる人が男じゃなかった",
-        "romaji": "Ki ni Natteru Hito ga Otoko ja Nakatta",
-        "trending": 35,
-        "popularity": 52049,
+        "anilistId": 214050,
+        "title": "내가 죽인 드래곤과 결혼했다",
+        "romaji": "Naega Jugin Dragon-gwa Gyeolhonhaetda",
+        "trending": 44,
+        "popularity": 3438,
         "genres": [
-          "Music",
-          "Romance"
+          "Action",
+          "Fantasy"
         ],
-        "country": "JP",
-        "siteUrl": "https://anilist.co/manga/149544"
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/214050"
       },
       {
         "titleZh": "",
@@ -228,83 +220,78 @@
         "synopsisZh": "",
         "genreZh": [],
         "rank": 7,
-        "anilistId": 142352,
-        "title": "일타강사 백사부",
-        "romaji": "Iltagangsa Baeksabu",
-        "trending": 27,
-        "popularity": 10398,
+        "anilistId": 152128,
+        "title": "소설 속 엑스트라",
+        "romaji": "Soseol Sok Extra",
+        "trending": 41,
+        "popularity": 29758,
         "genres": [
           "Action",
+          "Adventure",
+          "Drama",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/142352"
+        "siteUrl": "https://anilist.co/manga/152128"
       },
       {
-        "titleZh": "劍術名家的小兒子",
-        "authorZh": "황제펭귄／AZI",
-        "synopsisZh": "大陸第一劍術名門的小兒子吉恩，前世是家族眼中的廢材，最後落得被逐出家門的下場。帶著記憶重活一世，靠著甦醒的天賦與神的契約，他決心為自己而戰。",
+        "titleZh": "我！天命大反派",
+        "authorZh": "天命反派／繪術動漫",
+        "synopsisZh": "顧長歌穿越玄幻世界，開局便扛下模範主角與氣運之子的滿滿仇恨值，還有貴客待遇與女主青睞。原以為身份實力壓人一等，卻發現自己竟是專門收割主角的系統宿主。",
         "genreZh": [
           "奇幻",
-          "熱血"
+          "戀愛"
         ],
         "rank": 8,
-        "anilistId": 149332,
-        "title": "검술명가 막내아들",
-        "romaji": "Geomsulmyeongga Mangnaeadeul",
-        "trending": 25,
-        "popularity": 43726,
+        "anilistId": 142287,
+        "title": "我！天命大反派",
+        "romaji": "Wo! Tian Mìng Da Fanpai",
+        "trending": 34,
+        "popularity": 15628,
         "genres": [
           "Action",
           "Adventure",
+          "Drama",
           "Fantasy"
         ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/149332"
+        "country": "CN",
+        "siteUrl": "https://anilist.co/manga/142287"
       },
       {
-        "titleZh": "異類屠龍者的回歸",
-        "authorZh": "헥토파스칼／곤",
-        "synopsisZh": "屠龍世家直系子孫吉克，天生只有治癒天賦而非劍術資質，因此遭家族放逐。掙扎求強卻仍慘死之際，古龍之魂烙印靈魂，讓他回到二十年前，決心不擇手段成為強者。",
-        "genreZh": [
-          "奇幻",
-          "戰鬥"
-        ],
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
         "rank": 9,
-        "anilistId": 185978,
-        "title": "용살자의 클래스가 다른 회귀",
-        "romaji": "Yongsaljaui Keullaeseuga Dareun Hoegwi",
-        "trending": 24,
-        "popularity": 8390,
+        "anilistId": 202718,
+        "title": "방랑기사로 살아가는 법",
+        "romaji": "Bangnanggisaro Saraganeun Beop",
+        "trending": 34,
+        "popularity": 3532,
         "genres": [
           "Action",
-          "Adventure",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/185978"
+        "siteUrl": "https://anilist.co/manga/202718"
       },
       {
-        "titleZh": "Pick Me Up!",
-        "authorZh": "헤르모드／와삭바삭",
-        "synopsisZh": "世界排名第五的大師羅奇，破關途中意外昏迷，醒來後竟成了等級一、星級一的菜鳥英雄韓伊斯拉特。為了重返地球，他必須帶領新手夥伴，闖過迷宮整整一百層關卡。",
-        "genreZh": [
-          "奇幻",
-          "冒險"
-        ],
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
         "rank": 10,
-        "anilistId": 159441,
-        "title": "픽 미 업!",
-        "romaji": "Pick Me Up!",
-        "trending": 22,
-        "popularity": 44564,
+        "anilistId": 211510,
+        "title": "이세계서 유부남된 썰",
+        "romaji": "Isegyeseo Yubunamdoen Sseol",
+        "trending": 31,
+        "popularity": 3245,
         "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy"
+          "Fantasy",
+          "Slice of Life"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/159441"
+        "siteUrl": "https://anilist.co/manga/211510"
       }
     ]
   }
