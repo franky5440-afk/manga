@@ -1,298 +1,106 @@
 {
-  "generatedAt": "2026-09-22T11:46:43+08:00",
+  "generatedAt": "2026-09-23T11:45:35+08:00",
   "cjk": {
     "source": "zh.wikipedia pageviews",
     "sourceUrl": "https://wikimedia.org/api/rest_v1/",
-    "dataDate": "20260920",
+    "dataDate": "20260922",
     "missing": [],
     "list": [
       {
-        "id": "demon-slayer",
-        "wiki": "鬼滅之刃",
-        "views": 1640,
-        "day": "20260920",
-        "found": true,
-        "rank": 1,
-        "prevRank": 1
-      },
-      {
         "id": "bleach",
         "wiki": "BLEACH",
-        "views": 1133,
-        "day": "20260920",
+        "views": 896,
+        "day": "20260922",
         "found": true,
-        "rank": 2,
+        "rank": 1,
         "prevRank": 2
-      },
-      {
-        "id": "one-piece",
-        "wiki": "ONE PIECE",
-        "views": 982,
-        "day": "20260920",
-        "found": true,
-        "rank": 3,
-        "prevRank": 3
       },
       {
         "id": "frieren",
         "wiki": "葬送的芙莉蓮",
-        "views": 974,
-        "day": "20260920",
+        "views": 875,
+        "day": "20260922",
+        "found": true,
+        "rank": 2,
+        "prevRank": 4
+      },
+      {
+        "id": "attack-on-titan",
+        "wiki": "進擊的巨人",
+        "views": 856,
+        "day": "20260922",
+        "found": true,
+        "rank": 3,
+        "prevRank": 7
+      },
+      {
+        "id": "demon-slayer",
+        "wiki": "鬼滅之刃",
+        "views": 824,
+        "day": "20260922",
         "found": true,
         "rank": 4,
-        "prevRank": 4
+        "prevRank": 1
       },
       {
         "id": "jujutsu-kaisen",
         "wiki": "咒術迴戰",
-        "views": 950,
-        "day": "20260920",
+        "views": 743,
+        "day": "20260922",
         "found": true,
         "rank": 5,
         "prevRank": 5
       },
       {
-        "id": "my-hero-academia",
-        "wiki": "我的英雄學院",
-        "views": 907,
-        "day": "20260920",
+        "id": "one-piece",
+        "wiki": "ONE PIECE",
+        "views": 742,
+        "day": "20260922",
         "found": true,
         "rank": 6,
+        "prevRank": 3
+      },
+      {
+        "id": "my-hero-academia",
+        "wiki": "我的英雄學院",
+        "views": 608,
+        "day": "20260922",
+        "found": true,
+        "rank": 7,
         "prevRank": 6
       },
       {
-        "id": "attack-on-titan",
-        "wiki": "進擊的巨人",
-        "views": 834,
-        "day": "20260920",
-        "found": true,
-        "rank": 7,
-        "prevRank": 7
-      },
-      {
-        "id": "kaiju-no8",
-        "wiki": "怪獸8號",
-        "views": 633,
-        "day": "20260920",
+        "id": "naruto",
+        "wiki": "火影忍者",
+        "views": 521,
+        "day": "20260922",
         "found": true,
         "rank": 8,
-        "prevRank": 8
+        "prevRank": 10
       },
       {
         "id": "chainsaw-man",
         "wiki": "鏈鋸人",
-        "views": 552,
-        "day": "20260920",
+        "views": 494,
+        "day": "20260922",
         "found": true,
         "rank": 9,
         "prevRank": 9
       },
       {
-        "id": "naruto",
-        "wiki": "火影忍者",
-        "views": 547,
-        "day": "20260920",
+        "id": "haikyu",
+        "wiki": "排球少年！！",
+        "views": 411,
+        "day": "20260922",
         "found": true,
         "rank": 10,
-        "prevRank": 10
+        "prevRank": null
       }
     ]
   },
   "global": {
     "source": "AniList trending",
     "sourceUrl": "https://anilist.co",
-    "list": [
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 1,
-        "anilistId": 175946,
-        "title": "괴력 난신",
-        "romaji": "Goeryeok Nansin",
-        "trending": 127,
-        "popularity": 19323,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/175946"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 2,
-        "anilistId": 182066,
-        "title": "회귀한 용병은 다 계획이 있다",
-        "romaji": "Hoegwihan Yongbyeongeun Da Gyehoegi Itda",
-        "trending": 102,
-        "popularity": 23992,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/182066"
-      },
-      {
-        "titleZh": "絕對回歸",
-        "authorZh": "장영훈／박진환",
-        "synopsisZh": "劍無極曾在天魔一族肆虐的亂世中失去所有摯友與家人，自己也慘死於絕世高手華無奇之手。他習得失傳的回歸大法，歷經無數劫難重返過去，誓要親手改寫這場家破人亡的悲劇。",
-        "genreZh": [
-          "戰鬥",
-          "劇情"
-        ],
-        "rank": 3,
-        "anilistId": 180891,
-        "title": "절대회귀",
-        "romaji": "Jeoldaehoegwi",
-        "trending": 78,
-        "popularity": 18306,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/180891"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 4,
-        "anilistId": 208208,
-        "title": "양치기 마법사",
-        "romaji": "Yangchigi Mabeopsa",
-        "trending": 63,
-        "popularity": 6035,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/208208"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 5,
-        "anilistId": 180890,
-        "title": "천하제일인의 소꿉친구",
-        "romaji": "Cheonhajeirinui Sokkupchingu",
-        "trending": 55,
-        "popularity": 15537,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/180890"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 6,
-        "anilistId": 214050,
-        "title": "내가 죽인 드래곤과 결혼했다",
-        "romaji": "Naega Jugin Dragon-gwa Gyeolhonhaetda",
-        "trending": 44,
-        "popularity": 3438,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/214050"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 7,
-        "anilistId": 152128,
-        "title": "소설 속 엑스트라",
-        "romaji": "Soseol Sok Extra",
-        "trending": 41,
-        "popularity": 29758,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Drama",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/152128"
-      },
-      {
-        "titleZh": "我！天命大反派",
-        "authorZh": "天命反派／繪術動漫",
-        "synopsisZh": "顧長歌穿越玄幻世界，開局便扛下模範主角與氣運之子的滿滿仇恨值，還有貴客待遇與女主青睞。原以為身份實力壓人一等，卻發現自己竟是專門收割主角的系統宿主。",
-        "genreZh": [
-          "奇幻",
-          "戀愛"
-        ],
-        "rank": 8,
-        "anilistId": 142287,
-        "title": "我！天命大反派",
-        "romaji": "Wo! Tian Mìng Da Fanpai",
-        "trending": 34,
-        "popularity": 15628,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Drama",
-          "Fantasy"
-        ],
-        "country": "CN",
-        "siteUrl": "https://anilist.co/manga/142287"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 9,
-        "anilistId": 202718,
-        "title": "방랑기사로 살아가는 법",
-        "romaji": "Bangnanggisaro Saraganeun Beop",
-        "trending": 34,
-        "popularity": 3532,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/202718"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 10,
-        "anilistId": 211510,
-        "title": "이세계서 유부남된 썰",
-        "romaji": "Isegyeseo Yubunamdoen Sseol",
-        "trending": 31,
-        "popularity": 3245,
-        "genres": [
-          "Fantasy",
-          "Slice of Life"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/211510"
-      }
-    ]
+    "list": []
   }
 }
