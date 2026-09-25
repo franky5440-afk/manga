@@ -1,61 +1,61 @@
 {
-  "generatedAt": "2026-09-24T11:37:00+08:00",
+  "generatedAt": "2026-09-25T11:53:22+08:00",
   "cjk": {
     "source": "zh.wikipedia pageviews",
     "sourceUrl": "https://wikimedia.org/api/rest_v1/",
-    "dataDate": "20260923",
+    "dataDate": "20260924",
     "missing": [],
     "list": [
       {
-        "id": "frieren",
-        "wiki": "葬送的芙莉蓮",
-        "views": 875,
-        "day": "20260923",
+        "id": "attack-on-titan",
+        "wiki": "進擊的巨人",
+        "views": 870,
+        "day": "20260924",
         "found": true,
         "rank": 1,
         "prevRank": 2
       },
       {
-        "id": "attack-on-titan",
-        "wiki": "進擊的巨人",
-        "views": 836,
-        "day": "20260923",
+        "id": "jujutsu-kaisen",
+        "wiki": "咒術迴戰",
+        "views": 800,
+        "day": "20260924",
         "found": true,
         "rank": 2,
-        "prevRank": 3
+        "prevRank": 4
       },
       {
         "id": "bleach",
         "wiki": "BLEACH",
-        "views": 763,
-        "day": "20260923",
+        "views": 771,
+        "day": "20260924",
         "found": true,
         "rank": 3,
-        "prevRank": 1
+        "prevRank": 3
       },
       {
-        "id": "jujutsu-kaisen",
-        "wiki": "咒術迴戰",
-        "views": 749,
-        "day": "20260923",
+        "id": "frieren",
+        "wiki": "葬送的芙莉蓮",
+        "views": 764,
+        "day": "20260924",
         "found": true,
         "rank": 4,
-        "prevRank": 5
+        "prevRank": 1
       },
       {
         "id": "demon-slayer",
         "wiki": "鬼滅之刃",
-        "views": 745,
-        "day": "20260923",
+        "views": 761,
+        "day": "20260924",
         "found": true,
         "rank": 5,
-        "prevRank": 4
+        "prevRank": 5
       },
       {
         "id": "one-piece",
         "wiki": "ONE PIECE",
-        "views": 690,
-        "day": "20260923",
+        "views": 707,
+        "day": "20260924",
         "found": true,
         "rank": 6,
         "prevRank": 6
@@ -63,8 +63,8 @@
       {
         "id": "my-hero-academia",
         "wiki": "我的英雄學院",
-        "views": 636,
-        "day": "20260923",
+        "views": 648,
+        "day": "20260924",
         "found": true,
         "rank": 7,
         "prevRank": 7
@@ -72,35 +72,229 @@
       {
         "id": "naruto",
         "wiki": "火影忍者",
-        "views": 556,
-        "day": "20260923",
+        "views": 512,
+        "day": "20260924",
         "found": true,
         "rank": 8,
         "prevRank": 8
       },
       {
-        "id": "chainsaw-man",
-        "wiki": "鏈鋸人",
-        "views": 510,
-        "day": "20260923",
-        "found": true,
-        "rank": 9,
-        "prevRank": 9
-      },
-      {
         "id": "haikyu",
         "wiki": "排球少年！！",
-        "views": 492,
-        "day": "20260923",
+        "views": 477,
+        "day": "20260924",
+        "found": true,
+        "rank": 9,
+        "prevRank": 10
+      },
+      {
+        "id": "chainsaw-man",
+        "wiki": "鏈鋸人",
+        "views": 441,
+        "day": "20260924",
         "found": true,
         "rank": 10,
-        "prevRank": 10
+        "prevRank": 9
       }
     ]
   },
   "global": {
     "source": "AniList trending",
     "sourceUrl": "https://anilist.co",
-    "list": []
+    "list": [
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 1,
+        "anilistId": 201009,
+        "title": "악당들의 후원자가 되었다",
+        "romaji": "Akdangdeurui Huwonjaga Doeeotda",
+        "trending": 90,
+        "popularity": 14431,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/201009"
+      },
+      {
+        "titleZh": "三流反派的學院生存記",
+        "authorZh": "코리타／기린그린",
+        "synopsisZh": "艾德被家族拋棄，又被逐出宿舍，是遊戲裡注定領便當的三流反派。靈魂穿入他體內後，只想低調拿到獎學金畢業，卻沒想到四位女主角接連靠近，命運悄悄偏離劇本。",
+        "genreZh": [
+          "奇幻",
+          "戀愛"
+        ],
+        "rank": 2,
+        "anilistId": 172619,
+        "title": "아카데미에서 살아남기",
+        "romaji": "Academy-eseo Saranamgi",
+        "trending": 74,
+        "popularity": 31140,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/172619"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 3,
+        "anilistId": 137280,
+        "title": "나 혼자 만렙 뉴비",
+        "romaji": "Na Honja Mallep Newbie",
+        "trending": 70,
+        "popularity": 50669,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/137280"
+      },
+      {
+        "titleZh": "魔皇大管家",
+        "authorZh": "夜梟／無二漫畫",
+        "synopsisZh": "曾經威震一方的魔皇卓一凡遭親信背叛，重生後修為歸零，還被心魔纏身。為了重返巔峰，他暫且棲身沒落家族，擔任大小姐的專屬管家暗中佈局。",
+        "genreZh": [
+          "奇幻",
+          "戰鬥"
+        ],
+        "rank": 4,
+        "anilistId": 116353,
+        "title": "魔皇大管家",
+        "romaji": "Mo Huang Da Guanjia",
+        "trending": 68,
+        "popularity": 27612,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "country": "CN",
+        "siteUrl": "https://anilist.co/manga/116353"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 5,
+        "anilistId": 189051,
+        "title": "풍작이에요, 마왕님!",
+        "romaji": "Pungjagieyo, Mawangnim!",
+        "trending": 52,
+        "popularity": 9182,
+        "genres": [
+          "Comedy",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/189051"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 6,
+        "anilistId": 202986,
+        "title": "마왕인데 용사가 너무 많음",
+        "romaji": "Mawanginde Yongsaga Neomu Maneum",
+        "trending": 51,
+        "popularity": 6927,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/202986"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 7,
+        "anilistId": 194727,
+        "title": "회귀수선전",
+        "romaji": "Hoegwisuseonjeon",
+        "trending": 48,
+        "popularity": 6223,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/194727"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 8,
+        "anilistId": 86399,
+        "title": "転生したらスライムだった件",
+        "romaji": "Tensei Shitara Slime Datta Ken",
+        "trending": 38,
+        "popularity": 61740,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Comedy",
+          "Fantasy"
+        ],
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/86399"
+      },
+      {
+        "titleZh": "薰香花朵凜然綻放",
+        "authorZh": "三香見サカ",
+        "synopsisZh": "千鳥高中生紬凜太郎外表兇惡、沉默寡言，常被誤認為難以親近，其實在家中蛋糕店幫忙時展現笨拙卻真誠的溫柔，他與痛恨千鳥的貴族女校學生和栗薰子相遇，兩人的心意逐漸靠近。",
+        "genreZh": [
+          "戀愛",
+          "治癒"
+        ],
+        "rank": 9,
+        "anilistId": 140475,
+        "title": "薫る花は凛と咲く",
+        "romaji": "Kaoru Hana wa Rin to Saku",
+        "trending": 38,
+        "popularity": 79680,
+        "genres": [
+          "Comedy",
+          "Drama",
+          "Romance"
+        ],
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/140475"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 10,
+        "anilistId": 152913,
+        "title": "アンタと幼なじみってだけでもイヤなのに！～絶交から始まるS級美少女との学園成り上がり生活～",
+        "romaji": "Anta to Osananajimitte dake demo Iyananoni!: Zekkou kara Hajimaru S-kyuu Bishoujo to no Gakuen Nariagari Seikatsu",
+        "trending": 37,
+        "popularity": 8499,
+        "genres": [
+          "Comedy",
+          "Romance"
+        ],
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/152913"
+      }
+    ]
   }
 }
