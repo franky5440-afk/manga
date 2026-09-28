@@ -1,319 +1,106 @@
 {
-  "generatedAt": "2026-09-27T12:10:15+08:00",
+  "generatedAt": "2026-09-28T12:11:53+08:00",
   "cjk": {
     "source": "zh.wikipedia pageviews",
     "sourceUrl": "https://wikimedia.org/api/rest_v1/",
-    "dataDate": "20260926",
+    "dataDate": "20260927",
     "missing": [],
     "list": [
       {
         "id": "frieren",
         "wiki": "葬送的芙莉蓮",
-        "views": 1024,
-        "day": "20260926",
+        "views": 1182,
+        "day": "20260927",
         "found": true,
         "rank": 1,
         "prevRank": 1
       },
       {
-        "id": "jujutsu-kaisen",
-        "wiki": "咒術迴戰",
-        "views": 876,
-        "day": "20260926",
+        "id": "one-piece",
+        "wiki": "ONE PIECE",
+        "views": 1047,
+        "day": "20260927",
         "found": true,
         "rank": 2,
-        "prevRank": 2
+        "prevRank": 7
       },
       {
-        "id": "kaiju-no8",
-        "wiki": "怪獸8號",
-        "views": 829,
-        "day": "20260926",
+        "id": "jujutsu-kaisen",
+        "wiki": "咒術迴戰",
+        "views": 934,
+        "day": "20260927",
         "found": true,
         "rank": 3,
-        "prevRank": null
-      },
-      {
-        "id": "demon-slayer",
-        "wiki": "鬼滅之刃",
-        "views": 820,
-        "day": "20260926",
-        "found": true,
-        "rank": 4,
-        "prevRank": 4
+        "prevRank": 2
       },
       {
         "id": "attack-on-titan",
         "wiki": "進擊的巨人",
-        "views": 809,
-        "day": "20260926",
+        "views": 925,
+        "day": "20260927",
         "found": true,
-        "rank": 5,
+        "rank": 4,
         "prevRank": 5
       },
       {
         "id": "bleach",
         "wiki": "BLEACH",
-        "views": 800,
-        "day": "20260926",
+        "views": 922,
+        "day": "20260927",
         "found": true,
-        "rank": 6,
-        "prevRank": 3
-      },
-      {
-        "id": "one-piece",
-        "wiki": "ONE PIECE",
-        "views": 752,
-        "day": "20260926",
-        "found": true,
-        "rank": 7,
+        "rank": 5,
         "prevRank": 6
       },
       {
-        "id": "chainsaw-man",
-        "wiki": "鏈鋸人",
-        "views": 660,
-        "day": "20260926",
+        "id": "demon-slayer",
+        "wiki": "鬼滅之刃",
+        "views": 891,
+        "day": "20260927",
         "found": true,
-        "rank": 8,
-        "prevRank": 9
+        "rank": 6,
+        "prevRank": 4
       },
       {
         "id": "my-hero-academia",
         "wiki": "我的英雄學院",
-        "views": 610,
-        "day": "20260926",
+        "views": 682,
+        "day": "20260927",
+        "found": true,
+        "rank": 7,
+        "prevRank": 9
+      },
+      {
+        "id": "chainsaw-man",
+        "wiki": "鏈鋸人",
+        "views": 666,
+        "day": "20260927",
+        "found": true,
+        "rank": 8,
+        "prevRank": 8
+      },
+      {
+        "id": "kaiju-no8",
+        "wiki": "怪獸8號",
+        "views": 641,
+        "day": "20260927",
         "found": true,
         "rank": 9,
-        "prevRank": 7
+        "prevRank": 3
       },
       {
         "id": "naruto",
         "wiki": "火影忍者",
-        "views": 543,
-        "day": "20260926",
+        "views": 602,
+        "day": "20260927",
         "found": true,
         "rank": 10,
-        "prevRank": 8
+        "prevRank": 10
       }
     ]
   },
   "global": {
     "source": "AniList trending",
     "sourceUrl": "https://anilist.co",
-    "list": [
-      {
-        "titleZh": "劍術名家的小兒子",
-        "authorZh": "황제펭귄／AZI",
-        "synopsisZh": "大陸第一劍術名門的小兒子吉恩，前世是家族眼中的廢材，最後落得被逐出家門的下場。帶著記憶重活一世，靠著甦醒的天賦與神的契約，他決心為自己而戰。",
-        "genreZh": [
-          "奇幻",
-          "熱血"
-        ],
-        "rank": 1,
-        "anilistId": 149332,
-        "title": "검술명가 막내아들",
-        "romaji": "Geomsulmyeongga Mangnaeadeul",
-        "trending": 72,
-        "popularity": 43966,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/149332"
-      },
-      {
-        "titleZh": "魯蛇的登塔攻略法",
-        "authorZh": "꾸찌꾸찌／플랜에이",
-        "synopsisZh": "地球各地憑空出現黑色高塔，能覺醒力量的人類寥寥無幾，膽小怕事的魯蛇上班族奉柱赫，從未奢望自己會是其中之一。某夜啃著泡麵時，系統忽然宣告他已覺醒，被迫踏上意外攻塔路。",
-        "genreZh": [
-          "奇幻",
-          "戰鬥"
-        ],
-        "rank": 2,
-        "anilistId": 203958,
-        "title": "하남자의 탑 공략법",
-        "romaji": "Hanamjaui Tap Gongnyakbeop",
-        "trending": 65,
-        "popularity": 3914,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/203958"
-      },
-      {
-        "titleZh": "魔皇大管家",
-        "authorZh": "夜梟／無二漫畫",
-        "synopsisZh": "曾經威震一方的魔皇卓一凡遭親信背叛，重生後修為歸零，還被心魔纏身。為了重返巔峰，他暫且棲身沒落家族，擔任大小姐的專屬管家暗中佈局。",
-        "genreZh": [
-          "奇幻",
-          "戰鬥"
-        ],
-        "rank": 3,
-        "anilistId": 116353,
-        "title": "魔皇大管家",
-        "romaji": "Mo Huang Da Guanjia",
-        "trending": 61,
-        "popularity": 27662,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "CN",
-        "siteUrl": "https://anilist.co/manga/116353"
-      },
-      {
-        "titleZh": "航海王",
-        "authorZh": "尾田榮一郎",
-        "synopsisZh": "少年魯夫吃下橡膠果實後踏上大海，立志成為海賊王。他一路收攏各懷夢想的夥伴，駕船闖進被稱為偉大航道的險惡海域，在各方勢力的碰撞中追尋傳說中的大秘寶。",
-        "genreZh": [
-          "冒險",
-          "熱血"
-        ],
-        "rank": 4,
-        "anilistId": 30013,
-        "title": "ONE PIECE",
-        "romaji": "ONE PIECE",
-        "trending": 58,
-        "popularity": 233630,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Comedy",
-          "Fantasy"
-        ],
-        "country": "JP",
-        "siteUrl": "https://anilist.co/manga/30013"
-      },
-      {
-        "titleZh": "世上沒有壞千金",
-        "authorZh": "코리타／신희빈、팀핑크샤크",
-        "synopsisZh": "德瑞克曾是覺醒魔法天賦的傭兵，如今受聘成為貴族學院的魔法教師，專門教導行為出格的千金小姐。他堅信世上沒有真正的壞千金，只有未被理解的處境，一步步引導她們找回真心。",
-        "genreZh": [
-          "戀愛",
-          "喜劇"
-        ],
-        "rank": 5,
-        "anilistId": 206766,
-        "title": "세상에 나쁜 영애는 없다",
-        "romaji": "Sesange Nappeun Yeongaeneun Eopda",
-        "trending": 56,
-        "popularity": 6028,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/206766"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 6,
-        "anilistId": 128067,
-        "title": "SSS급 죽어야 사는 헌터",
-        "romaji": "SSS-geup Jugeoya Saneun Hunter",
-        "trending": 44,
-        "popularity": 67845,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Drama",
-          "Fantasy",
-          "Supernatural"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/128067"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 7,
-        "anilistId": 194523,
-        "title": "권왕환생",
-        "romaji": "Gwonwanghwansaeng",
-        "trending": 42,
-        "popularity": 6721,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/194523"
-      },
-      {
-        "titleZh": "描繪地下城的畫家",
-        "authorZh": "취미글주의",
-        "synopsisZh": "美術教師徐智吾在大火中喪命，靈魂被吸入一幅肖像畫中，自己也化為畫中人。在畫作世界裡，他意外獲得創造生命與開啟異次元之門的能力，決心運用畫筆，解決身邊眾人面臨的難題。",
-        "genreZh": [
-          "奇幻",
-          "治癒"
-        ],
-        "rank": 8,
-        "anilistId": 213942,
-        "title": "던전을 그리는 화가",
-        "romaji": "Dungeon-eul Geurineun Hwaga",
-        "trending": 42,
-        "popularity": 4495,
-        "genres": [
-          "Fantasy",
-          "Mystery",
-          "Thriller"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/213942"
-      },
-      {
-        "titleZh": "怠尊秘錄",
-        "authorZh": "비가／김꿀빨、레드훅",
-        "synopsisZh": "光輝武尊終結亂世紛爭，威名遠播，被世人尊為聖賢與大英雄，然而不為人知的黑暗過往正逐漸浮出水面。當塵封多年的秘密被揭開，這位曠世英雄的真面目，恐怕會顛覆所有人的想像。",
-        "genreZh": [
-          "戰鬥",
-          "懸疑"
-        ],
-        "rank": 9,
-        "anilistId": 195914,
-        "title": "태존비록",
-        "romaji": "Taejonbirok",
-        "trending": 41,
-        "popularity": 6408,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/195914"
-      },
-      {
-        "titleZh": "序章已過三十年",
-        "authorZh": "맠엘라하／기린그림팀",
-        "synopsisZh": "主角穿越到陌生世界，以為踏入典型的傳統角色扮演故事，便埋頭苦練三十年，成為戰爭英雄準備退休。豈料回頭一看才驚覺，漫長的三十年不過是序章，真正的校園故事才剛要開始。",
-        "genreZh": [
-          "奇幻",
-          "喜劇"
-        ],
-        "rank": 10,
-        "anilistId": 214453,
-        "title": "프롤로그에서 30년이 흘렀다",
-        "romaji": "Prologue-eseo 30-nyeoni Heulleotda",
-        "trending": 40,
-        "popularity": 3584,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/214453"
-      }
-    ]
+    "list": []
   }
 }
