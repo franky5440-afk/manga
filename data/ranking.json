@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T12:40:02+08:00",
+  "generatedAt": "2026-10-02T12:31:46+08:00",
   "cjk": {
     "source": "zh.wikipedia pageviews",
     "sourceUrl": "https://wikimedia.org/api/rest_v1/",
@@ -103,49 +103,43 @@
     "sourceUrl": "https://anilist.co",
     "list": [
       {
-        "titleZh": "Pick Me Up!",
-        "authorZh": "헤르모드／와삭바삭",
-        "synopsisZh": "世界排名第五的大師羅奇，破關途中意外昏迷，醒來後竟成了等級一、星級一的菜鳥英雄韓伊斯拉特。為了重返地球，他必須帶領新手夥伴，闖過迷宮整整一百層關卡。",
-        "genreZh": [
-          "奇幻",
-          "冒險"
-        ],
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
         "rank": 1,
-        "anilistId": 159441,
-        "title": "픽 미 업!",
-        "romaji": "Pick Me Up!",
-        "trending": 114,
-        "popularity": 45090,
+        "anilistId": 128067,
+        "title": "SSS급 죽어야 사는 헌터",
+        "romaji": "SSS-geup Jugeoya Saneun Hunter",
+        "trending": 73,
+        "popularity": 68297,
         "genres": [
           "Action",
           "Adventure",
+          "Drama",
+          "Fantasy",
+          "Supernatural"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/128067"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 2,
+        "anilistId": 137280,
+        "title": "나 혼자 만렙 뉴비",
+        "romaji": "Na Honja Mallep Newbie",
+        "trending": 66,
+        "popularity": 50954,
+        "genres": [
+          "Action",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/159441"
-      },
-      {
-        "titleZh": "奈米魔神",
-        "authorZh": "한중월야／금강불괴",
-        "synopsisZh": "天如運是魔教教主之子，卻被貶為不受重視的第七公子。命懸一線之際，未來子孫送來奈米機器助他逃過一劫，憑藉奈米科技加速修煉，從谷底一路崛起，在魔教掀起全新變革。",
-        "genreZh": [
-          "科幻",
-          "戰鬥"
-        ],
-        "rank": 2,
-        "anilistId": 120980,
-        "title": "나노마신",
-        "romaji": "Nano Machine",
-        "trending": 111,
-        "popularity": 48344,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy",
-          "Sci-Fi"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/120980"
+        "siteUrl": "https://anilist.co/manga/137280"
       },
       {
         "titleZh": "",
@@ -153,124 +147,113 @@
         "synopsisZh": "",
         "genreZh": [],
         "rank": 3,
-        "anilistId": 184502,
-        "title": "사시미 한 자루로 아카데미를 씹어먹음",
-        "romaji": "Sashimi Han Jaruro Academy-reul Ssipeomeokeum",
-        "trending": 77,
-        "popularity": 15018,
+        "anilistId": 130429,
+        "title": "이번 생은 가주가 되겠습니다",
+        "romaji": "Ibeon Saengeun Gajuga Doegetseumnida",
+        "trending": 58,
+        "popularity": 25185,
+        "genres": [
+          "Drama",
+          "Fantasy",
+          "Romance"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/130429"
+      },
+      {
+        "titleZh": "魔皇大管家",
+        "authorZh": "夜梟／無二漫畫",
+        "synopsisZh": "曾經威震一方的魔皇卓一凡遭親信背叛，重生後修為歸零，還被心魔纏身。為了重返巔峰，他暫且棲身沒落家族，擔任大小姐的專屬管家暗中佈局。",
+        "genreZh": [
+          "奇幻",
+          "戰鬥"
+        ],
+        "rank": 4,
+        "anilistId": 116353,
+        "title": "魔皇大管家",
+        "romaji": "Mo Huang Da Guanjia",
+        "trending": 55,
+        "popularity": 27750,
         "genres": [
           "Action",
           "Fantasy"
         ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/184502"
+        "country": "CN",
+        "siteUrl": "https://anilist.co/manga/116353"
       },
       {
         "titleZh": "",
         "authorZh": "",
         "synopsisZh": "",
         "genreZh": [],
-        "rank": 4,
-        "anilistId": 201773,
-        "title": "灰宮先輩は怖くてかわいい",
-        "romaji": "Haimiya-senpai wa Kowakute Kawaii",
-        "trending": 61,
-        "popularity": 19760,
-        "genres": [
-          "Comedy",
-          "Romance",
-          "Slice of Life"
-        ],
-        "country": "JP",
-        "siteUrl": "https://anilist.co/manga/201773"
-      },
-      {
-        "titleZh": "變成蠻族！遊戲生存戰",
-        "authorZh": "정윤강／한태수",
-        "synopsisZh": "主角一覺醒來，竟附身在獨立遊戲「地下城與巨石」裡的蠻族角色身上，必須在滿是死亡陷阱的地城中殺出血路。沒有存檔，沒有重來，只能靠蠻力與野性一路活下去。",
-        "genreZh": [
-          "奇幻",
-          "戰鬥"
-        ],
         "rank": 5,
-        "anilistId": 164857,
-        "title": "게임 속 바바리안으로 살아남기",
-        "romaji": "Game Sok Babarian-euro Saranamgi",
-        "trending": 54,
-        "popularity": 21038,
+        "anilistId": 184347,
+        "title": "배드 본 블러드",
+        "romaji": "Bad Born Blood",
+        "trending": 53,
+        "popularity": 11478,
         "genres": [
           "Action",
-          "Adventure",
-          "Fantasy"
+          "Drama",
+          "Sci-Fi"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/164857"
+        "siteUrl": "https://anilist.co/manga/184347"
       },
       {
-        "titleZh": "星耀劍士",
-        "authorZh": "Q10／juno",
-        "synopsisZh": "布拉德自幼在貧民窟裡掙扎求生，某夜遭黑色雷電擊中，一股神祕存在自此寄宿於他體內。伴隨力量甦醒，他一步步踏上劍術之路，要在群星俯視的大陸闖出自己的傳說。",
-        "genreZh": [
-          "奇幻",
-          "戰鬥"
-        ],
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
         "rank": 6,
-        "anilistId": 170400,
-        "title": "별을 품은 소드마스터",
-        "romaji": "Byeoreul Pumeun Swordmaster",
-        "trending": 34,
-        "popularity": 32457,
+        "anilistId": 194727,
+        "title": "회귀수선전",
+        "romaji": "Hoegwisuseonjeon",
+        "trending": 51,
+        "popularity": 6600,
         "genres": [
           "Action",
           "Adventure",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/170400"
+        "siteUrl": "https://anilist.co/manga/194727"
       },
       {
-        "titleZh": "高武：登陸未來一萬年",
-        "authorZh": "每月一更／常盤勇者",
-        "synopsisZh": "武道初興之際，異獸來襲，人族武者節節敗退。陸聖穿越入夢，竟看見一萬年後的世界，那裡的煉體術與武學典籍效力翻倍千倍，只是文明繁衍至巔峰，卻已無人能繼承。",
-        "genreZh": [
-          "熱血",
-          "科幻"
-        ],
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
         "rank": 7,
-        "anilistId": 160980,
-        "title": "高武：登陆未来一万年",
-        "romaji": "Gao Wu: Denglu Weilai Yi Wan Nian",
-        "trending": 33,
-        "popularity": 15067,
+        "anilistId": 165182,
+        "title": "시한부 천재 암흑기사",
+        "romaji": "Sihanbu Cheonjae Amheukgisa",
+        "trending": 46,
+        "popularity": 19395,
         "genres": [
           "Action",
-          "Drama",
           "Fantasy"
         ],
-        "country": "CN",
-        "siteUrl": "https://anilist.co/manga/160980"
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/165182"
       },
       {
-        "titleZh": "藍色監獄",
-        "authorZh": "金城宗幸／ノ村優介",
-        "synopsisZh": "日本足球協會為打造世界頂尖前鋒，籌辦代號藍色監獄的極端選拔計畫，召集三百名高中鋒線球員，關進封閉設施淘汰賽。資質平庸的潔世一，被迫賭上一切爭奪成為最強前鋒的資格。",
-        "genreZh": [
-          "運動",
-          "競技"
-        ],
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
         "rank": 8,
-        "anilistId": 106130,
-        "title": "ブルーロック",
-        "romaji": "Blue Lock",
-        "trending": 29,
-        "popularity": 124909,
+        "anilistId": 201009,
+        "title": "악당들의 후원자가 되었다",
+        "romaji": "Akdangdeurui Huwonjaga Doeeotda",
+        "trending": 45,
+        "popularity": 14854,
         "genres": [
           "Action",
-          "Drama",
-          "Sports"
+          "Fantasy"
         ],
-        "country": "JP",
-        "siteUrl": "https://anilist.co/manga/106130"
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/201009"
       },
       {
         "titleZh": "",
@@ -278,18 +261,17 @@
         "synopsisZh": "",
         "genreZh": [],
         "rank": 9,
-        "anilistId": 132144,
-        "title": "화산귀환",
-        "romaji": "Hwasangwihwan",
-        "trending": 29,
-        "popularity": 45057,
+        "anilistId": 189051,
+        "title": "풍작이에요, 마왕님!",
+        "romaji": "Pungjagieyo, Mawangnim!",
+        "trending": 42,
+        "popularity": 9378,
         "genres": [
-          "Action",
-          "Adventure",
+          "Comedy",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/132144"
+        "siteUrl": "https://anilist.co/manga/189051"
       },
       {
         "titleZh": "",
@@ -297,17 +279,17 @@
         "synopsisZh": "",
         "genreZh": [],
         "rank": 10,
-        "anilistId": 201855,
-        "title": "ふたりバス",
-        "romaji": "Futari Bus",
-        "trending": 29,
-        "popularity": 4308,
+        "anilistId": 182000,
+        "title": "대뜸 착각당했다 괴물 천재배우로",
+        "romaji": "Daetteum Chakgakdanghaetda Goemul Cheonjaebaeuro",
+        "trending": 36,
+        "popularity": 5457,
         "genres": [
-          "Comedy",
-          "Romance"
+          "Drama",
+          "Supernatural"
         ],
-        "country": "JP",
-        "siteUrl": "https://anilist.co/manga/201855"
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/182000"
       }
     ]
   }
