@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-10-06T13:20:29+08:00",
+  "generatedAt": "2026-10-07T12:48:55+08:00",
   "cjk": {
     "source": "zh.wikipedia pageviews",
     "sourceUrl": "https://wikimedia.org/api/rest_v1/",
-    "dataDate": "20261005",
+    "dataDate": "20261006",
     "missing": [],
     "list": [
       {
         "id": "frieren",
         "wiki": "葬送的芙莉蓮",
-        "views": 862,
-        "day": "20261005",
+        "views": 844,
+        "day": "20261006",
         "found": true,
         "rank": 1,
         "prevRank": 1
@@ -18,8 +18,8 @@
       {
         "id": "attack-on-titan",
         "wiki": "進擊的巨人",
-        "views": 846,
-        "day": "20261005",
+        "views": 769,
+        "day": "20261006",
         "found": true,
         "rank": 2,
         "prevRank": 2
@@ -27,26 +27,26 @@
       {
         "id": "jujutsu-kaisen",
         "wiki": "咒術迴戰",
-        "views": 844,
-        "day": "20261005",
+        "views": 757,
+        "day": "20261006",
         "found": true,
         "rank": 3,
-        "prevRank": 5
-      },
-      {
-        "id": "one-piece",
-        "wiki": "ONE PIECE",
-        "views": 685,
-        "day": "20261005",
-        "found": true,
-        "rank": 4,
         "prevRank": 3
       },
       {
         "id": "demon-slayer",
         "wiki": "鬼滅之刃",
-        "views": 662,
-        "day": "20261005",
+        "views": 731,
+        "day": "20261006",
+        "found": true,
+        "rank": 4,
+        "prevRank": 5
+      },
+      {
+        "id": "one-piece",
+        "wiki": "ONE PIECE",
+        "views": 692,
+        "day": "20261006",
         "found": true,
         "rank": 5,
         "prevRank": 4
@@ -54,8 +54,8 @@
       {
         "id": "bleach",
         "wiki": "BLEACH",
-        "views": 595,
-        "day": "20261005",
+        "views": 532,
+        "day": "20261006",
         "found": true,
         "rank": 6,
         "prevRank": 6
@@ -63,35 +63,35 @@
       {
         "id": "my-hero-academia",
         "wiki": "我的英雄學院",
-        "views": 522,
-        "day": "20261005",
+        "views": 526,
+        "day": "20261006",
         "found": true,
         "rank": 7,
         "prevRank": 7
       },
       {
-        "id": "chainsaw-man",
-        "wiki": "鏈鋸人",
-        "views": 484,
-        "day": "20261005",
-        "found": true,
-        "rank": 8,
-        "prevRank": 10
-      },
-      {
         "id": "naruto",
         "wiki": "火影忍者",
-        "views": 473,
-        "day": "20261005",
+        "views": 514,
+        "day": "20261006",
         "found": true,
-        "rank": 9,
+        "rank": 8,
         "prevRank": 9
       },
       {
-        "id": "spy-family",
-        "wiki": "SPY×FAMILY間諜家家酒",
-        "views": 439,
-        "day": "20261005",
+        "id": "chainsaw-man",
+        "wiki": "鏈鋸人",
+        "views": 471,
+        "day": "20261006",
+        "found": true,
+        "rank": 9,
+        "prevRank": 8
+      },
+      {
+        "id": "blue-lock",
+        "wiki": "BLUE LOCK 藍色監獄",
+        "views": 457,
+        "day": "20261006",
         "found": true,
         "rank": 10,
         "prevRank": null
@@ -101,6 +101,199 @@
   "global": {
     "source": "AniList trending",
     "sourceUrl": "https://anilist.co",
-    "list": []
+    "list": [
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 1,
+        "anilistId": 159930,
+        "title": "무한의 마법사",
+        "romaji": "Muhanui Mabeopsa",
+        "trending": 74,
+        "popularity": 41363,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Drama",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/159930"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 2,
+        "anilistId": 214050,
+        "title": "내가 죽인 드래곤과 결혼했다",
+        "romaji": "Naega Jugin Dragon-gwa Gyeolhonhaetda",
+        "trending": 67,
+        "popularity": 4046,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/214050"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 3,
+        "anilistId": 106929,
+        "title": "일렉시드",
+        "romaji": "Eleceed",
+        "trending": 63,
+        "popularity": 46879,
+        "genres": [
+          "Action",
+          "Comedy",
+          "Supernatural"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/106929"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 4,
+        "anilistId": 132144,
+        "title": "화산귀환",
+        "romaji": "Hwasangwihwan",
+        "trending": 56,
+        "popularity": 45289,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/132144"
+      },
+      {
+        "titleZh": "藍色監獄",
+        "authorZh": "金城宗幸／ノ村優介",
+        "synopsisZh": "日本足球協會為打造世界頂尖前鋒，籌辦代號藍色監獄的極端選拔計畫，召集三百名高中鋒線球員，關進封閉設施淘汰賽。資質平庸的潔世一，被迫賭上一切爭奪成為最強前鋒的資格。",
+        "genreZh": [
+          "運動",
+          "競技"
+        ],
+        "rank": 5,
+        "anilistId": 106130,
+        "title": "ブルーロック",
+        "romaji": "Blue Lock",
+        "trending": 49,
+        "popularity": 125197,
+        "genres": [
+          "Action",
+          "Drama",
+          "Sports"
+        ],
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/106130"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 6,
+        "anilistId": 175946,
+        "title": "괴력 난신",
+        "romaji": "Goeryeok Nansin",
+        "trending": 47,
+        "popularity": 20100,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/175946"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 7,
+        "anilistId": 169904,
+        "title": "尾守つみきと奇日常。",
+        "romaji": "Ogami Tsumiki to Kinichijou.",
+        "trending": 44,
+        "popularity": 15098,
+        "genres": [
+          "Comedy",
+          "Romance",
+          "Supernatural"
+        ],
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/169904"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 8,
+        "anilistId": 180422,
+        "title": "百瀬アキラの初恋破綻中。",
+        "romaji": "Momose Akira no Hatsukoi Hatan-chuu.",
+        "trending": 42,
+        "popularity": 16307,
+        "genres": [
+          "Comedy",
+          "Romance"
+        ],
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/180422"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 9,
+        "anilistId": 207089,
+        "title": "망나니 1왕자가 되었다",
+        "romaji": "Mangnani 1-wangjaga Doeeotda",
+        "trending": 42,
+        "popularity": 5659,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/207089"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 10,
+        "anilistId": 122063,
+        "title": "シャングリラ・フロンティア〜クソゲーハンター, 神ゲーに挑まんとす〜",
+        "romaji": "Shangri-La Frontier: Kusoge Hunter, Kami ge ni Idoman to su",
+        "trending": 35,
+        "popularity": 23021,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Comedy",
+          "Fantasy",
+          "Sci-Fi"
+        ],
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/122063"
+      }
+    ]
   }
 }
