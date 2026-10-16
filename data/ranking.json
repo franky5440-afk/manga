@@ -1,316 +1,106 @@
 {
-  "generatedAt": "2026-10-15T11:37:05+08:00",
+  "generatedAt": "2026-10-16T11:33:20+08:00",
   "cjk": {
     "source": "zh.wikipedia pageviews",
     "sourceUrl": "https://wikimedia.org/api/rest_v1/",
-    "dataDate": "20261014",
+    "dataDate": "20261015",
     "missing": [],
     "list": [
       {
-        "id": "naruto",
-        "wiki": "火影忍者",
-        "views": 853,
-        "day": "20261014",
+        "id": "attack-on-titan",
+        "wiki": "進擊的巨人",
+        "views": 956,
+        "day": "20261015",
         "found": true,
         "rank": 1,
         "prevRank": 2
       },
       {
-        "id": "attack-on-titan",
-        "wiki": "進擊的巨人",
-        "views": 811,
-        "day": "20261014",
+        "id": "naruto",
+        "wiki": "火影忍者",
+        "views": 743,
+        "day": "20261015",
         "found": true,
         "rank": 2,
         "prevRank": 1
       },
       {
-        "id": "jujutsu-kaisen",
-        "wiki": "咒術迴戰",
-        "views": 750,
-        "day": "20261014",
+        "id": "frieren",
+        "wiki": "葬送的芙莉蓮",
+        "views": 735,
+        "day": "20261015",
         "found": true,
         "rank": 3,
         "prevRank": 4
       },
       {
-        "id": "frieren",
-        "wiki": "葬送的芙莉蓮",
-        "views": 742,
-        "day": "20261014",
+        "id": "jujutsu-kaisen",
+        "wiki": "咒術迴戰",
+        "views": 704,
+        "day": "20261015",
         "found": true,
         "rank": 4,
         "prevRank": 3
       },
       {
-        "id": "one-piece",
-        "wiki": "ONE PIECE",
-        "views": 733,
-        "day": "20261014",
-        "found": true,
-        "rank": 5,
-        "prevRank": 5
-      },
-      {
         "id": "demon-slayer",
         "wiki": "鬼滅之刃",
-        "views": 719,
-        "day": "20261014",
+        "views": 665,
+        "day": "20261015",
         "found": true,
-        "rank": 6,
+        "rank": 5,
         "prevRank": 6
       },
       {
-        "id": "bleach",
-        "wiki": "BLEACH",
-        "views": 572,
-        "day": "20261014",
+        "id": "one-piece",
+        "wiki": "ONE PIECE",
+        "views": 647,
+        "day": "20261015",
+        "found": true,
+        "rank": 6,
+        "prevRank": 5
+      },
+      {
+        "id": "my-hero-academia",
+        "wiki": "我的英雄學院",
+        "views": 500,
+        "day": "20261015",
         "found": true,
         "rank": 7,
-        "prevRank": 7
+        "prevRank": null
       },
       {
         "id": "haikyu",
         "wiki": "排球少年！！",
-        "views": 476,
-        "day": "20261014",
+        "views": 500,
+        "day": "20261015",
         "found": true,
         "rank": 8,
-        "prevRank": null
+        "prevRank": 8
+      },
+      {
+        "id": "bleach",
+        "wiki": "BLEACH",
+        "views": 483,
+        "day": "20261015",
+        "found": true,
+        "rank": 9,
+        "prevRank": 7
       },
       {
         "id": "chainsaw-man",
         "wiki": "鏈鋸人",
-        "views": 462,
-        "day": "20261014",
-        "found": true,
-        "rank": 9,
-        "prevRank": null
-      },
-      {
-        "id": "dandadan",
-        "wiki": "膽大黨",
-        "views": 455,
-        "day": "20261014",
+        "views": 468,
+        "day": "20261015",
         "found": true,
         "rank": 10,
-        "prevRank": 10
+        "prevRank": 9
       }
     ]
   },
   "global": {
     "source": "AniList trending",
     "sourceUrl": "https://anilist.co",
-    "list": [
-      {
-        "titleZh": "奈米魔神",
-        "authorZh": "한중월야／금강불괴",
-        "synopsisZh": "天如運是魔教教主之子，卻被貶為不受重視的第七公子。命懸一線之際，未來子孫送來奈米機器助他逃過一劫，憑藉奈米科技加速修煉，從谷底一路崛起，在魔教掀起全新變革。",
-        "genreZh": [
-          "科幻",
-          "戰鬥"
-        ],
-        "rank": 1,
-        "anilistId": 120980,
-        "title": "나노마신",
-        "romaji": "Nano Machine",
-        "trending": 104,
-        "popularity": 48840,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy",
-          "Sci-Fi"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/120980"
-      },
-      {
-        "titleZh": "Pick Me Up!",
-        "authorZh": "헤르모드／와삭바삭",
-        "synopsisZh": "世界排名第五的大師羅奇，破關途中意外昏迷，醒來後竟成了等級一、星級一的菜鳥英雄韓伊斯拉特。為了重返地球，他必須帶領新手夥伴，闖過迷宮整整一百層關卡。",
-        "genreZh": [
-          "奇幻",
-          "冒險"
-        ],
-        "rank": 2,
-        "anilistId": 159441,
-        "title": "픽 미 업!",
-        "romaji": "Pick Me Up!",
-        "trending": 92,
-        "popularity": 45834,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/159441"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 3,
-        "anilistId": 184502,
-        "title": "사시미 한 자루로 아카데미를 씹어먹음",
-        "romaji": "Sashimi Han Jaruro Academy-reul Ssipeomeokeum",
-        "trending": 81,
-        "popularity": 15590,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/184502"
-      },
-      {
-        "titleZh": "變成蠻族！遊戲生存戰",
-        "authorZh": "정윤강／한태수",
-        "synopsisZh": "主角一覺醒來，竟附身在獨立遊戲「地下城與巨石」裡的蠻族角色身上，必須在滿是死亡陷阱的地城中殺出血路。沒有存檔，沒有重來，只能靠蠻力與野性一路活下去。",
-        "genreZh": [
-          "奇幻",
-          "戰鬥"
-        ],
-        "rank": 4,
-        "anilistId": 164857,
-        "title": "게임 속 바바리안으로 살아남기",
-        "romaji": "Game Sok Babarian-euro Saranamgi",
-        "trending": 62,
-        "popularity": 21628,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/164857"
-      },
-      {
-        "titleZh": "星耀劍士",
-        "authorZh": "Q10／juno",
-        "synopsisZh": "布拉德自幼在貧民窟裡掙扎求生，某夜遭黑色雷電擊中，一股神祕存在自此寄宿於他體內。伴隨力量甦醒，他一步步踏上劍術之路，要在群星俯視的大陸闖出自己的傳說。",
-        "genreZh": [
-          "奇幻",
-          "戰鬥"
-        ],
-        "rank": 5,
-        "anilistId": 170400,
-        "title": "별을 품은 소드마스터",
-        "romaji": "Byeoreul Pumeun Swordmaster",
-        "trending": 38,
-        "popularity": 33256,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/170400"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 6,
-        "anilistId": 210492,
-        "title": "初代様の帰還～史上最強が1000年後の子孫に転生する～",
-        "romaji": "Shodai-sama no Kikan: Shijou Saikyou ga 1000-nengo no Shison ni Tensei Suru",
-        "trending": 31,
-        "popularity": 1506,
-        "genres": [
-          "Action",
-          "Drama",
-          "Fantasy"
-        ],
-        "country": "JP",
-        "siteUrl": "https://anilist.co/manga/210492"
-      },
-      {
-        "titleZh": "高武：登陸未來一萬年",
-        "authorZh": "每月一更／常盤勇者",
-        "synopsisZh": "武道初興之際，異獸來襲，人族武者節節敗退。陸聖穿越入夢，竟看見一萬年後的世界，那裡的煉體術與武學典籍效力翻倍千倍，只是文明繁衍至巔峰，卻已無人能繼承。",
-        "genreZh": [
-          "熱血",
-          "科幻"
-        ],
-        "rank": 7,
-        "anilistId": 160980,
-        "title": "高武：登陆未来一万年",
-        "romaji": "Gao Wu: Denglu Weilai Yi Wan Nian",
-        "trending": 30,
-        "popularity": 15273,
-        "genres": [
-          "Action",
-          "Drama",
-          "Fantasy"
-        ],
-        "country": "CN",
-        "siteUrl": "https://anilist.co/manga/160980"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 8,
-        "anilistId": 165287,
-        "title": "신과함께 돌아온 기사왕님",
-        "romaji": "Singwahamkke Doraon Gisawangnim",
-        "trending": 27,
-        "popularity": 19656,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/165287"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 9,
-        "anilistId": 106929,
-        "title": "일렉시드",
-        "romaji": "Eleceed",
-        "trending": 25,
-        "popularity": 47136,
-        "genres": [
-          "Action",
-          "Comedy",
-          "Supernatural"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/106929"
-      },
-      {
-        "titleZh": "裝備至上",
-        "authorZh": "박새날／Team Argo",
-        "synopsisZh": "申英友白天打零工餬口，晚上靠虛擬實境遊戲紓壓，操控的角色格里德升級緩慢又不起眼。一次完成頂級任務，讓他獲得傳說中的帕格瑪祕笈，就此踏上逆襲成為傳奇職業的道路。",
-        "genreZh": [
-          "科幻",
-          "競技"
-        ],
-        "rank": 10,
-        "anilistId": 117460,
-        "title": "템빨",
-        "romaji": "Temppal",
-        "trending": 25,
-        "popularity": 39437,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Comedy",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/117460"
-      }
-    ]
+    "list": []
   }
 }
