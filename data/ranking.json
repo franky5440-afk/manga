@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T11:23:37+08:00",
+  "generatedAt": "2026-10-18T11:29:05+08:00",
   "cjk": {
     "source": "zh.wikipedia pageviews",
     "sourceUrl": "https://wikimedia.org/api/rest_v1/",
@@ -103,6 +103,71 @@
     "sourceUrl": "https://anilist.co",
     "list": [
       {
+        "titleZh": "魔皇大管家",
+        "authorZh": "夜梟／無二漫畫",
+        "synopsisZh": "曾經威震一方的魔皇卓一凡遭親信背叛，重生後修為歸零，還被心魔纏身。為了重返巔峰，他暫且棲身沒落家族，擔任大小姐的專屬管家暗中佈局。",
+        "genreZh": [
+          "奇幻",
+          "戰鬥"
+        ],
+        "rank": 1,
+        "anilistId": 116353,
+        "title": "魔皇大管家",
+        "romaji": "Mo Huang Da Guanjia",
+        "trending": 67,
+        "popularity": 28039,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "country": "CN",
+        "siteUrl": "https://anilist.co/manga/116353"
+      },
+      {
+        "titleZh": "劍術名家的小兒子",
+        "authorZh": "황제펭귄／AZI",
+        "synopsisZh": "大陸第一劍術名門的小兒子吉恩，前世是家族眼中的廢材，最後落得被逐出家門的下場。帶著記憶重活一世，靠著甦醒的天賦與神的契約，他決心為自己而戰。",
+        "genreZh": [
+          "奇幻",
+          "熱血"
+        ],
+        "rank": 2,
+        "anilistId": 149332,
+        "title": "검술명가 막내아들",
+        "romaji": "Geomsulmyeongga Mangnaeadeul",
+        "trending": 60,
+        "popularity": 44743,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/149332"
+      },
+      {
+        "titleZh": "描繪地下城的畫家",
+        "authorZh": "취미글주의",
+        "synopsisZh": "美術教師徐智吾在大火中喪命，靈魂被吸入一幅肖像畫中，自己也化為畫中人。在畫作世界裡，他意外獲得創造生命與開啟異次元之門的能力，決心運用畫筆，解決身邊眾人面臨的難題。",
+        "genreZh": [
+          "奇幻",
+          "治癒"
+        ],
+        "rank": 3,
+        "anilistId": 213942,
+        "title": "던전을 그리는 화가",
+        "romaji": "Dungeon-eul Geurineun Hwaga",
+        "trending": 60,
+        "popularity": 5569,
+        "genres": [
+          "Fantasy",
+          "Mystery",
+          "Thriller"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/213942"
+      },
+      {
         "titleZh": "航海王",
         "authorZh": "尾田榮一郎",
         "synopsisZh": "少年魯夫吃下橡膠果實後踏上大海，立志成為海賊王。他一路收攏各懷夢想的夥伴，駕船闖進被稱為偉大航道的險惡海域，在各方勢力的碰撞中追尋傳說中的大秘寶。",
@@ -110,12 +175,12 @@
           "冒險",
           "熱血"
         ],
-        "rank": 1,
+        "rank": 4,
         "anilistId": 30013,
         "title": "ONE PIECE",
         "romaji": "ONE PIECE",
-        "trending": 74,
-        "popularity": 235040,
+        "trending": 55,
+        "popularity": 235108,
         "genres": [
           "Action",
           "Adventure",
@@ -126,46 +191,23 @@
         "siteUrl": "https://anilist.co/manga/30013"
       },
       {
-        "titleZh": "魔皇大管家",
-        "authorZh": "夜梟／無二漫畫",
-        "synopsisZh": "曾經威震一方的魔皇卓一凡遭親信背叛，重生後修為歸零，還被心魔纏身。為了重返巔峰，他暫且棲身沒落家族，擔任大小姐的專屬管家暗中佈局。",
-        "genreZh": [
-          "奇幻",
-          "戰鬥"
-        ],
-        "rank": 2,
-        "anilistId": 116353,
-        "title": "魔皇大管家",
-        "romaji": "Mo Huang Da Guanjia",
-        "trending": 68,
-        "popularity": 28020,
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 5,
+        "anilistId": 135325,
+        "title": "나태 공자, 노력 천재 되다",
+        "romaji": "Natae Gongja, Nolyeog Cheonjae Doeda",
+        "trending": 53,
+        "popularity": 34892,
         "genres": [
           "Action",
-          "Fantasy"
-        ],
-        "country": "CN",
-        "siteUrl": "https://anilist.co/manga/116353"
-      },
-      {
-        "titleZh": "魔道轉生記",
-        "authorZh": "codezero／FORCE STUDIO",
-        "synopsisZh": "千河宸原是正道義天盟麾下最強刺客，一朝殞命卻轉生為魔教三皇子徐良。背負仇敵之名重新睜眼，他決心藏起過去身份，在爾虞我詐的魔道世界裡步步為營，闖出屬於自己的一條生路。",
-        "genreZh": [
-          "戰鬥",
-          "奇幻"
-        ],
-        "rank": 3,
-        "anilistId": 164222,
-        "title": "마도전생기",
-        "romaji": "Madojeonsaenggi",
-        "trending": 48,
-        "popularity": 14570,
-        "genres": [
-          "Action",
+          "Adventure",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/164222"
+        "siteUrl": "https://anilist.co/manga/135325"
       },
       {
         "titleZh": "裝備至上",
@@ -175,12 +217,12 @@
           "科幻",
           "競技"
         ],
-        "rank": 4,
+        "rank": 6,
         "anilistId": 117460,
         "title": "템빨",
         "romaji": "Temppal",
-        "trending": 47,
-        "popularity": 39528,
+        "trending": 52,
+        "popularity": 39591,
         "genres": [
           "Action",
           "Adventure",
@@ -191,105 +233,65 @@
         "siteUrl": "https://anilist.co/manga/117460"
       },
       {
-        "titleZh": "三流反派的學院生存記",
-        "authorZh": "코리타／기린그린",
-        "synopsisZh": "艾德被家族拋棄，又被逐出宿舍，是遊戲裡注定領便當的三流反派。靈魂穿入他體內後，只想低調拿到獎學金畢業，卻沒想到四位女主角接連靠近，命運悄悄偏離劇本。",
-        "genreZh": [
-          "奇幻",
-          "戀愛"
-        ],
-        "rank": 5,
-        "anilistId": 172619,
-        "title": "아카데미에서 살아남기",
-        "romaji": "Academy-eseo Saranamgi",
-        "trending": 43,
-        "popularity": 32261,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/172619"
-      },
-      {
-        "titleZh": "地下城見聞錄",
-        "authorZh": "글럼프／손민우",
-        "synopsisZh": "金鎮宇出生於迷宮最深處，是被怪物撫養長大的地下城之子。他自幼以盜掘古墓維生，歷經無數次生死交關的戰鬥後練出驚人實力，逐步從卑微的盜墓者，蛻變為統治整座迷宮的王者。",
-        "genreZh": [
-          "奇幻",
-          "冒險"
-        ],
-        "rank": 6,
-        "anilistId": 155485,
-        "title": "던전 견문록",
-        "romaji": "Dungeon Gyeonmullok",
-        "trending": 42,
-        "popularity": 21802,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/155485"
-      },
-      {
         "titleZh": "",
         "authorZh": "",
         "synopsisZh": "",
         "genreZh": [],
         "rank": 7,
-        "anilistId": 212562,
-        "title": "괴담에 떨어져도 출근을 해야 하는구나",
-        "romaji": "Goedame Tteoreojyeodo Chulgeuneul Haeya Haneunguna",
-        "trending": 38,
-        "popularity": 6815,
-        "genres": [
-          "Drama",
-          "Fantasy",
-          "Horror",
-          "Supernatural"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/212562"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 8,
-        "anilistId": 128067,
-        "title": "SSS급 죽어야 사는 헌터",
-        "romaji": "SSS-geup Jugeoya Saneun Hunter",
-        "trending": 32,
-        "popularity": 69500,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Drama",
-          "Fantasy",
-          "Supernatural"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/128067"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 9,
-        "anilistId": 137280,
-        "title": "나 혼자 만렙 뉴비",
-        "romaji": "Na Honja Mallep Newbie",
-        "trending": 32,
-        "popularity": 51484,
+        "anilistId": 186019,
+        "title": "집구석 절대자",
+        "romaji": "Jipguseok Jeoldaeja",
+        "trending": 44,
+        "popularity": 9891,
         "genres": [
           "Action",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/137280"
+        "siteUrl": "https://anilist.co/manga/186019"
+      },
+      {
+        "titleZh": "世上沒有壞千金",
+        "authorZh": "코리타／신희빈、팀핑크샤크",
+        "synopsisZh": "德瑞克曾是覺醒魔法天賦的傭兵，如今受聘成為貴族學院的魔法教師，專門教導行為出格的千金小姐。他堅信世上沒有真正的壞千金，只有未被理解的處境，一步步引導她們找回真心。",
+        "genreZh": [
+          "戀愛",
+          "喜劇"
+        ],
+        "rank": 8,
+        "anilistId": 206766,
+        "title": "세상에 나쁜 영애는 없다",
+        "romaji": "Sesange Nappeun Yeongaeneun Eopda",
+        "trending": 35,
+        "popularity": 6644,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/206766"
+      },
+      {
+        "titleZh": "高武：登陸未來一萬年",
+        "authorZh": "每月一更／常盤勇者",
+        "synopsisZh": "武道初興之際，異獸來襲，人族武者節節敗退。陸聖穿越入夢，竟看見一萬年後的世界，那裡的煉體術與武學典籍效力翻倍千倍，只是文明繁衍至巔峰，卻已無人能繼承。",
+        "genreZh": [
+          "熱血",
+          "科幻"
+        ],
+        "rank": 9,
+        "anilistId": 160980,
+        "title": "高武：登陆未来一万年",
+        "romaji": "Gao Wu: Denglu Weilai Yi Wan Nian",
+        "trending": 34,
+        "popularity": 15307,
+        "genres": [
+          "Action",
+          "Drama",
+          "Fantasy"
+        ],
+        "country": "CN",
+        "siteUrl": "https://anilist.co/manga/160980"
       },
       {
         "titleZh": "",
@@ -297,17 +299,17 @@
         "synopsisZh": "",
         "genreZh": [],
         "rank": 10,
-        "anilistId": 201009,
-        "title": "악당들의 후원자가 되었다",
-        "romaji": "Akdangdeurui Huwonjaga Doeeotda",
-        "trending": 32,
-        "popularity": 15723,
+        "anilistId": 185979,
+        "title": "전설급 영웅은 아카데미 우등생",
+        "romaji": "Jeonseolgeup Yeongungeun Academy Udeungsaeng",
+        "trending": 34,
+        "popularity": 10919,
         "genres": [
           "Action",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/201009"
+        "siteUrl": "https://anilist.co/manga/185979"
       }
     ]
   }
