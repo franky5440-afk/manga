@@ -1,97 +1,97 @@
 {
-  "generatedAt": "2026-10-27T12:04:38+08:00",
+  "generatedAt": "2026-10-28T12:31:27+08:00",
   "cjk": {
     "source": "zh.wikipedia pageviews",
     "sourceUrl": "https://wikimedia.org/api/rest_v1/",
-    "dataDate": "20261026",
+    "dataDate": "20261027",
     "missing": [],
     "list": [
       {
         "id": "bleach",
         "wiki": "BLEACH",
-        "views": 1569,
-        "day": "20261026",
+        "views": 3830,
+        "day": "20261027",
         "found": true,
         "rank": 1,
-        "prevRank": 6
+        "prevRank": 1
       },
       {
         "id": "attack-on-titan",
         "wiki": "進擊的巨人",
-        "views": 911,
-        "day": "20261026",
+        "views": 983,
+        "day": "20261027",
         "found": true,
         "rank": 2,
-        "prevRank": 1
+        "prevRank": 2
       },
       {
         "id": "frieren",
         "wiki": "葬送的芙莉蓮",
-        "views": 821,
-        "day": "20261026",
+        "views": 762,
+        "day": "20261027",
         "found": true,
         "rank": 3,
-        "prevRank": 2
-      },
-      {
-        "id": "jujutsu-kaisen",
-        "wiki": "咒術迴戰",
-        "views": 746,
-        "day": "20261025",
-        "found": true,
-        "rank": 4,
         "prevRank": 3
-      },
-      {
-        "id": "one-piece",
-        "wiki": "ONE PIECE",
-        "views": 746,
-        "day": "20261025",
-        "found": true,
-        "rank": 5,
-        "prevRank": 4
-      },
-      {
-        "id": "demon-slayer",
-        "wiki": "鬼滅之刃",
-        "views": 705,
-        "day": "20261026",
-        "found": true,
-        "rank": 6,
-        "prevRank": 5
       },
       {
         "id": "naruto",
         "wiki": "火影忍者",
-        "views": 686,
-        "day": "20261026",
+        "views": 638,
+        "day": "20261027",
+        "found": true,
+        "rank": 4,
+        "prevRank": 7
+      },
+      {
+        "id": "one-piece",
+        "wiki": "ONE PIECE",
+        "views": 623,
+        "day": "20261027",
+        "found": true,
+        "rank": 5,
+        "prevRank": 5
+      },
+      {
+        "id": "demon-slayer",
+        "wiki": "鬼滅之刃",
+        "views": 607,
+        "day": "20261027",
+        "found": true,
+        "rank": 6,
+        "prevRank": 6
+      },
+      {
+        "id": "jujutsu-kaisen",
+        "wiki": "咒術迴戰",
+        "views": 595,
+        "day": "20261027",
         "found": true,
         "rank": 7,
-        "prevRank": 7
+        "prevRank": 4
       },
       {
         "id": "my-hero-academia",
         "wiki": "我的英雄學院",
-        "views": 635,
-        "day": "20261026",
+        "views": 557,
+        "day": "20261027",
         "found": true,
         "rank": 8,
         "prevRank": 8
       },
       {
-        "id": "spy-family",
-        "wiki": "SPY×FAMILY間諜家家酒",
-        "views": 536,
-        "day": "20261026",
-        "found": true,
-        "rank": 9,
-        "prevRank": 9
-      },
-      {
         "id": "haikyu",
         "wiki": "排球少年！！",
-        "views": 494,
-        "day": "20261026",
+        "views": 465,
+        "day": "20261027",
+        "found": true,
+        "rank": 9,
+        "prevRank": 10
+      },
+      {
+        "id": "chainsaw-man",
+        "wiki": "鏈鋸人",
+        "views": 457,
+        "day": "20261027",
         "found": true,
         "rank": 10,
         "prevRank": null
@@ -108,21 +108,38 @@
         "synopsisZh": "",
         "genreZh": [],
         "rank": 1,
-        "anilistId": 132029,
-        "title": "ダンダダン",
-        "romaji": "Dandadan",
-        "trending": 78,
-        "popularity": 117979,
+        "anilistId": 159930,
+        "title": "무한의 마법사",
+        "romaji": "Muhanui Mabeopsa",
+        "trending": 81,
+        "popularity": 42148,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Drama",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/159930"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 2,
+        "anilistId": 106929,
+        "title": "일렉시드",
+        "romaji": "Eleceed",
+        "trending": 73,
+        "popularity": 47426,
         "genres": [
           "Action",
           "Comedy",
-          "Drama",
-          "Romance",
-          "Sci-Fi",
           "Supernatural"
         ],
-        "country": "JP",
-        "siteUrl": "https://anilist.co/manga/132029"
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/106929"
       },
       {
         "titleZh": "絕對回歸",
@@ -132,12 +149,12 @@
           "戰鬥",
           "劇情"
         ],
-        "rank": 2,
+        "rank": 3,
         "anilistId": 180891,
         "title": "절대회귀",
         "romaji": "Jeoldaehoegwi",
         "trending": 72,
-        "popularity": 19790,
+        "popularity": 19834,
         "genres": [
           "Action",
           "Fantasy"
@@ -146,42 +163,26 @@
         "siteUrl": "https://anilist.co/manga/180891"
       },
       {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 3,
-        "anilistId": 152128,
-        "title": "소설 속 엑스트라",
-        "romaji": "Soseol Sok Extra",
-        "trending": 69,
-        "popularity": 30759,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Drama",
-          "Fantasy"
+        "titleZh": "藍色監獄",
+        "authorZh": "金城宗幸／ノ村優介",
+        "synopsisZh": "日本足球協會為打造世界頂尖前鋒，籌辦代號藍色監獄的極端選拔計畫，召集三百名高中鋒線球員，關進封閉設施淘汰賽。資質平庸的潔世一，被迫賭上一切爭奪成為最強前鋒的資格。",
+        "genreZh": [
+          "運動",
+          "競技"
         ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/152128"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
         "rank": 4,
-        "anilistId": 182066,
-        "title": "회귀한 용병은 다 계획이 있다",
-        "romaji": "Hoegwihan Yongbyeongeun Da Gyehoegi Itda",
-        "trending": 64,
-        "popularity": 25539,
+        "anilistId": 106130,
+        "title": "ブルーロック",
+        "romaji": "Blue Lock",
+        "trending": 63,
+        "popularity": 126149,
         "genres": [
           "Action",
-          "Fantasy"
+          "Drama",
+          "Sports"
         ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/182066"
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/106130"
       },
       {
         "titleZh": "",
@@ -189,11 +190,48 @@
         "synopsisZh": "",
         "genreZh": [],
         "rank": 5,
+        "anilistId": 214050,
+        "title": "내가 죽인 드래곤과 결혼했다",
+        "romaji": "Naega Jugin Dragon-gwa Gyeolhonhaetda",
+        "trending": 58,
+        "popularity": 4929,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/214050"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 6,
+        "anilistId": 144957,
+        "title": "멸망 이후의 세계",
+        "romaji": "Myeolmang Ihuui Segye",
+        "trending": 57,
+        "popularity": 45543,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/144957"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 7,
         "anilistId": 208208,
         "title": "양치기 마법사",
         "romaji": "Yangchigi Mabeopsa",
-        "trending": 48,
-        "popularity": 7269,
+        "trending": 50,
+        "popularity": 7310,
         "genres": [
           "Action",
           "Fantasy"
@@ -202,67 +240,22 @@
         "siteUrl": "https://anilist.co/manga/208208"
       },
       {
-        "titleZh": "裝備至上",
-        "authorZh": "박새날／Team Argo",
-        "synopsisZh": "申英友白天打零工餬口，晚上靠虛擬實境遊戲紓壓，操控的角色格里德升級緩慢又不起眼。一次完成頂級任務，讓他獲得傳說中的帕格瑪祕笈，就此踏上逆襲成為傳奇職業的道路。",
-        "genreZh": [
-          "科幻",
-          "競技"
-        ],
-        "rank": 6,
-        "anilistId": 117460,
-        "title": "템빨",
-        "romaji": "Temppal",
-        "trending": 38,
-        "popularity": 40068,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Comedy",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/117460"
-      },
-      {
         "titleZh": "",
         "authorZh": "",
         "synopsisZh": "",
         "genreZh": [],
-        "rank": 7,
-        "anilistId": 164122,
-        "title": "귀환했는데 입대 전날이다",
-        "romaji": "Gwihwanhaenneunde Ipdae Jeonnarida",
-        "trending": 34,
-        "popularity": 12073,
+        "rank": 8,
+        "anilistId": 175946,
+        "title": "괴력 난신",
+        "romaji": "Goeryeok Nansin",
+        "trending": 47,
+        "popularity": 20793,
         "genres": [
           "Action",
-          "Drama",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/164122"
-      },
-      {
-        "titleZh": "修好辣妹的腳踏車後被她黏上了",
-        "authorZh": "紺野アキラ",
-        "synopsisZh": "沉默寡言的單車社少年順手修好了班上辣妹的腳踏車，從此被她三天兩頭找上門。兩個生活圈毫無交集的高中生，因為一台車慢慢摸索出彼此的距離。",
-        "genreZh": [
-          "戀愛",
-          "喜劇"
-        ],
-        "rank": 8,
-        "anilistId": 203886,
-        "title": "ギャルの自転車を直したら懐かれた",
-        "romaji": "Gal no Jitensha wo Naoshitara Natsukareta",
-        "trending": 32,
-        "popularity": 3009,
-        "genres": [
-          "Comedy",
-          "Romance"
-        ],
-        "country": "JP",
-        "siteUrl": "https://anilist.co/manga/203886"
+        "siteUrl": "https://anilist.co/manga/175946"
       },
       {
         "titleZh": "",
@@ -270,38 +263,36 @@
         "synopsisZh": "",
         "genreZh": [],
         "rank": 9,
-        "anilistId": 167834,
-        "title": "2레벨로 회귀한 무신",
-        "romaji": "2 Level Hoegwihan Musin",
-        "trending": 31,
-        "popularity": 20476,
+        "anilistId": 132144,
+        "title": "화산귀환",
+        "romaji": "Hwasangwihwan",
+        "trending": 45,
+        "popularity": 46027,
         "genres": [
           "Action",
+          "Adventure",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/167834"
+        "siteUrl": "https://anilist.co/manga/132144"
       },
       {
-        "titleZh": "鐵血劍家獵犬的回歸",
-        "authorZh": "레고밟았어／설아랑",
-        "synopsisZh": "身為鐵血劍家最忠誠的獵犬，維基爾替家族剷除異己，換來的卻是莫須有的罪名與斷頭台。帶著滿腔怨恨重生回到四十年前，這一次他發誓不再當任何人的狗。",
-        "genreZh": [
-          "奇幻",
-          "戰鬥"
-        ],
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
         "rank": 10,
-        "anilistId": 163824,
-        "title": "철혈검가 사냥개의 회귀",
-        "romaji": "Cheolhyeolgeomga Sanyanggaeui Hoegwi",
-        "trending": 29,
-        "popularity": 46458,
+        "anilistId": 201855,
+        "title": "ふたりバス",
+        "romaji": "Futari Bus",
+        "trending": 44,
+        "popularity": 4685,
         "genres": [
-          "Action",
-          "Fantasy"
+          "Comedy",
+          "Romance"
         ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/163824"
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/201855"
       }
     ]
   }
