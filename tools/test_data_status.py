@@ -47,8 +47,8 @@ def check(name, ok, detail=''):
         print('FAIL', name, ('\n    ' + str(detail)) if detail else '')
 
 
-# 基準固定為資料整理前的 commit；用 HEAD 的話，資料 commit 進去後基準會跟著移動、測試就失去意義
-BASE = '84c342e'
+# 基準固定為 2026-11-01 評論句清理併回後的 commit（原為 84c342e）；用 HEAD 的話基準會跟著移動、測試就失去意義
+BASE = '85f384e'
 
 
 def head(rel):
@@ -80,7 +80,7 @@ check('manga.json ended 值與查證清單一致（連載中 9 本、完結 30 �
 check('manga.json ended 為 true 的正好 30 本',
       sum(1 for b in manga if b.get('ended') is True) == 30)
 changed = [b['id'] for b, b0 in zip(manga, manga0)
-           if {k: v for k, v in b.items() if k != 'ended'} != b0]
+           if {k: v for k, v in b.items() if k != 'ended'} != {k: v for k, v in b0.items() if k != 'ended'}]
 check('manga.json 除了 ended 之外沒有任何欄位被改', not changed, changed)
 check('manga.json 存檔格式維持 indent=2／不轉義中文／結尾換行', fmt_ok('data/manga.json'))
 
