@@ -16,6 +16,8 @@ TOKEN = re.compile(r'[0-9０-９]+|[A-Za-z]{2,}|「[^」]+」|《[^》]+》')
 
 
 def hits(text):
+    # 「兩人氣勢」「根本作為」只是字面相鄰，不是禁用詞
+    text = re.sub(r'人氣[勢息憤喘力]|根本作|基本作', '', text)
     return [w for w in WORDS if w in text]
 
 
