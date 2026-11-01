@@ -19,6 +19,11 @@ def hits(text):
     return [w for w in WORDS if w in text]
 
 
+def without_hits(text):
+    sentences = re.findall(r'[^。！？]+[。！？」]*', text)
+    return ''.join(x for x in sentences if not hits(x))
+
+
 def strip_plots(book):
     b = copy.deepcopy(book)
     for c in b['chapters']:
@@ -52,6 +57,8 @@ def check(name):
                 bad.append(f'{key}: 例外缺 reason')
             if e and e.get('kind') == 'needs-research' and op != np:
                 bad.append(f'{key}: needs-research 必須維持原文')
+            if e and e.get('kind') == 'needs-research' and len(without_hits(op)) >= lo:
+                bad.append(f'{key}: 整句刪掉含禁用詞的句子後仍有 {len(without_hits(op))} 字，不是 needs-research，應直接清理')
             if op == np:
                 left = [w for w in hits(np) if not (e and w in e.get('words', []))]
                 if left:
