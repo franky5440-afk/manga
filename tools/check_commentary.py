@@ -19,9 +19,12 @@ def hits(text):
     return [w for w in WORDS if w in text]
 
 
+def sentences(text):
+    return re.findall(r'[^。！？]+[。！？」]*', text)
+
+
 def without_hits(text):
-    sentences = re.findall(r'[^。！？]+[。！？」]*', text)
-    return ''.join(x for x in sentences if not hits(x))
+    return ''.join(x for x in sentences(text) if not hits(x))
 
 
 def strip_plots(book):
@@ -66,6 +69,9 @@ def check(name):
                     bad.append(f'{key}: 殘留禁用詞 {left}')
                 continue
             changed += 1
+            for x in sentences(op):
+                if not hits(x) and x not in np:
+                    bad.append(f'{key}: 不含禁用詞的句子不可改動或刪除：{x[:30]}')
             if not hits(op):
                 bad.append(f'{key}: 基準版沒有禁用詞，不可改動')
             left = [w for w in hits(np) if not (e and e.get('kind') == 'in-story' and w in e.get('words', []))]
