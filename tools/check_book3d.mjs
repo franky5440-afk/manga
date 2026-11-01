@@ -109,7 +109,8 @@ test('鍵盤也能轉正：有 :focus-visible 或 :focus-within 規則把 .book-
 const firstId = JSON.parse(read('data/manga.json'))[0].id;
 const LIST_PAGES = ['index.html', 'timeless.html', 'essentials.html', 'library.html'];
 const PAGES = LIST_PAGES.concat(['manga.html?id=' + firstId]);
-const chrome = [process.env.CHROME, 'google-chrome', 'chromium', 'chromium-browser']
+const chrome = [process.env.CHROME, 'google-chrome', 'chromium', 'chromium-browser',
+  '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome']
   .filter(Boolean).find((b) => spawnSync(b, ['--version']).status === 0);
 
 async function probe(width) {
