@@ -1,0 +1,195 @@
+{
+  "jujutsu-kaisen#4": {
+    "kind": "needs-research",
+    "words": [
+      "人氣"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 183 字，低於 200 字；需核對原文補足。"
+  },
+  "frieren#1": {
+    "kind": "needs-research",
+    "words": [
+      "留白"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 155 字，低於 200 字；需核對原文補足。"
+  },
+  "frieren#3": {
+    "kind": "needs-research",
+    "words": [
+      "讀者",
+      "本作"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 158 字，低於 200 字；需核對原文補足。"
+  },
+  "frieren#4": {
+    "kind": "needs-research",
+    "words": [
+      "本作"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 163 字，低於 200 字；需核對原文補足。"
+  },
+  "oshi-no-ko#2": {
+    "kind": "needs-research",
+    "words": [
+      "人氣"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 148 字，低於 200 字；需核對原文補足。"
+  },
+  "oshi-no-ko#3": {
+    "kind": "needs-research",
+    "words": [
+      "本作"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 169 字，低於 200 字；需核對原文補足。"
+  },
+  "dandadan#3": {
+    "kind": "needs-research",
+    "words": [
+      "本作"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 195 字，低於 200 字；需核對原文補足。"
+  },
+  "dandadan#4": {
+    "kind": "needs-research",
+    "words": [
+      "本作",
+      "氣氛"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 140 字，低於 200 字；需核對原文補足。"
+  },
+  "apocalypse-hotel#1": {
+    "kind": "needs-research",
+    "words": [
+      "氛圍"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 195 字，低於 200 字；需核對原文補足。"
+  },
+  "apocalypse-hotel#3": {
+    "kind": "needs-research",
+    "words": [
+      "讀者"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 184 字，低於 200 字；需核對原文補足。"
+  },
+  "apocalypse-hotel#4": {
+    "kind": "needs-research",
+    "words": [
+      "經典"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 167 字，低於 200 字；需核對原文補足。"
+  },
+  "attack-on-titan#2": {
+    "kind": "needs-research",
+    "words": [
+      "讀者"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 195 字，低於 200 字；需核對原文補足。"
+  },
+  "chainsaw-man#3": {
+    "kind": "needs-research",
+    "words": [
+      "本作"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 185 字，低於 200 字；需核對原文補足。"
+  },
+  "chainsaw-man#228": {
+    "kind": "needs-research",
+    "words": [
+      "餘韻"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 192 字，低於 200 字；需核對原文補足。"
+  },
+  "chainsaw-man#229": {
+    "kind": "needs-research",
+    "words": [
+      "氣氛"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 191 字，低於 200 字；需核對原文補足。"
+  },
+  "naruto#3": {
+    "kind": "needs-research",
+    "words": [
+      "氣氛"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 198 字，低於 200 字；需核對原文補足。"
+  },
+  "my-hero-academia#2": {
+    "kind": "needs-research",
+    "words": [
+      "本作"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 183 字，低於 200 字；需核對原文補足。"
+  },
+  "slam-dunk#272": {
+    "kind": "needs-research",
+    "words": [
+      "氣氛"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 195 字，低於 200 字；需核對原文補足。"
+  },
+  "dragon-ball#517": {
+    "kind": "needs-research",
+    "words": [
+      "氣氛"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 162 字，低於 200 字；需核對原文補足。"
+  },
+  "gintama#701": {
+    "kind": "needs-research",
+    "words": [
+      "讀者"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 177 字，低於 200 字；需核對原文補足。"
+  },
+  "tokyo-ghoul#139": {
+    "kind": "needs-research",
+    "words": [
+      "讀者"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 166 字，低於 200 字；需核對原文補足。"
+  },
+  "quintessential-quintuplets#4": {
+    "kind": "in-story",
+    "words": [
+      "氣氛"
+    ],
+    "reason": "四葉在林間學校活動中努力炒熱現場，是角色當下的行動描述。"
+  },
+  "kaguya-sama#5": {
+    "kind": "needs-research",
+    "words": [
+      "讀者",
+      "留白"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 191 字，低於 200 字；需核對原文補足。"
+  },
+  "saiki-k#275": {
+    "kind": "needs-research",
+    "words": [
+      "讀者",
+      "氣氛"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 113 字，低於 200 字；需核對原文補足。"
+  },
+  "saiki-k#277": {
+    "kind": "needs-research",
+    "words": [
+      "讀者"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 129 字，低於 200 字；需核對原文補足。"
+  },
+  "saiki-k#278": {
+    "kind": "needs-research",
+    "words": [
+      "氣氛"
+    ],
+    "reason": "逐句保留事實並刪除評論子句後為 197 字，低於 200 字；需核對原文補足。"
+  },
+  "komi-san#498": {
+    "kind": "in-story",
+    "words": [
+      "氣氛"
+    ],
+    "reason": "畢業典禮以爵士改編校歌作開場表演，炒熱現場是典禮中的實際安排。"
+  }
+}
