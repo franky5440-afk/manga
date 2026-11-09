@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T12:55:31+08:00",
+  "generatedAt": "2026-11-09T13:03:24+08:00",
   "cjk": {
     "source": "zh.wikipedia pageviews",
     "sourceUrl": "https://wikimedia.org/api/rest_v1/",
@@ -103,47 +103,46 @@
     "sourceUrl": "https://anilist.co",
     "list": [
       {
-        "titleZh": "魔皇大管家",
-        "authorZh": "夜梟／無二漫畫",
-        "synopsisZh": "曾經威震一方的魔皇卓一凡遭親信背叛，重生後修為歸零，還被心魔纏身。為了重返巔峰，他暫且棲身沒落家族，擔任大小姐的專屬管家暗中佈局。",
+        "titleZh": "鐵血劍家獵犬的回歸",
+        "authorZh": "레고밟았어／설아랑",
+        "synopsisZh": "身為鐵血劍家最忠誠的獵犬，維基爾替家族剷除異己，換來的卻是莫須有的罪名與斷頭台。帶著滿腔怨恨重生回到四十年前，這一次他發誓不再當任何人的狗。",
         "genreZh": [
           "奇幻",
           "戰鬥"
         ],
         "rank": 1,
-        "anilistId": 116353,
-        "title": "魔皇大管家",
-        "romaji": "Mo Huang Da Guanjia",
-        "trending": 71,
-        "popularity": 28368,
+        "anilistId": 163824,
+        "title": "철혈검가 사냥개의 회귀",
+        "romaji": "Cheolhyeolgeomga Sanyanggaeui Hoegwi",
+        "trending": 102,
+        "popularity": 46842,
         "genres": [
           "Action",
-          "Fantasy"
-        ],
-        "country": "CN",
-        "siteUrl": "https://anilist.co/manga/116353"
-      },
-      {
-        "titleZh": "劍術名家的小兒子",
-        "authorZh": "황제펭귄／AZI",
-        "synopsisZh": "大陸第一劍術名門的小兒子吉恩，前世是家族眼中的廢材，最後落得被逐出家門的下場。帶著記憶重活一世，靠著甦醒的天賦與神的契約，他決心為自己而戰。",
-        "genreZh": [
-          "奇幻",
-          "熱血"
-        ],
-        "rank": 2,
-        "anilistId": 149332,
-        "title": "검술명가 막내아들",
-        "romaji": "Geomsulmyeongga Mangnaeadeul",
-        "trending": 54,
-        "popularity": 45337,
-        "genres": [
-          "Action",
-          "Adventure",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/149332"
+        "siteUrl": "https://anilist.co/manga/163824"
+      },
+      {
+        "titleZh": "魯蛇的登塔攻略法",
+        "authorZh": "꾸찌꾸찌／플랜에이",
+        "synopsisZh": "地球各地憑空出現黑色高塔，能覺醒力量的人類寥寥無幾，膽小怕事的魯蛇上班族奉柱赫，從未奢望自己會是其中之一。某夜啃著泡麵時，系統忽然宣告他已覺醒，被迫踏上意外攻塔路。",
+        "genreZh": [
+          "奇幻",
+          "戰鬥"
+        ],
+        "rank": 2,
+        "anilistId": 203958,
+        "title": "하남자의 탑 공략법",
+        "romaji": "Hanamjaui Tap Gongnyakbeop",
+        "trending": 96,
+        "popularity": 4774,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/203958"
       },
       {
         "titleZh": "航海王",
@@ -157,8 +156,8 @@
         "anilistId": 30013,
         "title": "ONE PIECE",
         "romaji": "ONE PIECE",
-        "trending": 52,
-        "popularity": 236538,
+        "trending": 67,
+        "popularity": 236637,
         "genres": [
           "Action",
           "Adventure",
@@ -169,150 +168,151 @@
         "siteUrl": "https://anilist.co/manga/30013"
       },
       {
-        "titleZh": "描繪地下城的畫家",
-        "authorZh": "취미글주의",
-        "synopsisZh": "美術教師徐智吾在大火中喪命，靈魂被吸入一幅肖像畫中，自己也化為畫中人。在畫作世界裡，他意外獲得創造生命與開啟異次元之門的能力，決心運用畫筆，解決身邊眾人面臨的難題。",
-        "genreZh": [
-          "奇幻",
-          "治癒"
-        ],
-        "rank": 4,
-        "anilistId": 213942,
-        "title": "던전을 그리는 화가",
-        "romaji": "Dungeon-eul Geurineun Hwaga",
-        "trending": 51,
-        "popularity": 6433,
-        "genres": [
-          "Fantasy",
-          "Mystery",
-          "Thriller"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/213942"
-      },
-      {
-        "titleZh": "狂魔重生記",
-        "authorZh": "유진성／이희",
-        "synopsisZh": "武功冠絕天下的狂魔李紫霞盜走魔教至寶天玉，逃亡途中墜崖喪命。再睜眼卻回到自己還是客棧跑堂小二的年少歲月，他帶著前世武學見識，決心走出比狂魔時代更強大的路。",
+        "titleZh": "記得一切的天才武士",
+        "authorZh": "적설목／오민、모기향",
+        "synopsisZh": "三流武士陳蘇雲天生武學資質低下，卻擁有過目不忘的記憶。猝然回到三十年前魔教尚未復甦之際，出身寒微宗門與淺薄天賦未變，只能憑記憶裡的血淚教訓，拚死扭轉早已寫定的結局。",
         "genreZh": [
           "戰鬥",
-          "劇情"
+          "奇幻"
         ],
-        "rank": 5,
-        "anilistId": 137304,
-        "title": "광마회귀",
-        "romaji": "Gwangmahoegwi",
-        "trending": 49,
-        "popularity": 28506,
+        "rank": 4,
+        "anilistId": 211415,
+        "title": "모든걸 기억하는 천재무사",
+        "romaji": "Modeungeol Gieokaneun Cheonjaemusa",
+        "trending": 60,
+        "popularity": 3203,
         "genres": [
           "Action",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/137304"
+        "siteUrl": "https://anilist.co/manga/211415"
       },
       {
-        "titleZh": "裝備至上",
-        "authorZh": "박새날／Team Argo",
-        "synopsisZh": "申英友白天打零工餬口，晚上靠虛擬實境遊戲紓壓，操控的角色格里德升級緩慢又不起眼。一次完成頂級任務，讓他獲得傳說中的帕格瑪祕笈，就此踏上逆襲成為傳奇職業的道路。",
+        "titleZh": "坂本日常",
+        "authorZh": "鈴木祐斗",
+        "synopsisZh": "曾經讓殺手界聞風喪膽的傳奇殺手坂本太郎，如今是個發福的商店老闆。為了守護妻女與得來不易的日常，他帶著能讀心的搭檔迎戰一波波懸賞追殺。",
         "genreZh": [
-          "科幻",
-          "競技"
+          "戰鬥",
+          "喜劇"
         ],
+        "rank": 5,
+        "anilistId": 125828,
+        "title": "SAKAMOTO DAYS",
+        "romaji": "SAKAMOTO DAYS",
+        "trending": 53,
+        "popularity": 90374,
+        "genres": [
+          "Action",
+          "Comedy"
+        ],
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/125828"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
         "rank": 6,
-        "anilistId": 117460,
-        "title": "템빨",
-        "romaji": "Temppal",
-        "trending": 41,
-        "popularity": 40679,
+        "anilistId": 108556,
+        "title": "SPY×FAMILY",
+        "romaji": "SPY×FAMILY",
+        "trending": 50,
+        "popularity": 161220,
+        "genres": [
+          "Action",
+          "Comedy",
+          "Slice of Life",
+          "Supernatural"
+        ],
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/108556"
+      },
+      {
+        "titleZh": "世上沒有壞千金",
+        "authorZh": "코리타／신희빈、팀핑크샤크",
+        "synopsisZh": "德瑞克曾是覺醒魔法天賦的傭兵，如今受聘成為貴族學院的魔法教師，專門教導行為出格的千金小姐。他堅信世上沒有真正的壞千金，只有未被理解的處境，一步步引導她們找回真心。",
+        "genreZh": [
+          "戀愛",
+          "喜劇"
+        ],
+        "rank": 7,
+        "anilistId": 206766,
+        "title": "세상에 나쁜 영애는 없다",
+        "romaji": "Sesange Nappeun Yeongaeneun Eopda",
+        "trending": 50,
+        "popularity": 7211,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/206766"
+      },
+      {
+        "titleZh": "隔壁座位的傢伙用那種眼神看著我",
+        "authorZh": "mmk",
+        "synopsisZh": "池澤與同班同學江口經常相鄰而坐，某天他發現自己留意起她流汗的肌膚與髮香，心底浮現不單純的念頭，沒想到江口竟也用同樣眼神偷偷注視著他，兩人壓抑心意，在放學後逐漸靠近。",
+        "genreZh": [
+          "戀愛",
+          "喜劇"
+        ],
+        "rank": 8,
+        "anilistId": 177096,
+        "title": "となりの席のヤツがそういう目で見てくる",
+        "romaji": "Tonari no Seki no Yatsu ga Souiu Me de Mitekuru",
+        "trending": 49,
+        "popularity": 15730,
+        "genres": [
+          "Comedy",
+          "Ecchi",
+          "Romance"
+        ],
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/177096"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 9,
+        "anilistId": 174315,
+        "title": "姉のともだち",
+        "romaji": "Ane no Tomodachi",
+        "trending": 47,
+        "popularity": 12081,
+        "genres": [
+          "Comedy",
+          "Romance",
+          "Slice of Life"
+        ],
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/174315"
+      },
+      {
+        "titleZh": "魔男伊奇",
+        "authorZh": "西修／宇佐崎しろ",
+        "synopsisZh": "在這個世界，魔法是活生生的生物，只有通過試煉的女性才能駕馭。深山長大的少年伊奇憑獵人身手捕獲了傳說級魔法，成為史上第一位男性魔法使，魔法界就此天翻地覆。",
+        "genreZh": [
+          "奇幻",
+          "冒險"
+        ],
+        "rank": 10,
+        "anilistId": 180752,
+        "title": "魔男のイチ",
+        "romaji": "Madan no Ichi",
+        "trending": 47,
+        "popularity": 30850,
         "genres": [
           "Action",
           "Adventure",
           "Comedy",
           "Fantasy"
         ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/117460"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 7,
-        "anilistId": 211413,
-        "title": "아리도록",
-        "romaji": "Aridorok",
-        "trending": 37,
-        "popularity": 3541,
-        "genres": [
-          "Comedy",
-          "Drama",
-          "Romance"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/211413"
-      },
-      {
-        "titleZh": "高武：登陸未來一萬年",
-        "authorZh": "每月一更／常盤勇者",
-        "synopsisZh": "武道初興之際，異獸來襲，人族武者節節敗退。陸聖穿越入夢，竟看見一萬年後的世界，那裡的煉體術與武學典籍效力翻倍千倍，只是文明繁衍至巔峰，卻已無人能繼承。",
-        "genreZh": [
-          "熱血",
-          "科幻"
-        ],
-        "rank": 8,
-        "anilistId": 160980,
-        "title": "高武：登陆未来一万年",
-        "romaji": "Gao Wu: Denglu Weilai Yi Wan Nian",
-        "trending": 36,
-        "popularity": 15550,
-        "genres": [
-          "Action",
-          "Drama",
-          "Fantasy"
-        ],
-        "country": "CN",
-        "siteUrl": "https://anilist.co/manga/160980"
-      },
-      {
-        "titleZh": "三流反派的學院生存記",
-        "authorZh": "코리타／기린그린",
-        "synopsisZh": "艾德被家族拋棄，又被逐出宿舍，是遊戲裡注定領便當的三流反派。靈魂穿入他體內後，只想低調拿到獎學金畢業，卻沒想到四位女主角接連靠近，命運悄悄偏離劇本。",
-        "genreZh": [
-          "奇幻",
-          "戀愛"
-        ],
-        "rank": 9,
-        "anilistId": 172619,
-        "title": "아카데미에서 살아남기",
-        "romaji": "Academy-eseo Saranamgi",
-        "trending": 33,
-        "popularity": 33123,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/172619"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 10,
-        "anilistId": 185979,
-        "title": "전설급 영웅은 아카데미 우등생",
-        "romaji": "Jeonseolgeup Yeongungeun Academy Udeungsaeng",
-        "trending": 33,
-        "popularity": 11312,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/185979"
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/180752"
       }
     ]
   }
