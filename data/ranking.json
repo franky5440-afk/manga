@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-11-20T14:07:02+08:00",
+  "generatedAt": "2026-11-21T13:58:44+08:00",
   "cjk": {
     "source": "zh.wikipedia pageviews",
     "sourceUrl": "https://wikimedia.org/api/rest_v1/",
-    "dataDate": "20261119",
+    "dataDate": "20261120",
     "missing": [],
     "list": [
       {
         "id": "frieren",
         "wiki": "葬送的芙莉蓮",
-        "views": 994,
-        "day": "20261119",
+        "views": 839,
+        "day": "20261120",
         "found": true,
         "rank": 1,
         "prevRank": 1
@@ -18,8 +18,8 @@
       {
         "id": "attack-on-titan",
         "wiki": "進擊的巨人",
-        "views": 774,
-        "day": "20261119",
+        "views": 678,
+        "day": "20261120",
         "found": true,
         "rank": 2,
         "prevRank": 2
@@ -27,8 +27,8 @@
       {
         "id": "jujutsu-kaisen",
         "wiki": "咒術迴戰",
-        "views": 669,
-        "day": "20261119",
+        "views": 617,
+        "day": "20261120",
         "found": true,
         "rank": 3,
         "prevRank": 3
@@ -36,8 +36,8 @@
       {
         "id": "one-piece",
         "wiki": "ONE PIECE",
-        "views": 589,
-        "day": "20261119",
+        "views": 555,
+        "day": "20261120",
         "found": true,
         "rank": 4,
         "prevRank": 4
@@ -45,56 +45,56 @@
       {
         "id": "demon-slayer",
         "wiki": "鬼滅之刃",
-        "views": 519,
-        "day": "20261119",
+        "views": 492,
+        "day": "20261120",
         "found": true,
         "rank": 5,
-        "prevRank": 8
+        "prevRank": 5
       },
       {
         "id": "bleach",
         "wiki": "BLEACH",
-        "views": 471,
-        "day": "20261119",
+        "views": 412,
+        "day": "20261120",
         "found": true,
         "rank": 6,
-        "prevRank": 5
-      },
-      {
-        "id": "my-hero-academia",
-        "wiki": "我的英雄學院",
-        "views": 448,
-        "day": "20261119",
-        "found": true,
-        "rank": 7,
-        "prevRank": 7
-      },
-      {
-        "id": "dandadan",
-        "wiki": "膽大黨",
-        "views": 408,
-        "day": "20261119",
-        "found": true,
-        "rank": 8,
         "prevRank": 6
       },
       {
         "id": "chainsaw-man",
         "wiki": "鏈鋸人",
-        "views": 405,
-        "day": "20261119",
+        "views": 410,
+        "day": "20261120",
         "found": true,
-        "rank": 9,
+        "rank": 7,
+        "prevRank": 9
+      },
+      {
+        "id": "naruto",
+        "wiki": "火影忍者",
+        "views": 398,
+        "day": "20261120",
+        "found": true,
+        "rank": 8,
         "prevRank": null
       },
       {
-        "id": "haikyu",
-        "wiki": "排球少年！！",
-        "views": 399,
-        "day": "20261119",
+        "id": "my-hero-academia",
+        "wiki": "我的英雄學院",
+        "views": 378,
+        "day": "20261120",
+        "found": true,
+        "rank": 9,
+        "prevRank": 7
+      },
+      {
+        "id": "dandadan",
+        "wiki": "膽大黨",
+        "views": 344,
+        "day": "20261120",
         "found": true,
         "rank": 10,
-        "prevRank": null
+        "prevRank": 8
       }
     ]
   },
@@ -103,27 +103,45 @@
     "sourceUrl": "https://anilist.co",
     "list": [
       {
-        "titleZh": "航海王",
-        "authorZh": "尾田榮一郎",
-        "synopsisZh": "少年魯夫吃下橡膠果實後踏上大海，立志成為海賊王。他一路收攏各懷夢想的夥伴，駕船闖進被稱為偉大航道的險惡海域，在各方勢力的碰撞中追尋傳說中的大秘寶。",
-        "genreZh": [
-          "冒險",
-          "熱血"
-        ],
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
         "rank": 1,
-        "anilistId": 30013,
-        "title": "ONE PIECE",
-        "romaji": "ONE PIECE",
-        "trending": 152,
-        "popularity": 237395,
+        "anilistId": 151512,
+        "title": "빌어먹을 환생",
+        "romaji": "Bireomeogeul Hwansaeng",
+        "trending": 124,
+        "popularity": 36965,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/151512"
+      },
+      {
+        "titleZh": "奈米魔神",
+        "authorZh": "한중월야／금강불괴",
+        "synopsisZh": "天如運是魔教教主之子，卻被貶為不受重視的第七公子。命懸一線之際，未來子孫送來奈米機器助他逃過一劫，憑藉奈米科技加速修煉，從谷底一路崛起，在魔教掀起全新變革。",
+        "genreZh": [
+          "科幻",
+          "戰鬥"
+        ],
+        "rank": 2,
+        "anilistId": 120980,
+        "title": "나노마신",
+        "romaji": "Nano Machine",
+        "trending": 89,
+        "popularity": 49936,
         "genres": [
           "Action",
           "Adventure",
-          "Comedy",
-          "Fantasy"
+          "Fantasy",
+          "Sci-Fi"
         ],
-        "country": "JP",
-        "siteUrl": "https://anilist.co/manga/30013"
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/120980"
       },
       {
         "titleZh": "魔皇大管家",
@@ -133,12 +151,12 @@
           "奇幻",
           "戰鬥"
         ],
-        "rank": 2,
+        "rank": 3,
         "anilistId": 116353,
         "title": "魔皇大管家",
         "romaji": "Mo Huang Da Guanjia",
-        "trending": 76,
-        "popularity": 28547,
+        "trending": 79,
+        "popularity": 28561,
         "genres": [
           "Action",
           "Fantasy"
@@ -151,59 +169,36 @@
         "authorZh": "",
         "synopsisZh": "",
         "genreZh": [],
-        "rank": 3,
-        "anilistId": 128067,
-        "title": "SSS급 죽어야 사는 헌터",
-        "romaji": "SSS-geup Jugeoya Saneun Hunter",
-        "trending": 75,
-        "popularity": 71060,
+        "rank": 4,
+        "anilistId": 137280,
+        "title": "나 혼자 만렙 뉴비",
+        "romaji": "Na Honja Mallep Newbie",
+        "trending": 69,
+        "popularity": 52354,
         "genres": [
           "Action",
-          "Adventure",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/128067"
+        "siteUrl": "https://anilist.co/manga/137280"
       },
       {
         "titleZh": "",
         "authorZh": "",
         "synopsisZh": "",
         "genreZh": [],
-        "rank": 4,
-        "anilistId": 201009,
-        "title": "악당들의 후원자가 되었다",
-        "romaji": "Akdangdeurui Huwonjaga Doeeotda",
-        "trending": 43,
-        "popularity": 17092,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/201009"
-      },
-      {
-        "titleZh": "變成蠻族！遊戲生存戰",
-        "authorZh": "정윤강／한태수",
-        "synopsisZh": "主角一覺醒來，竟附身在獨立遊戲「地下城與巨石」裡的蠻族角色身上，必須在滿是死亡陷阱的地城中殺出血路。沒有存檔，沒有重來，只能靠蠻力與野性一路活下去。",
-        "genreZh": [
-          "奇幻",
-          "戰鬥"
-        ],
         "rank": 5,
-        "anilistId": 164857,
-        "title": "게임 속 바바리안으로 살아남기",
-        "romaji": "Game Sok Babarian-euro Saranamgi",
-        "trending": 41,
-        "popularity": 22647,
+        "anilistId": 187427,
+        "title": "악당은 살고 싶다",
+        "romaji": "Akdangeun Salgo Sipda",
+        "trending": 67,
+        "popularity": 16165,
         "genres": [
-          "Action",
-          "Adventure",
+          "Drama",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/164857"
+        "siteUrl": "https://anilist.co/manga/187427"
       },
       {
         "titleZh": "",
@@ -211,57 +206,60 @@
         "synopsisZh": "",
         "genreZh": [],
         "rank": 6,
-        "anilistId": 194727,
-        "title": "회귀수선전",
-        "romaji": "Hoegwisuseonjeon",
-        "trending": 39,
-        "popularity": 7764,
+        "anilistId": 135325,
+        "title": "나태 공자, 노력 천재 되다",
+        "romaji": "Natae Gongja, Nolyeog Cheonjae Doeda",
+        "trending": 64,
+        "popularity": 35886,
         "genres": [
           "Action",
           "Adventure",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/194727"
+        "siteUrl": "https://anilist.co/manga/135325"
       },
       {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 7,
-        "anilistId": 166658,
-        "title": "나 혼자 탑에서 농사",
-        "romaji": "Na Honja Tabeseo Nongsa",
-        "trending": 38,
-        "popularity": 14840,
-        "genres": [
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/166658"
-      },
-      {
-        "titleZh": "怠尊秘錄",
-        "authorZh": "비가／김꿀빨、레드훅",
-        "synopsisZh": "光輝武尊終結亂世紛爭，威名遠播，被世人尊為聖賢與大英雄，然而不為人知的黑暗過往正逐漸浮出水面。當塵封多年的秘密被揭開，這位曠世英雄的真面目，恐怕會顛覆所有人的想像。",
+        "titleZh": "魔道轉生記",
+        "authorZh": "codezero／FORCE STUDIO",
+        "synopsisZh": "千河宸原是正道義天盟麾下最強刺客，一朝殞命卻轉生為魔教三皇子徐良。背負仇敵之名重新睜眼，他決心藏起過去身份，在爾虞我詐的魔道世界裡步步為營，闖出屬於自己的一條生路。",
         "genreZh": [
           "戰鬥",
-          "懸疑"
+          "奇幻"
         ],
-        "rank": 8,
-        "anilistId": 195914,
-        "title": "태존비록",
-        "romaji": "Taejonbirok",
-        "trending": 37,
-        "popularity": 7420,
+        "rank": 7,
+        "anilistId": 164222,
+        "title": "마도전생기",
+        "romaji": "Madojeonsaenggi",
+        "trending": 64,
+        "popularity": 15192,
         "genres": [
           "Action",
-          "Adventure",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/195914"
+        "siteUrl": "https://anilist.co/manga/164222"
+      },
+      {
+        "titleZh": "地下城見聞錄",
+        "authorZh": "글럼프／손민우",
+        "synopsisZh": "金鎮宇出生於迷宮最深處，是被怪物撫養長大的地下城之子。他自幼以盜掘古墓維生，歷經無數次生死交關的戰鬥後練出驚人實力，逐步從卑微的盜墓者，蛻變為統治整座迷宮的王者。",
+        "genreZh": [
+          "奇幻",
+          "冒險"
+        ],
+        "rank": 8,
+        "anilistId": 155485,
+        "title": "던전 견문록",
+        "romaji": "Dungeon Gyeonmullok",
+        "trending": 50,
+        "popularity": 22642,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/155485"
       },
       {
         "titleZh": "",
@@ -269,17 +267,17 @@
         "synopsisZh": "",
         "genreZh": [],
         "rank": 9,
-        "anilistId": 210414,
-        "title": "나 혼자 EX급 소환수",
-        "romaji": "Na Honja EX-geup Sohwansu",
-        "trending": 35,
-        "popularity": 3224,
+        "anilistId": 184502,
+        "title": "사시미 한 자루로 아카데미를 씹어먹음",
+        "romaji": "Sashimi Han Jaruro Academy-reul Ssipeomeokeum",
+        "trending": 50,
+        "popularity": 16713,
         "genres": [
           "Action",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/210414"
+        "siteUrl": "https://anilist.co/manga/184502"
       },
       {
         "titleZh": "",
@@ -287,19 +285,17 @@
         "synopsisZh": "",
         "genreZh": [],
         "rank": 10,
-        "anilistId": 86848,
-        "title": "외모지상주의",
-        "romaji": "Oemo Jisangjuui",
-        "trending": 34,
-        "popularity": 47222,
+        "anilistId": 202986,
+        "title": "마왕인데 용사가 너무 많음",
+        "romaji": "Mawanginde Yongsaga Neomu Maneum",
+        "trending": 49,
+        "popularity": 8860,
         "genres": [
           "Action",
-          "Comedy",
-          "Drama",
-          "Supernatural"
+          "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/86848"
+        "siteUrl": "https://anilist.co/manga/202986"
       }
     ]
   }
