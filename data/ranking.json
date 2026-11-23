@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-11-22T13:33:49+08:00",
+  "generatedAt": "2026-11-23T14:14:59+08:00",
   "cjk": {
     "source": "zh.wikipedia pageviews",
     "sourceUrl": "https://wikimedia.org/api/rest_v1/",
-    "dataDate": "20261121",
+    "dataDate": "20261122",
     "missing": [],
     "list": [
       {
         "id": "frieren",
         "wiki": "葬送的芙莉蓮",
-        "views": 808,
-        "day": "20261121",
+        "views": 756,
+        "day": "20261122",
         "found": true,
         "rank": 1,
         "prevRank": 1
@@ -18,8 +18,8 @@
       {
         "id": "attack-on-titan",
         "wiki": "進擊的巨人",
-        "views": 760,
-        "day": "20261121",
+        "views": 752,
+        "day": "20261122",
         "found": true,
         "rank": 2,
         "prevRank": 2
@@ -27,74 +27,74 @@
       {
         "id": "jujutsu-kaisen",
         "wiki": "咒術迴戰",
-        "views": 717,
-        "day": "20261121",
+        "views": 619,
+        "day": "20261122",
         "found": true,
         "rank": 3,
         "prevRank": 3
       },
       {
-        "id": "demon-slayer",
-        "wiki": "鬼滅之刃",
-        "views": 615,
-        "day": "20261121",
+        "id": "one-piece",
+        "wiki": "ONE PIECE",
+        "views": 561,
+        "day": "20261122",
         "found": true,
         "rank": 4,
         "prevRank": 5
       },
       {
-        "id": "one-piece",
-        "wiki": "ONE PIECE",
-        "views": 572,
-        "day": "20261121",
+        "id": "demon-slayer",
+        "wiki": "鬼滅之刃",
+        "views": 535,
+        "day": "20261122",
         "found": true,
         "rank": 5,
         "prevRank": 4
       },
       {
-        "id": "bleach",
-        "wiki": "BLEACH",
-        "views": 516,
-        "day": "20261121",
+        "id": "my-hero-academia",
+        "wiki": "我的英雄學院",
+        "views": 528,
+        "day": "20261122",
         "found": true,
         "rank": 6,
+        "prevRank": 7
+      },
+      {
+        "id": "bleach",
+        "wiki": "BLEACH",
+        "views": 521,
+        "day": "20261122",
+        "found": true,
+        "rank": 7,
         "prevRank": 6
       },
       {
-        "id": "my-hero-academia",
-        "wiki": "我的英雄學院",
-        "views": 499,
-        "day": "20261121",
+        "id": "spy-family",
+        "wiki": "SPY×FAMILY間諜家家酒",
+        "views": 454,
+        "day": "20261122",
         "found": true,
-        "rank": 7,
-        "prevRank": 9
+        "rank": 8,
+        "prevRank": null
       },
       {
         "id": "naruto",
         "wiki": "火影忍者",
-        "views": 456,
-        "day": "20261121",
+        "views": 454,
+        "day": "20261122",
         "found": true,
-        "rank": 8,
+        "rank": 9,
         "prevRank": 8
       },
       {
-        "id": "chainsaw-man",
-        "wiki": "鏈鋸人",
-        "views": 435,
-        "day": "20261121",
-        "found": true,
-        "rank": 9,
-        "prevRank": 7
-      },
-      {
-        "id": "dandadan",
-        "wiki": "膽大黨",
-        "views": 434,
-        "day": "20261121",
+        "id": "haikyu",
+        "wiki": "排球少年！！",
+        "views": 420,
+        "day": "20261122",
         "found": true,
         "rank": 10,
-        "prevRank": 10
+        "prevRank": null
       }
     ]
   },
@@ -103,145 +103,65 @@
     "sourceUrl": "https://anilist.co",
     "list": [
       {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 1,
-        "anilistId": 178379,
-        "title": "마법학교 앞점멸 천재가 되었다",
-        "romaji": "Mabeop Hakgyo Apjeommyeol Cheonjae-ga Doeeotda",
-        "trending": 77,
-        "popularity": 23006,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/178379"
-      },
-      {
-        "titleZh": "",
-        "authorZh": "",
-        "synopsisZh": "",
-        "genreZh": [],
-        "rank": 2,
-        "anilistId": 151512,
-        "title": "빌어먹을 환생",
-        "romaji": "Bireomeogeul Hwansaeng",
-        "trending": 63,
-        "popularity": 37146,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/151512"
-      },
-      {
-        "titleZh": "魔皇大管家",
-        "authorZh": "夜梟／無二漫畫",
-        "synopsisZh": "曾經威震一方的魔皇卓一凡遭親信背叛，重生後修為歸零，還被心魔纏身。為了重返巔峰，他暫且棲身沒落家族，擔任大小姐的專屬管家暗中佈局。",
+        "titleZh": "鐵血劍家獵犬的回歸",
+        "authorZh": "레고밟았어／설아랑",
+        "synopsisZh": "身為鐵血劍家最忠誠的獵犬，維基爾替家族剷除異己，換來的卻是莫須有的罪名與斷頭台。帶著滿腔怨恨重生回到四十年前，這一次他發誓不再當任何人的狗。",
         "genreZh": [
           "奇幻",
           "戰鬥"
         ],
-        "rank": 3,
-        "anilistId": 116353,
-        "title": "魔皇大管家",
-        "romaji": "Mo Huang Da Guanjia",
-        "trending": 54,
-        "popularity": 28575,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "country": "CN",
-        "siteUrl": "https://anilist.co/manga/116353"
-      },
-      {
-        "titleZh": "劍術名家的小兒子",
-        "authorZh": "황제펭귄／AZI",
-        "synopsisZh": "大陸第一劍術名門的小兒子吉恩，前世是家族眼中的廢材，最後落得被逐出家門的下場。帶著記憶重活一世，靠著甦醒的天賦與神的契約，他決心為自己而戰。",
-        "genreZh": [
-          "奇幻",
-          "熱血"
-        ],
-        "rank": 4,
-        "anilistId": 149332,
-        "title": "검술명가 막내아들",
-        "romaji": "Geomsulmyeongga Mangnaeadeul",
-        "trending": 54,
-        "popularity": 45708,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy"
-        ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/149332"
-      },
-      {
-        "titleZh": "三流反派的學院生存記",
-        "authorZh": "코리타／기린그린",
-        "synopsisZh": "艾德被家族拋棄，又被逐出宿舍，是遊戲裡注定領便當的三流反派。靈魂穿入他體內後，只想低調拿到獎學金畢業，卻沒想到四位女主角接連靠近，命運悄悄偏離劇本。",
-        "genreZh": [
-          "奇幻",
-          "戀愛"
-        ],
-        "rank": 5,
-        "anilistId": 172619,
-        "title": "아카데미에서 살아남기",
-        "romaji": "Academy-eseo Saranamgi",
-        "trending": 49,
-        "popularity": 33649,
+        "rank": 1,
+        "anilistId": 163824,
+        "title": "철혈검가 사냥개의 회귀",
+        "romaji": "Cheolhyeolgeomga Sanyanggaeui Hoegwi",
+        "trending": 136,
+        "popularity": 47275,
         "genres": [
           "Action",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/172619"
+        "siteUrl": "https://anilist.co/manga/163824"
       },
       {
-        "titleZh": "描繪地下城的畫家",
-        "authorZh": "취미글주의",
-        "synopsisZh": "美術教師徐智吾在大火中喪命，靈魂被吸入一幅肖像畫中，自己也化為畫中人。在畫作世界裡，他意外獲得創造生命與開啟異次元之門的能力，決心運用畫筆，解決身邊眾人面臨的難題。",
+        "titleZh": "坂本日常",
+        "authorZh": "鈴木祐斗",
+        "synopsisZh": "曾經讓殺手界聞風喪膽的傳奇殺手坂本太郎，如今是個發福的商店老闆。為了守護妻女與得來不易的日常，他帶著能讀心的搭檔迎戰一波波懸賞追殺。",
         "genreZh": [
-          "奇幻",
-          "治癒"
+          "戰鬥",
+          "喜劇"
         ],
-        "rank": 6,
-        "anilistId": 213942,
-        "title": "던전을 그리는 화가",
-        "romaji": "Dungeon-eul Geurineun Hwaga",
-        "trending": 46,
-        "popularity": 6921,
+        "rank": 2,
+        "anilistId": 125828,
+        "title": "SAKAMOTO DAYS",
+        "romaji": "SAKAMOTO DAYS",
+        "trending": 72,
+        "popularity": 90711,
         "genres": [
-          "Fantasy",
-          "Mystery",
-          "Thriller"
+          "Action",
+          "Comedy"
         ],
-        "country": "KR",
-        "siteUrl": "https://anilist.co/manga/213942"
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/125828"
       },
       {
         "titleZh": "",
         "authorZh": "",
         "synopsisZh": "",
         "genreZh": [],
-        "rank": 7,
-        "anilistId": 202986,
-        "title": "마왕인데 용사가 너무 많음",
-        "romaji": "Mawanginde Yongsaga Neomu Maneum",
-        "trending": 43,
-        "popularity": 8965,
+        "rank": 3,
+        "anilistId": 180890,
+        "title": "천하제일인의 소꿉친구",
+        "romaji": "Cheonhajeirinui Sokkupchingu",
+        "trending": 63,
+        "popularity": 17382,
         "genres": [
           "Action",
+          "Adventure",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/202986"
+        "siteUrl": "https://anilist.co/manga/180890"
       },
       {
         "titleZh": "航海王",
@@ -251,12 +171,12 @@
           "冒險",
           "熱血"
         ],
-        "rank": 8,
+        "rank": 4,
         "anilistId": 30013,
         "title": "ONE PIECE",
         "romaji": "ONE PIECE",
-        "trending": 42,
-        "popularity": 237541,
+        "trending": 60,
+        "popularity": 237603,
         "genres": [
           "Action",
           "Adventure",
@@ -271,18 +191,101 @@
         "authorZh": "",
         "synopsisZh": "",
         "genreZh": [],
-        "rank": 9,
-        "anilistId": 189051,
-        "title": "풍작이에요, 마왕님!",
-        "romaji": "Pungjagieyo, Mawangnim!",
-        "trending": 40,
-        "popularity": 10444,
+        "rank": 5,
+        "anilistId": 108556,
+        "title": "SPY×FAMILY",
+        "romaji": "SPY×FAMILY",
+        "trending": 60,
+        "popularity": 161610,
         "genres": [
+          "Action",
+          "Comedy",
+          "Slice of Life",
+          "Supernatural"
+        ],
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/108556"
+      },
+      {
+        "titleZh": "魔男伊奇",
+        "authorZh": "西修／宇佐崎しろ",
+        "synopsisZh": "在這個世界，魔法是活生生的生物，只有通過試煉的女性才能駕馭。深山長大的少年伊奇憑獵人身手捕獲了傳說級魔法，成為史上第一位男性魔法使，魔法界就此天翻地覆。",
+        "genreZh": [
+          "奇幻",
+          "冒險"
+        ],
+        "rank": 6,
+        "anilistId": 180752,
+        "title": "魔男のイチ",
+        "romaji": "Madan no Ichi",
+        "trending": 54,
+        "popularity": 31305,
+        "genres": [
+          "Action",
+          "Adventure",
           "Comedy",
           "Fantasy"
         ],
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/180752"
+      },
+      {
+        "titleZh": "神樂鉢",
+        "authorZh": "外薗健",
+        "synopsisZh": "刀匠之子千礦自幼跟著父親學藝，本以為平靜的日子會一直持續。父親遇害那一夜，他接下遺留的妖刀，踏上追討仇敵、奪回失竊名刀的復仇之路。",
+        "genreZh": [
+          "戰鬥",
+          "劇情"
+        ],
+        "rank": 7,
+        "anilistId": 169355,
+        "title": "カグラバチ",
+        "romaji": "Kagurabachi",
+        "trending": 52,
+        "popularity": 73209,
+        "genres": [
+          "Action",
+          "Drama",
+          "Fantasy"
+        ],
+        "country": "JP",
+        "siteUrl": "https://anilist.co/manga/169355"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 8,
+        "anilistId": 151512,
+        "title": "빌어먹을 환생",
+        "romaji": "Bireomeogeul Hwansaeng",
+        "trending": 47,
+        "popularity": 37254,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/189051"
+        "siteUrl": "https://anilist.co/manga/151512"
+      },
+      {
+        "titleZh": "",
+        "authorZh": "",
+        "synopsisZh": "",
+        "genreZh": [],
+        "rank": 9,
+        "anilistId": 201009,
+        "title": "악당들의 후원자가 되었다",
+        "romaji": "Akdangdeurui Huwonjaga Doeeotda",
+        "trending": 35,
+        "popularity": 17252,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "country": "KR",
+        "siteUrl": "https://anilist.co/manga/201009"
       },
       {
         "titleZh": "",
@@ -290,17 +293,16 @@
         "synopsisZh": "",
         "genreZh": [],
         "rank": 10,
-        "anilistId": 201009,
-        "title": "악당들의 후원자가 되었다",
-        "romaji": "Akdangdeurui Huwonjaga Doeeotda",
-        "trending": 39,
-        "popularity": 17206,
+        "anilistId": 217098,
+        "title": "야생에서 갤러리를 얻었다",
+        "romaji": "Yasaengeseo Gallery-reul Eodeotda",
+        "trending": 33,
+        "popularity": 1924,
         "genres": [
-          "Action",
           "Fantasy"
         ],
         "country": "KR",
-        "siteUrl": "https://anilist.co/manga/201009"
+        "siteUrl": "https://anilist.co/manga/217098"
       }
     ]
   }
